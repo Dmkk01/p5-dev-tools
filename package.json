@@ -10,9 +10,13 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:p5-snippets-and-tools.helloWorld"
+		"onCommand:p5-snippets-and-tools.helloWorld",
+		"onLanguage:javascript"
 	],
 	"main": "./out/extension.js",
+	"capabilities" : {
+        "hoverProvider" : "true"
+    },
 	"contributes": {
 		"commands": [
 			{
