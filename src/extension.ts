@@ -24,15 +24,25 @@ export function activate(context: vscode.ExtensionContext) {
       const range = document.getWordRangeAtPosition(position);
       const word = document.getText(range);
 
-	    const check = references.find(x => x.element === word);
+	    const reference = references.find(x => x.element === word);
 
-      if (check) {
-        const markdown = new vscode.MarkdownString(`${check.description}\n`);
-        markdown.appendCodeblock(`${check.code}`, "javascript");
-        if (check.syntax.length > 0) {
-          check.syntax.forEach(element => {
-            markdown.appendCodeblock(`${element.parameter}`, "javascript");
-            markdown.appendMarkdown(`* ${element.description}\n`);	
+      if (reference) {
+        const markdown = new vscode.MarkdownString(`${reference.description}\n`);
+        
+        markdown.appendCodeblock(`${reference.code}`, "javascript");
+
+        let returnsText = "";
+        if (reference.return) {
+          returnsText = `\nReturns ${reference.return!.description} (${reference.return!.type})\n`;
+        }
+        markdown.appendMarkdown(returnsText);
+        
+        if (reference.syntax.length > 0) {
+          reference.syntax.forEach(parameter => {
+            markdown.appendCodeblock(`${parameter.parameter}`, "javascript");
+            if (parameter.description) {
+              markdown.appendMarkdown(`* ${parameter.description}\n`);
+            }
           });
         }
 
