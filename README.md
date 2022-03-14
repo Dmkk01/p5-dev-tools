@@ -1,6 +1,12 @@
-# p5-snippets-and-tools README
+<!-- [![Version](https://vsmarketplacebadge.apphb.com/version/dsznajder.es7-react-js-snippets.svg)](https://vsmarketplacebadge.apphb.com/version-short/dsznajder.es7-react-js-snippets.svg)
+[![Install](https://vsmarketplacebadge.apphb.com/installs/dsznajder.es7-react-js-snippets.svg)](https://vsmarketplacebadge.apphb.com/installs-short/dsznajder.es7-react-js-snippets.svg)
+[![Downloads](https://vsmarketplacebadge.apphb.com/downloads/dsznajder.es7-react-js-snippets.svg)](https://vsmarketplacebadge.apphb.com/downloads-short/dsznajder.es7-react-js-snippets.svg)
+[![Ratings](https://vsmarketplacebadge.apphb.com/rating-short/dsznajder.es7-react-js-snippets.svg)](https://vsmarketplacebadge.apphb.com/rating-short/dsznajder.es7-react-js-snippets.svg) -->
 
-This is the README for your extension "p5-snippets-and-tools". After writing up a brief description, we recommend including the following sections.
+
+# p5.js Dev Tools for Visual Studio Code
+
+This extension puts handy shortcuts and abbreviated p5 documentation right at your fingertips as you write p5.js in Visual Studio Code.
 
 ## Features
 
