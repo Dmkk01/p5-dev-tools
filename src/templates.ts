@@ -11,6 +11,32 @@ export const htmlTemplateHosted = `<html>
 </html>
 `;
 
+export const htmlTemplateLocalMin = `<html>
+  <head>
+    <script src="p5/p5.min.js"></script>
+    <script src="sketch.js"></script>
+    <title>Hello</title>
+  </head>
+  <body>
+    <main>
+    </main>
+  </body>
+</html>
+`;
+
+export const htmlTemplateLocal = `<html>
+  <head>
+    <script src="p5/p5.js"></script>
+    <script src="sketch.js"></script>
+    <title>Hello</title>
+  </head>
+  <body>
+    <main>
+    </main>
+  </body>
+</html>
+`;
+
 export const sketchTemplateBasic = 
 `function setup() {
     createCanvas(400, 400);
