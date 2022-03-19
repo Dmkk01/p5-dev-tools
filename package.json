@@ -1,7 +1,11 @@
 {
 	"name": "p5-snippets-and-tools",
+	"license" : "MIT",
+	"publisher": "Dominikasinski",
 	"displayName": "P5 Snippets and Tools",
 	"description": "An extension for development with p5.js",
+	"icon": "logo.png",
+	"repository": { "type": "git", "url": "https://github.com/Dmkk01/p5-dev-tools" },
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.65.0"
