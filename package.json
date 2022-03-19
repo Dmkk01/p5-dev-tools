@@ -14,7 +14,7 @@
 		"vscode": "^1.65.0"
 	},
 	"categories": [
-		"Other"
+		"Snippets", "Other", "Programming Languages"
 	],
 	"activationEvents": [
 		"onCommand:p5-snippets-and-tools.create-p5-project-standard",
@@ -29,6 +29,16 @@
 			{
 				"command": "p5-snippets-and-tools.create-p5-project-standard",
 				"title": "Create a standard p5.js project"
+			}
+		],
+		"snippets": [
+			{
+			  "language": "javascript",
+			  "path": "./snippets/snippets.json"
+			},
+			{
+				"language": "html",
+				"path": "./snippets/snippets-html.json"
 			}
 		]
 	},

@@ -1,0 +1,32 @@
+{
+    "p5.js Setup": {
+      "prefix": "p5-setup",
+      "body": [
+          "function setup() {",
+          "    createCanvas(400, 400);",
+          "}"
+      ],
+      "description": "Setup function for p5.js"
+    },
+    "p5.js Draw": {
+        "prefix": "p5-draw",
+        "body": [
+            "function draw() {",
+            "    background(220);",
+            "}"
+        ],
+        "description": "Draw functions for p5.js"
+    },
+    "p5.js Init": {
+        "prefix": "p5-init",
+        "body": [
+            "function setup() {",
+            "    createCanvas(400, 400);",
+            "}",
+            "function draw() {",
+            "    background(220);",
+            "}"
+        ],
+        "description": "Init functions for p5.js"
+    }
+}
