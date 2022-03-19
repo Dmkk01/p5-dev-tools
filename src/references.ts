@@ -615,7 +615,7 @@ export const references = [
           "Function to be called once the model is loaded. Will be passed the 3D model object. (Optional)",
       },
       {
-        parameter: "failureCallback: Function(Event)",
+        parameter: "failureCallback: function(Event)",
         description:
           "called with event error if the model fails to load. (Optional)",
       },
@@ -2629,5 +2629,2341 @@ export const references = [
         description: "File that is wrapped",
       },
     ],
+  },
+  {
+    element: "p5.Graphics",
+    description:
+      "Thin wrapper around a renderer, to be used for creating a graphics buffer object. Use this class if you need to draw into an off-screen graphics buffer. The two parameters define the width and height in pixels. The fields and methods for this class are extensive, but mirror the normal drawing API for p5. Extends p5.Element",
+    code: "new p5.Graphics(w, h, renderer, [pInst])",
+    insert: "new p5.Graphics(${1:w}, ${2:h}, ${3:renderer})",
+    syntax: [
+      {
+        parameter: "w: Number",
+        description: "width",
+      },
+      {
+        parameter: "h: Number",
+        description: "height",
+      },
+      {
+        parameter: "renderer: Constant",
+        description: "the renderer to use, either P2D or WEBGL",
+      },
+      {
+        parameter: "pInst: P5",
+        description: "pointer to p5 instance (Optional)",
+      },
+    ],
+  },
+  {
+    element: "createCanvas",
+    description:
+      "Creates a canvas element in the document, and sets the dimensions of it in pixels. This method should be called only once at the start of setup. Calling createCanvas more than once in a sketch will result in very unpredictable behavior. If you want more than one drawing canvas you could use createGraphics (hidden by default but it can be shown). Important note: in 2D mode (i.e. when p5.Renderer is not set) the origin (0,0) is positioned at the top left of the screen. In 3D mode (i.e. when p5.Renderer is set to WEBGL), the origin is positioned at the center of the canvas.",
+    code: "createCanvas(w, h, [renderer])",
+    insert: "createCanvas(${1:w}, ${2:h})",
+    syntax: [
+      {
+        parameter: "w: Number",
+        description: "width of the canvas",
+      },
+      {
+        parameter: "h: Number",
+        description: "height of the canvas",
+      },
+      {
+        parameter: "renderer: Constant",
+        description: "either P2D or WEBGL (Optional)",
+      },
+    ],
+  },
+  {
+    element: "resizeCanvas",
+    description:
+      "Resizes the canvas to given width and height. The canvas will be cleared and draw will be called immediately, allowing the sketch to re-render itself in the resized canvas.",
+    code: "resizeCanvas(w, h, [noRedraw])",
+    insert: "resizeCanvas(${1:w}, ${2:h})",
+    syntax: [
+      {
+        parameter: "w: Number",
+        description: "width of the canvas",
+      },
+      {
+        parameter: "h: Number",
+        description: "height of the canvas",
+      },
+      {
+        parameter: "noRedraw: Boolean",
+        description: "don't redraw the canvas immediately (Optional)",
+      },
+    ],
+  },
+  {
+    element: "noCanvas",
+    description:
+      "Removes the default canvas for a p5 sketch that doesn't require a canvas",
+    code: "noCanvas()",
+    insert: "noCanvas()",
+    syntax: [
+    ],
+  },
+  {
+    element: "createGraphics",
+    description:
+      "Creates and returns a new p5.Renderer object. Use this class if you need to draw into an off-screen graphics buffer. The two parameters define the width and height in pixels.",
+    code: "createGraphics(w, h, [renderer])",
+    insert: "createGraphics(${1:w}, ${2:h})",
+    syntax: [
+      {
+        parameter: "w: Number",
+        description: "width of the offscreen graphics buffer",
+      },
+      {
+        parameter: "h: Number",
+        description: "height of the offscreen graphics buffer",
+      },
+      {
+        parameter: "renderer: Constant",
+        description: "either P2D or WEBGL undefined defaults to p2d (Optional)",
+      },
+    ],
+  },
+  {
+    element: "blendMode",
+    description:
+      "Blends the pixels in the display window according to the defined mode.",
+    code: "blendMode(mode)",
+    insert: "blendMode(${1:mode})",
+    syntax: [
+      {
+        parameter: "mode: Constant",
+        description: "blend mode to set for canvas. either BLEND, DARKEST, LIGHTEST, DIFFERENCE, MULTIPLY, EXCLUSION, SCREEN, REPLACE, OVERLAY, HARD_LIGHT, SOFT_LIGHT, DODGE, BURN, ADD, REMOVE or SUBTRACT",
+      },
+    ],
+  },
+  {
+    element: "drawingContext",
+    description:
+      "The p5.js API provides a lot of functionality for creating graphics, but there is some native HTML5 Canvas functionality that is not exposed by p5. You can still call it directly using the variable drawingContext, as in the example shown. This is the equivalent of calling canvas.getContext('2d'); or canvas.getContext('webgl');.",
+    code: "drawingContext",
+    insert: "drawingContext",
+    syntax: [
+    ],
+  },
+  {
+    element: "setAttributes",
+    description:
+      "Set attributes for the WebGL Drawing context. This is a way of adjusting how the WebGL renderer works to fine-tune the display and performance. Note that this will reinitialize the drawing context if called after the WebGL canvas is made. If an object is passed as the parameter, all attributes not declared in the object will be set to defaults.",
+    code: "setAttributes(key, value), setAttributes(obj)",
+    insert: "setAttributes(${1:key}, ${2:value})",
+    syntax: [
+      {
+        parameter: "key: String",
+        description: "Name of attribute",
+      },
+      {
+        parameter: "value: Boolean",
+        description: "New value of named attribute",
+      },
+      {
+        parameter: "obj: Object",
+        description: "object with key-value pairs",
+      },
+    ],
+  },
+  {
+    element: "applyMatrix",
+    description:
+      "Multiplies the current matrix by the one specified through the parameters. This is a powerful operation that can perform the equivalent of translate, scale, shear and rotate all at once.",
+    code: "applyMatrix(a, b, c, d, e, f)",
+    insert: "applyMatrix(${1:a}, ${2:b}, ${3:c}, ${4:d}, ${5:e}, ${6:f})",
+    syntax: [
+      {
+        parameter: "a: Number|Array",
+        description: "numbers which define the 2x3 matrix to be multiplied, or an array of numbers",
+      },
+      {
+        parameter: "b: Number",
+        description: "numbers which define the 2x3 matrix to be multiplied",
+      },
+      {
+        parameter: "c: Number",
+        description: "numbers which define the 2x3 matrix to be multiplied",
+      },
+      {
+        parameter: "d: Number",
+        description: "numbers which define the 2x3 matrix to be multiplied",
+      },
+      {
+        parameter: "e: Number",
+        description: "numbers which define the 2x3 matrix to be multiplied",
+      },
+      {
+        parameter: "f: Number",
+        description: "numbers which define the 2x3 matrix to be multiplied",
+      },
+    ],
+  },
+  {
+    element: "resetMatrix",
+    description:
+      "Replaces the current matrix with the identity matrix.",
+    code: "resetMatrix()",
+    insert: "resetMatrix()",
+    syntax: [
+    ],
+  },
+  {
+    element: "rotate",
+    description:
+      "Rotates a shape by the amount specified by the angle parameter. This function accounts for angleMode, so angles can be entered in either RADIANS or DEGREES. Objects are always rotated around their relative position to the origin and positive numbers rotate objects in a clockwise direction. Transformations apply to everything that happens after and subsequent calls to the function accumulates the effect.",
+    code: "rotate(angle, [axis])",
+    insert: "rotate(${1:angle})",
+    syntax: [
+      {
+        parameter: "angle: Number",
+        description: "the angle of rotation, specified in radians or degrees, depending on current angleMode",
+      },
+      {
+        parameter: "axis: p5.Vector|Number[]",
+        description: "(in 3d) the axis to rotate around (Optional)",
+      },
+    ],
+  },
+  {
+    element: "rotateX",
+    description:
+      "Rotates a shape around X axis by the amount specified in angle parameter. The angles can be entered in either RADIANS or DEGREES. Objects are always rotated around their relative position to the origin and positive numbers rotate objects in a clockwise direction. All transformations are reset when draw() begins again.",
+    code: "rotateX(angle)",
+    insert: "rotateX(${1:angle})",
+    syntax: [
+      {
+        parameter: "angle: Number",
+        description: "the angle of rotation, specified in radians or degrees, depending on current angleMode",
+      },
+    ],
+  },
+  {
+    element: "rotateY",
+    description:
+      "Rotates a shape around Y axis by the amount specified in angle parameter. The angles can be entered in either RADIANS or DEGREES. Objects are always rotated around their relative position to the origin and positive numbers rotate objects in a clockwise direction. All transformations are reset when draw() begins again.",
+    code: "rotateY(angle)",
+    insert: "rotateY(${1:angle})",
+    syntax: [
+      {
+        parameter: "angle: Number",
+        description: "the angle of rotation, specified in radians or degrees, depending on current angleMode",
+      },
+    ],
+  },
+  {
+    element: "rotateZ",
+    description:
+      "Rotates a shape around Z axis by the amount specified in angle parameter. The angles can be entered in either RADIANS or DEGREES. This method works in WEBGL mode only. Objects are always rotated around their relative position to the origin and positive numbers rotate objects in a clockwise direction. All transformations are reset when draw() begins again.",
+    code: "rotateZ(angle)",
+    insert: "rotateZ(${1:angle})",
+    syntax: [
+      {
+        parameter: "angle: Number",
+        description: "the angle of rotation, specified in radians or degrees, depending on current angleMode",
+      },
+    ],
+  },
+  {
+    element: "scale",
+    description:
+      "Increases or decreases the size of a shape by expanding or contracting vertices. Objects always scale from their relative origin to the coordinate system. Scale values are specified as decimal percentages. For example, the function call scale(2.0) increases the dimension of a shape by 200%.",
+    code: "scale(s, [y], [z]), scale(scales)",
+    insert: "scale(${1:s})",
+    syntax: [
+      {
+        parameter: "s: Number|p5.Vector|Number[]",
+        description: "percent to scale the object, or percentage to scale the object in the x-axis if multiple arguments are given",
+      },
+      {
+        parameter: "y: Number",
+        description: "percent to scale the object in the y-axis (Optional)",
+      },
+      {
+        parameter: "z: Number",
+        description: "percent to scale the object in the z-axis (webgl only) (Optional)",
+      },
+      {
+        parameter: "scales: p5.Vector|Number[]",
+        description: "per-axis percents to scale the object",
+      },
+    ],
+  },
+  {
+    element: "shearX",
+    description:
+      "Shears a shape around the x-axis by the amount specified by the angle parameter. Angles should be specified in the current angleMode. Objects are always sheared around their relative position to the origin and positive numbers shear objects in a clockwise direction.",
+    code: "shearX(angle)",
+    insert: "shearX(${1:angle})",
+    syntax: [
+      {
+        parameter: "angle: Number",
+        description: "angle of shear specified in radians or degrees, depending on current angleMode",
+      },
+    ],
+  },
+  {
+    element: "shearY",
+    description:
+      "Shears a shape around the y-axis the amount specified by the angle parameter. Angles should be specified in the current angleMode. Objects are always sheared around their relative position to the origin and positive numbers shear objects in a clockwise direction.",
+    code: "shearY(angle)",
+    insert: "shearY(${1:angle})",
+    syntax: [
+      {
+        parameter: "angle: Number",
+        description: "angle of shear specified in radians or degrees, depending on current angleMode",
+      },
+    ],
+  },
+  {
+    element: "translate",
+    description:
+      "Specifies an amount to displace objects within the display window. The x parameter specifies left/right translation, the y parameter specifies up/down translation.",
+    code: "translate(x, y, [z]), translate(vector)",
+    insert: "translate(${1:x}, ${2:y})",
+    syntax: [
+      {
+        parameter: "x: Number",
+        description: "left/right translation",
+      },
+      {
+        parameter: "y: Number",
+        description: "up/down translation",
+      },
+      {
+        parameter: "z: Number",
+        description: "forward/backward translation (webgl only) (Optional)",
+      },
+      {
+        parameter: "vector: p5.Vector",
+        description: "the vector to translate by",
+      },
+    ],
+  },
+  {
+    element: "storeItem",
+    description:
+      "Stores a value in local storage under the key name. Local storage is saved in the browser and persists between browsing sessions and page reloads. The key can be the name of the variable but doesn't have to be. To retrieve stored items see getItem. Sensitive data such as passwords or personal information should not be stored in local storage.",
+    code: "storeItem(key, value)",
+    insert: "storeItem(${1:key}, ${2:value})",
+    syntax: [
+      {
+        parameter: "key: String",
+        description: "",
+      },
+      {
+        parameter: "value: String|Number|Object|Boolean|p5.Color|p5.Vector",
+        description: "",
+      },
+    ],
+  },
+  {
+    element: "getItem",
+    description:
+      "Returns the value of an item that was stored in local storage using storeItem()",
+    code: "getItem(key)",
+    insert: "getItem(${1:key})",
+    syntax: [
+      {
+        parameter: "key: String",
+        description: "name that you wish to use to store in local storage",
+      },
+    ],
+    return: {
+      type: "Number|Object|String|Boolean|p5.Color|p5.Vector",
+      description: "Value of stored item",
+    },
+  },
+  {
+    element: "clearStorage",
+    description:
+      "Clears all local storage items set with storeItem() for the current domain.",
+    code: "clearStorage()",
+    insert: "clearStorage()",
+    syntax: [
+    ],
+  },
+  {
+    element: "removeItem",
+    description:
+      "Removes an item that was stored with storeItem()",
+    code: "removeItem(key)",
+    insert: "removeItem(${1:key})",
+    syntax: [
+      {
+        parameter: "key: String",
+        description: "",
+      },
+    ],
+  },
+  {
+    element: "createStringDict",
+    description:
+      "Creates a new instance of p5.StringDict using the key-value pair or the object you provide.",
+    code: "createStringDict(key, value), createStringDict(object)",
+    insert: "createStringDict(${1:key}, ${2:value})",
+    syntax: [
+      {
+        parameter: "key: String",
+        description: "",
+      },
+      {
+        parameter: "value: String",
+        description: "",
+      },
+      {
+        parameter: "object: Object",
+        description: "object",
+      },
+    ],
+    return: {
+      type: "p5.StringDict",
+      description: "",
+    },
+  },
+  {
+    element: "createNumberDict",
+    description:
+      "Creates a new instance of p5.NumberDict using the key-value pair or object you provide.",
+    code: "createNumberDict(key, value), createNumberDict(object)",
+    insert: "createNumberDict(${1:key}, ${2:value})",
+    syntax: [
+      {
+        parameter: "key: Number",
+        description: "",
+      },
+      {
+        parameter: "value: Number",
+        description: "",
+      },
+      {
+        parameter: "object: Object",
+        description: "object",
+      },
+    ],
+    return: {
+      type: "p5.NumberDict",
+      description: "",
+    },
+  },
+  {
+    element: "p5.TypedDict",
+    description:
+      "Base class for all p5.Dictionary types. Specifically typed Dictionary classes inherit from this class.",
+    code: "new p5.TypedDict()",
+    insert: "new p5.TypedDict()",
+    syntax: [
+    ],
+  },
+  {
+    element: "p5.NumberDict",
+    description:
+      "A simple Dictionary class for Numbers. Extends p5.TypedDict",
+    code: "new p5.NumberDict()",
+    insert: "new p5.NumberDict()",
+    syntax: [
+    ],
+  },
+  {
+    element: "shuffle",
+    description:
+      "Randomizes the order of the elements of an array. Implements Fisher-Yates Shuffle Algorithm.",
+    code: "shuffle(array, [bool])",
+    insert: "shuffle(${1:array})",
+    syntax: [
+      {
+        parameter: "array: Array",
+        description: "Array to shuffle",
+      },
+      {
+        parameter: "bool: Boolean",
+        description: "modify passed array (Optional)",
+      },
+    ],
+    return: {
+      type: "Array",
+      description: "shuffled Array",
+    },
+  },
+  {
+    element: "int",
+    description:
+      "Converts a boolean, string, or float to its integer representation. When an array of values is passed in, then an int array of the same length is returned.",
+    code: "int(n, [radix]), int(ns, [radix])",
+    insert: "int(${1:n})",
+    syntax: [
+      {
+        parameter: "n: String|Boolean|Number",
+        description: "value to parse",
+      },
+      {
+        parameter: "radix: Integer",
+        description: "the radix to convert to (default: 10) (Optional)",
+      },
+      {
+        parameter: "ns: Array",
+        description: "values to parse",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "integer representation of value",
+    },
+  },
+  {
+    element: "str",
+    description:
+      "Converts a boolean, string or number to its string representation. When an array of values is passed in, then an array of strings of the same length is returned.",
+    code: "str(n)",
+    insert: "str(${1:n})",
+    syntax: [
+      {
+        parameter: "n: String|Boolean|Number|Array",
+        description: "value to parse",
+      },
+    ],
+    return: {
+      type: "String",
+      description: "string representation of value",
+    },
+  },
+  {
+    element: "boolean",
+    description:
+      "A boolean is one of the 7 primitive data types in Javascript. A boolean can only be true or false. From the MDN entry: Boolean represents a logical entity and can have two values: true, and false.",
+    code: "boolean",
+    insert: "boolean",
+    syntax: [
+    ],
+  },
+  {
+    element: "char",
+    description:
+      "Converts a number or string to its corresponding single-character string representation. If a string parameter is provided, it is first parsed as an integer and then translated into a single-character string. When an array of number or string values is passed in, then an array of single-character strings of the same length is returned.",
+    code: "char(n), char(ns)",
+    insert: "char(${1:n})",
+    syntax: [
+      {
+        parameter: "n: String|Number",
+        description: "value to parse",
+      },
+      {
+        parameter: "ns: Array",
+        description: "values to parse",
+      },
+    ],
+    return: {
+      type: "String",
+      description: "string representation of value",
+    },
+  },
+  {
+    element: "unchar",
+    description:
+      "Converts a single-character string to its corresponding integer representation. When an array of single-character string values is passed in, then an array of integers of the same length is returned.",
+    code: "unchar(n), unchar(ns)",
+    insert: "unchar(${1:n})",
+    syntax: [
+      {
+        parameter: "n: String",
+        description: "value to parse",
+      },
+      {
+        parameter: "ns: Array",
+        description: "values to parse",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "integer representation of value",
+    },
+  },
+  {
+    element: "hex",
+    description:
+      "Converts a number to a string in its equivalent hexadecimal notation. If a second parameter is passed, it is used to set the number of characters to generate in the hexadecimal notation. When an array is passed in, an array of strings in hexadecimal notation of the same length is returned.",
+    code: "hex(n, [digits]), hex(ns, [digits])",
+    insert: "hex(${1:n})",
+    syntax: [
+      {
+        parameter: "n: Number",
+        description: "value to parse",
+      },
+      {
+        parameter: "digits: Number",
+        description: "(Optional)",
+      },
+      {
+        parameter: "ns: Number[]",
+        description: "array of values to parse",
+      },
+    ],
+    return: {
+      type: "String",
+      description: "hexadecimal string representation of value",
+    },
+  },
+  {
+    element: "unhex",
+    description:
+      "Converts a string representation of a hexadecimal number to its equivalent integer value. When an array of strings in hexadecimal notation is passed in, an array of integers of the same length is returned.",
+    code: "unhex(n), unhex(ns)",
+    insert: "unhex(${1:n})",
+    syntax: [
+      {
+        parameter: "n: String",
+        description: "value to parse",
+      },
+      {
+        parameter: "ns: Array",
+        description: "values to parse",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "integer representation of hexadecimal value",
+    },
+  },
+  {
+    element: "join",
+    description:
+      "Combines an array of Strings into one String, each separated by the character(s) used for the separator parameter. To join arrays of ints or floats, it's necessary to first convert them to Strings using nf() or nfs().",
+    code: "join(list, separator)",
+    insert: "join(${1:list}, ${2:separator})",
+    syntax: [
+      {
+        parameter: "list: Array",
+        description: "array of Strings to be joined",
+      },
+      {
+        parameter: "separator: String",
+        description: "String to be placed between each item",
+      },
+    ],
+    return: {
+      type: "String",
+      description: "joined String",
+    },
+  },
+  {
+    element: "match",
+    description:
+      "This function is used to apply a regular expression to a piece of text, and return matching groups (elements found inside parentheses) as a String array. If there are no matches, a null value will be returned. If no groups are specified in the regular expression, but the sequence matches, an array of length 1 (with the matched text as the first element of the array) will be returned.",
+    code: "match(str, regexp)",
+    insert: "match(${1:str}, ${2:regexp})",
+    syntax: [
+      {
+        parameter: "str: String",
+        description: "the String to be searched",
+      },
+      {
+        parameter: "regexp: String",
+        description: "the regexp to be used for matching",
+      },
+    ],
+    return: {
+      type: "String[]",
+      description: "Array of Strings found",
+    },
+  },
+  {
+    element: "matchAll",
+    description:
+      "This function is used to apply a regular expression to a piece of text, and return a list of matching groups (elements found inside parentheses) as a two-dimensional String array. If there are no matches, a null value will be returned. If no groups are specified in the regular expression, but the sequence matches, a two dimensional array is still returned, but the second dimension is only of length one.",
+    code: "matchAll(str, regexp)",
+    insert: "matchAll(${1:str}, ${2:regexp})",
+    syntax: [
+      {
+        parameter: "str: String",
+        description: "the String to be searched",
+      },
+      {
+        parameter: "regexp: String",
+        description: "the regexp to be used for matching",
+      },
+    ],
+    return: {
+      type: "String[]",
+      description: "2d Array of Strings found",
+    },
+  },
+  {
+    element: "nf",
+    description:
+      "Utility function for formatting numbers into strings. There are two versions: one for formatting floats, and one for formatting ints. The values for the digits, left, and right parameters should always be positive integers. (NOTE): Be cautious when using left and right parameters as it prepends numbers of 0's if the parameter if greater than the current length of the number.",
+    code: "nf(num, [left], [right]), nf(nums, [left], [right])",
+    insert: "nf(${1:num})",
+    syntax: [
+      {
+        parameter: "num: Number|String",
+        description: "the Number to format",
+      },
+      {
+        parameter: "left: Integer|String",
+        description: "number of digits to the left of the decimal point (Optional)",
+      },
+      {
+        parameter: "right: Integer|String",
+        description: "number of digits to the right of the decimal point (Optional)",
+      },
+      {
+        parameter: "nums: Array",
+        description: "the Numbers to format",
+      },
+    ],
+    return: {
+      type: "String",
+      description: "formatted String",
+    },
+  },
+  {
+    element: "nfc",
+    description:
+      "Utility function for formatting numbers into strings and placing appropriate commas to mark units of 1000. There are two versions: one for formatting ints, and one for formatting an array of ints. The value for the right parameter should always be a positive integer.",
+    code: "nfc(num, [right]), nfc(nums, [right])",
+    insert: "nfc(${1:num})",
+    syntax: [
+      {
+        parameter: "num: Number|String",
+        description: "the Number to format",
+      },
+      {
+        parameter: "right: Integer|String",
+        description: "number of digits to the right of the decimal point (Optional)",
+      },
+      {
+        parameter: "nums: Array",
+        description: "the Numbers to format",
+      },
+    ],
+    return: {
+      type: "String",
+      description: "formatted String",
+    },
+  },
+  {
+    element: "nfp",
+    description:
+      "Utility function for formatting numbers into strings. Similar to nf() but puts a '+' in front of positive numbers and a '-' in front of negative numbers. There are two versions: one for formatting floats, and one for formatting ints. The values for left, and right parameters should always be positive integers.",
+    code: "nfp(num, [left], [right]), nfp(nums, [left], [right])",
+    insert: "nfp(${1:num})",
+    syntax: [
+      {
+        parameter: "num: Number",
+        description: "the Number to format",
+      },
+      {
+        parameter: "left: Integer",
+        description: "number of digits to the left of the decimal point (Optional)",
+      },
+      {
+        parameter: "right: Integer",
+        description: "number of digits to the right of the decimal point (Optional)",
+      },
+      {
+        parameter: "nums: Number[]",
+        description: "the Numbers to format",
+      },
+    ],
+    return: {
+      type: "String",
+      description: "formatted String",
+    },
+  },
+  {
+    element: "nfs",
+    description:
+      "Utility function for formatting numbers into strings. Similar to nf() but puts an additional '-' (space) in front of positive numbers just in case to align it with negative numbers which includes '-' (minus) sign. The main usecase of nfs() can be seen when one wants to align the digits (place values) of a non-negative number with some negative number (See the example to get a clear picture). There are two versions: one for formatting float, and one for formatting int. The values for the digits, left, and right parameters should always be positive integers.",
+    code: "nfs(num, [left], [right]), nfs(nums, [left], [right])",
+    insert: "nfs(${1:num})",
+    syntax: [
+      {
+        parameter: "num: Number",
+        description: "the Number to format",
+      },
+      {
+        parameter: "left: Integer",
+        description: "number of digits to the left of the decimal point (Optional)",
+      },
+      {
+        parameter: "right: Integer",
+        description: "number of digits to the right of the decimal point (Optional)",
+      },
+      {
+        parameter: "nums: Array",
+        description: "the Numbers to format",
+      },
+    ],
+    return: {
+      type: "String",
+      description: "formatted String",
+    },
+  },
+  {
+    element: "split",
+    description:
+      "The split() function maps to String.split(), it breaks a String into pieces using a character or string as the delimiter. The delim parameter specifies the character or characters that mark the boundaries between each piece. A String[] array is returned that contains each of the pieces. The splitTokens() function works in a similar fashion, except that it splits using a range of characters instead of a specific character or sequence.",
+    code: "split(value, delim)",
+    insert: "split(${1:value}, ${2:delim})",
+    syntax: [
+      {
+        parameter: "value: String",
+        description: "the String to be split",
+      },
+      {
+        parameter: "delim: String",
+        description: "the String used to separate the data",
+      },
+    ],
+    return: {
+      type: "String[]",
+      description: "Array of Strings",
+    },
+  },
+  {
+    element: "splitTokens",
+    description:
+      "The splitTokens() function splits a String at one or many character delimiters or 'tokens.' The delim parameter specifies the character or characters to be used as a boundary. If no delim characters are specified, any whitespace character is used to split. Whitespace characters include tab (\t), line feed (\n), carriage return (\r), form feed (\f), and space.",
+    code: "splitTokens(value, [delim])",
+    insert: "splitTokens(${1:value})",
+    syntax: [
+      {
+        parameter: "value: String",
+        description: "the String to be split",
+      },
+      {
+        parameter: "delim: String",
+        description: "list of individual Strings that will be used as separators (Optional)",
+      },
+    ],
+    return: {
+      type: "String[]",
+      description: "Array of Strings",
+    },
+  },
+  {
+    element: "trim",
+    description:
+      "Removes whitespace characters from the beginning and end of a String. In addition to standard whitespace characters such as space, carriage return, and tab, this function also removes the Unicode 'nbsp' character.",
+    code: "trim(str), trim(strs)",
+    insert: "trim(${1:str})",
+    syntax: [
+      {
+        parameter: "str: String",
+        description: "the String to be trimmed",
+      },
+      {
+        parameter: "strs: Array",
+        description: "an Array of Strings to be trimmed",
+      },
+    ],
+    return: {
+      type: "String",
+      description: "a trimmed String",
+    },
+  },
+  {
+    element: "deviceOrientation",
+    description:
+      "The system variable deviceOrientation always contains the orientation of the device. The value of this variable will either be set 'landscape' or 'portrait'. If no data is available it will be set to 'undefined'. either LANDSCAPE or PORTRAIT.",
+    code: "deviceOrientation",
+    insert: "deviceOrientation",
+    syntax: [
+    ],
+  },
+  {
+    element: "accelerationX",
+    description:
+      "The system variable accelerationX always contains the acceleration of the device along the x axis. Value is represented as meters per second squared.",
+    code: "accelerationX",
+    insert: "accelerationX",
+    syntax: [
+    ],
+  },
+  {
+    element: "accelerationY",
+    description:
+      "The system variable accelerationY always contains the acceleration of the device along the y axis. Value is represented as meters per second squared.",
+    code: "accelerationY",
+    insert: "accelerationY",
+    syntax: [
+    ],
+  },
+  {
+    element: "accelerationZ",
+    description:
+      "The system variable accelerationZ always contains the acceleration of the device along the z axis. Value is represented as meters per second squared.",
+    code: "accelerationZ",
+    insert: "accelerationZ",
+    syntax: [
+    ],
+  },
+  {
+    element: "pAccelerationX",
+    description:
+      "The system variable pAccelerationX always contains the acceleration of the device along the x axis in the frame previous to the current frame. Value is represented as meters per second squared.",
+    code: "pAccelerationX",
+    insert: "pAccelerationX",
+    syntax: [
+    ],
+  },
+  {
+    element: "pAccelerationY",
+    description:
+      "The system variable pAccelerationY always contains the acceleration of the device along the y axis in the frame previous to the current frame. Value is represented as meters per second squared.",
+    code: "pAccelerationY",
+    insert: "pAccelerationY",
+    syntax: [
+    ],
+  },
+  {
+    element: "pAccelerationZ",
+    description:
+      "The system variable pAccelerationZ always contains the acceleration of the device along the z axis in the frame previous to the current frame. Value is represented as meters per second squared.",
+    code: "pAccelerationZ",
+    insert: "pAccelerationZ",
+    syntax: [
+    ],
+  },
+  {
+    element: "rotationX",
+    description:
+      "The system variable rotationX always contains the rotation of the device along the x axis. If the sketch angleMode() is set to DEGREES, the value will be -180 to 180. If it is set to RADIANS, the value will be -PI to PI. Note: The order the rotations are called is important, ie. if used together, it must be called in the order Z-X-Y or there might be unexpected behaviour.",
+    code: "rotationX",
+    insert: "rotationX",
+    syntax: [
+    ],
+  },
+  {
+    element: "rotationY",
+    description:
+      "The system variable rotationY always contains the rotation of the device along the y axis. If the sketch angleMode() is set to DEGREES, the value will be -90 to 90. If it is set to RADIANS, the value will be -PI/2 to PI/2. Note: The order the rotations are called is important, ie. if used together, it must be called in the order Z-X-Y or there might be unexpected behaviour.",
+    code: "rotationY",
+    insert: "rotationY",
+    syntax: [
+    ],
+  },
+  {
+    element: "rotationZ",
+    description:
+      "The system variable rotationZ always contains the rotation of the device along the z axis. If the sketch angleMode() is set to DEGREES, the value will be 0 to 360. If it is set to RADIANS, the value will be 0 to 2*PI. Unlike rotationX and rotationY, this variable is available for devices with a built-in compass only. Note: The order the rotations are called is important, ie. if used together, it must be called in the order Z-X-Y or there might be unexpected behaviour.",
+    code: "rotationZ",
+    insert: "rotationZ",
+    syntax: [
+    ],
+  },
+  {
+    element: "pRotationX",
+    description:
+      "The system variable pRotationX always contains the rotation of the device along the x axis in the frame previous to the current frame. If the sketch angleMode() is set to DEGREES, the value will be -180 to 180. If it is set to RADIANS, the value will be -PI to PI. pRotationX can also be used with rotationX to determine the rotate direction of the device along the X-axis.",
+    code: "pRotationX",
+    insert: "pRotationX",
+    syntax: [
+    ],
+  },
+  {
+    element: "pRotationY",
+    description:
+      "The system variable pRotationY always contains the rotation of the device along the y axis in the frame previous to the current frame. If the sketch angleMode() is set to DEGREES, the value will be -90 to 90. If it is set to RADIANS, the value will be -PI/2 to PI/2. pRotationY can also be used with rotationY to determine the rotate direction of the device along the Y-axis.",
+    code: "pRotationY",
+    insert: "pRotationY",
+    syntax: [
+    ],
+  },
+  {
+    element: "pRotationZ",
+    description:
+      "The system variable pRotationZ always contains the rotation of the device along the z axis in the frame previous to the current frame. If the sketch angleMode() is set to DEGREES, the value will be 0 to 360. If it is set to RADIANS, the value will be 0 to 2*PI. pRotationZ can also be used with rotationZ to determine the rotate direction of the device along the Z-axis.",
+    code: "pRotationZ",
+    insert: "pRotationZ",
+    syntax: [
+    ],
+  },
+  {
+    element: "turnAxis",
+    description:
+      "When a device is rotated, the axis that triggers the deviceTurned() method is stored in the turnAxis variable. The turnAxis variable is only defined within the scope of deviceTurned().",
+    code: "turnAxis",
+    insert: "turnAxis",
+    syntax: [
+    ],
+  },
+  {
+    element: "setMoveThreshold",
+    description:
+      "The setMoveThreshold() function is used to set the movement threshold for the deviceMoved() function. The default threshold is set to 0.5.",
+    code: "setMoveThreshold(value)",
+    insert: "setMoveThreshold(${1:value})",
+    syntax: [
+      {
+        parameter: "value: Number",
+        description: "The threshold value",
+      },
+    ],
+  },
+  {
+    element: "setShakeThreshold",
+    description:
+      "The setShakeThreshold() function is used to set the movement threshold for the deviceShaken() function. The default threshold is set to 30.",
+    code: "setShakeThreshold(value)",
+    insert: "setShakeThreshold(${1:value})",
+    syntax: [
+      {
+        parameter: "value: Number",
+        description: "The threshold value",
+      },
+    ],
+  },
+  {
+    element: "deviceMoved",
+    description:
+      "The deviceMoved() function is called when the device is moved by more than the threshold value along X, Y or Z axis. The default threshold is set to 0.5. The threshold value can be changed using setMoveThreshold().",
+    code: "deviceMoved()",
+    insert: "deviceMoved()",
+    syntax: [
+    ],
+  },
+  {
+    element: "deviceTurned",
+    description:
+      "The deviceTurned() function is called when the device rotates by more than 90 degrees continuously. The axis that triggers the deviceTurned() method is stored in the turnAxis variable. The deviceTurned() method can be locked to trigger on any axis: X, Y or Z by comparing the turnAxis variable to 'X', 'Y' or 'Z'.",
+    code: "deviceTurned()",
+    insert: "deviceTurned()",
+    syntax: [
+    ],
+  },
+  {
+    element: "deviceShaken",
+    description:
+      "The deviceShaken() function is called when the device total acceleration changes of accelerationX and accelerationY values is more than the threshold value. The default threshold is set to 30. The threshold value can be changed using setShakeThreshold().",
+    code: "deviceShaken()",
+    insert: "deviceShaken()",
+    syntax: [
+    ],
+  },
+  {
+    element: "keyIsPressed",
+    description:
+      "The boolean system variable keyIsPressed is true if any key is pressed and false if no keys are pressed.",
+    code: "keyIsPressed",
+    insert: "keyIsPressed",
+    syntax: [
+    ],
+  },
+  {
+    element: "key",
+    description:
+      "The system variable key always contains the value of the most recent key on the keyboard that was typed. To get the proper capitalization, it is best to use it within keyTyped(). For non-ASCII keys, use the keyCode variable.",
+    code: "key",
+    insert: "key",
+    syntax: [
+    ],
+  },
+  {
+    element: "keyCode",
+    description:
+      "The variable keyCode is used to detect special keys such as BACKSPACE, DELETE, ENTER, RETURN, TAB, ESCAPE, SHIFT, CONTROL, OPTION, ALT, UP_ARROW, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW.",
+    code: "keyCode",
+    insert: "keyCode",
+    syntax: [
+    ],
+  },
+  {
+    element: "keyPressed",
+    description:
+      "The keyPressed() function is called once every time a key is pressed. The keyCode for the key that was pressed is stored in the keyCode variable.",
+    code: "keyPressed([event])",
+    insert: "keyPressed()",
+    syntax: [
+      {
+        parameter: "event: Object",
+        description: "optional KeyboardEvent callback argument. (Optional)",
+      },
+    ],
+  },
+  {
+    element: "keyReleased",
+    description:
+      "The keyReleased() function is called once every time a key is released. See key and keyCode for more information. Browsers may have different default behaviors attached to various key events. To prevent any default behavior for this event, add 'return false' to the end of the method.",
+    code: "keyReleased([event])",
+    insert: "keyReleased()",
+    syntax: [
+      {
+        parameter: "event: Object",
+        description: "optional KeyboardEvent callback argument. (Optional)",
+      },
+    ],
+  },
+  {
+    element: "keyTyped",
+    description:
+      "The keyTyped() function is called once every time a key is pressed, but action keys such as Backspace, Delete, Ctrl, Shift, and Alt are ignored. If you are trying to detect a keyCode for one of these keys, use the keyPressed() function instead. The most recent key typed will be stored in the key variable.",
+    code: "keyTyped([event])",
+    insert: "keyTyped()",
+    syntax: [
+      {
+        parameter: "event: Object",
+        description: "optional KeyboardEvent callback argument. (Optional)",
+      },
+    ],
+  },
+  {
+    element: "keyIsDown",
+    description:
+      "The keyIsDown() function checks if the key is currently down, i.e. pressed. It can be used if you have an object that moves, and you want several keys to be able to affect its behaviour simultaneously, such as moving a sprite diagonally.",
+    code: "keyIsDown(code)",
+    insert: "keyIsDown(${1:code})",
+    syntax: [
+      {
+        parameter: "code: Number",
+        description: "The key to check for.",
+      },
+    ],
+    return: {
+      type: "Boolean",
+      description: "whether key is down or not",
+    },
+  },
+  {
+    element: "movedX",
+    description:
+      "The variable movedX contains the horizontal movement of the mouse since the last frame",
+    code: "movedX",
+    insert: "movedX",
+    syntax: [
+    ],
+  },
+  {
+    element: "movedY",
+    description:
+      "The variable movedY contains the vertical movement of the mouse since the last frame",
+    code: "movedY",
+    insert: "movedY",
+    syntax: [
+    ],
+  },
+  {
+    element: "mouseX",
+    description:
+      "The system variable mouseX always contains the current horizontal position of the mouse, relative to (0, 0) of the canvas. The value at the top-left corner is (0, 0) for 2-D and (-width/2, -height/2) for WebGL. If touch is used instead of mouse input, mouseX will hold the x value of the most recent touch point.",
+    code: "mouseX",
+    insert: "mouseX",
+    syntax: [
+    ],
+  },
+  {
+    element: "mouseY",
+    description:
+      "The system variable mouseY always contains the current vertical position of the mouse, relative to (0, 0) of the canvas. The value at the top-left corner is (0, 0) for 2-D and (-width/2, -height/2) for WebGL. If touch is used instead of mouse input, mouseY will hold the y value of the most recent touch point.",
+    code: "mouseY",
+    insert: "mouseY",
+    syntax: [
+    ],
+  },
+  {
+    element: "pmouseX",
+    description:
+      "The system variable pmouseX always contains the horizontal position of the mouse or finger in the frame previous to the current frame, relative to (0, 0) of the canvas. The value at the top-left corner is (0, 0) for 2-D and (-width/2, -height/2) for WebGL. Note: pmouseX will be reset to the current mouseX value at the start of each touch event.",
+    code: "pmouseX",
+    insert: "pmouseX",
+    syntax: [
+    ],
+  },
+  {
+    element: "pmouseY",
+    description:
+      "The system variable pmouseY always contains the vertical position of the mouse or finger in the frame previous to the current frame, relative to (0, 0) of the canvas. The value at the top-left corner is (0, 0) for 2-D and (-width/2, -height/2) for WebGL. Note: pmouseY will be reset to the current mouseY value at the start of each touch event.",
+    code: "pmouseY",
+    insert: "pmouseY",
+    syntax: [
+    ],
+  },
+  {
+    element: "winMouseX",
+    description:
+      "The system variable winMouseX always contains the current horizontal position of the mouse, relative to (0, 0) of the window.",
+    code: "winMouseX",
+    insert: "winMouseX",
+    syntax: [
+    ],
+  },
+  {
+    element: "winMouseY",
+    description:
+      "The system variable winMouseY always contains the current vertical position of the mouse, relative to (0, 0) of the window.",
+    code: "winMouseY",
+    insert: "winMouseY",
+    syntax: [
+    ],
+  },
+  {
+    element: "pwinMouseX",
+    description:
+      "The system variable pwinMouseX always contains the horizontal position of the mouse in the frame previous to the current frame, relative to (0, 0) of the window. Note: pwinMouseX will be reset to the current winMouseX value at the start of each touch event.",
+    code: "pwinMouseX",
+    insert: "pwinMouseX",
+    syntax: [
+    ],
+  },
+  {
+    element: "pwinMouseY",
+    description:
+      "The system variable pwinMouseY always contains the vertical position of the mouse in the frame previous to the current frame, relative to (0, 0) of the window. Note: pwinMouseY will be reset to the current winMouseY value at the start of each touch event.",
+    code: "pwinMouseY",
+    insert: "pwinMouseY",
+    syntax: [
+    ],
+  },
+  {
+    element: "mouseButton",
+    description:
+      "p5 automatically tracks if the mouse button is pressed and which button is pressed. The value of the system variable mouseButton is either LEFT, RIGHT, or CENTER depending on which button was pressed last. Warning: different browsers may track mouseButton differently.",
+    code: "mouseButton",
+    insert: "mouseButton",
+    syntax: [
+    ],
+  },
+  {
+    element: "mouseIsPressed",
+    description:
+      "The boolean system variable mouseIsPressed is true if the mouse is pressed and false if not.",
+    code: "mouseIsPressed",
+    insert: "mouseIsPressed",
+    syntax: [
+    ],
+  },
+  {
+    element: "mouseMoved",
+    description:
+      "The mouseMoved() function is called every time the mouse moves and a mouse button is not pressed. Browsers may have different default behaviors attached to various mouse events. To prevent any default behavior for this event, add 'return false' to the end of the method.",
+    code: "mouseMoved([event])",
+    insert: "mouseMoved()",
+    syntax: [
+      {
+        parameter: "event: Object",
+        description: "optional MouseEvent callback argument. (Optional)",
+      },
+    ],
+  },
+  {
+    element: "mouseDragged",
+    description:
+      "The mouseDragged() function is called once every time the mouse moves and a mouse button is pressed. If no mouseDragged() function is defined, the touchMoved() function will be called instead if it is defined. Browsers may have different default behaviors attached to various mouse events. To prevent any default behavior for this event, add 'return false' to the end of the method.",
+    code: "mouseDragged([event])",
+    insert: "mouseDragged()",
+    syntax: [
+      {
+        parameter: "event: Object",
+        description: "optional MouseEvent callback argument. (Optional)",
+      },
+    ],
+  },
+  {
+    element: "mousePressed",
+    description:
+      "The mousePressed() function is called once after every time a mouse button is pressed. The mouseButton variable (see the related reference entry) can be used to determine which button has been pressed. If no mousePressed() function is defined, the touchStarted() function will be called instead if it is defined. Browsers may have different default behaviors attached to various mouse events. To prevent any default behavior for this event, add 'return false' to the end of the method.",
+    code: "mousePressed([event])",
+    insert: "mousePressed()",
+    syntax: [
+      {
+        parameter: "event: Object",
+        description: "optional MouseEvent callback argument. (Optional)",
+      },
+    ],
+  },
+  {
+    element: "mouseReleased",
+    description:
+      "The mouseReleased() function is called every time a mouse button is released. If no mouseReleased() function is defined, the touchEnded() function will be called instead if it is defined. Browsers may have different default behaviors attached to various mouse events. To prevent any default behavior for this event, add 'return false' to the end of the method.",
+    code: "mouseReleased([event])",
+    insert: "mouseReleased()",
+    syntax: [
+      {
+        parameter: "event: Object",
+        description: "optional MouseEvent callback argument. (Optional)",
+      },
+    ],
+  },
+  {
+    element: "mouseClicked",
+    description:
+      "The mouseClicked() function is called once after a mouse button has been pressed and then released. Browsers handle clicks differently, so this function is only guaranteed to be run when the left mouse button is clicked.",
+    code: "mouseClicked([event])",
+    insert: "mouseClicked()",
+    syntax: [
+      {
+        parameter: "event: Object",
+        description: "optional MouseEvent callback argument. (Optional)",
+      },
+    ],
+  },
+  {
+    element: "doubleClicked",
+    description:
+      "The doubleClicked() function is executed every time a event listener has detected a dblclick event which is a part of the DOM L3 specification. The doubleClicked event is fired when a pointing device button (usually a mouse's primary button) is clicked twice on a single element.",
+    code: "doubleClicked([event])",
+    insert: "doubleClicked()",
+    syntax: [
+      {
+        parameter: "event: Object",
+        description: "optional MouseEvent callback argument. (Optional)",
+      },
+    ],
+  },
+  {
+    element: "mouseWheel",
+    description:
+      "The function mouseWheel() is executed every time a vertical mouse wheel event is detected either triggered by an actual mouse wheel or by a touchpad. The event.delta property returns the amount the mouse wheel have scrolled. The values can be positive or negative depending on the scroll direction (on OS X with 'natural' scrolling enabled, the signs are inverted).",
+    code: "mouseWheel([event])",
+    insert: "mouseWheel()",
+    syntax: [
+      {
+        parameter: "event: Object",
+        description: "optional WheelEvent callback argument. (Optional)",
+      },
+    ],
+  },
+  {
+    element: "requestPointerLock",
+    description:
+      "The function requestPointerLock() locks the pointer to its current position and makes it invisible. Use movedX and movedY to get the difference the mouse was moved since the last call of draw. Note that not all browsers support this feature. This enables you to create experiences that aren't limited by the mouse moving out of the screen even if it is repeatedly moved into one direction. For example, a first person perspective experience.",
+    code: "requestPointerLock()",
+    insert: "requestPointerLock()",
+    syntax: [
+    ],
+  },
+  {
+    element: "exitPointerLock",
+    description:
+      "The function exitPointerLock() exits a previously triggered pointer Lock for example to make ui elements usable etc",
+    code: "exitPointerLock()",
+    insert: "exitPointerLock()",
+    syntax: [
+    ],
+  },
+  {
+    element: "touches",
+    description:
+      "The system variable touches[] contains an array of the positions of all current touch points, relative to (0, 0) of the canvas, and IDs identifying a unique touch as it moves. Each element in the array is an object with x, y, and id properties. The touches[] array is not supported on Safari and IE on touch-based desktops (laptops).",
+    code: "touches",
+    insert: "touches",
+    syntax: [
+    ],
+  },
+  {
+    element: "touchStarted",
+    description:
+      "The touchStarted() function is called once after every time a touch is registered. If no touchStarted() function is defined, the mousePressed() function will be called instead if it is defined.",
+    code: "touchStarted([event])",
+    insert: "touchStarted()",
+    syntax: [
+      {
+        parameter: "event: Object",
+        description: "optional TouchEvent callback argument. (Optional)",
+      },
+    ],
+  },
+  {
+    element: "touchMoved",
+    description:
+      "The touchMoved() function is called every time a touch move is registered. If no touchMoved() function is defined, the mouseDragged() function will be called instead if it is defined.",
+    code: "touchMoved([event])",
+    insert: "touchMoved()",
+    syntax: [
+      {
+        parameter: "event: Object",
+        description: "optional TouchEvent callback argument. (Optional)",
+      },
+    ],
+  },
+  {
+    element: "touchEnded",
+    description:
+      "The touchEnded() function is called every time a touch ends. If no touchEnded() function is defined, the mouseReleased() function will be called instead if it is defined.",
+    code: "touchEnded([event])",
+    insert: "touchEnded()",
+    syntax: [
+      {
+        parameter: "event: Object",
+        description: "optional TouchEvent callback argument. (Optional)",
+      },
+    ],
+  },
+  {
+    element: "createImage",
+    description:
+      "Creates a new p5.Image (the datatype for storing images). This provides a fresh buffer of pixels to play with. Set the size of the buffer with the width and height parameters.",
+    code: "createImage(width, height)",
+    insert: "createImage(${1:width}, ${2:height})",
+    syntax: [
+      {
+        parameter: "width: Integer",
+        description: "width in pixels",
+      },
+      {
+        parameter: "height: Integer",
+        description: "height in pixels",
+      },
+    ],
+    return: {
+      type: "p5.Image",
+      description: "the p5.Image object",
+    },
+  },
+  {
+    element: "saveCanvas",
+    description: "Save the current canvas as an image. The browser will either save the file immediately, or prompt the user with a dialogue window.",
+    code: "saveCanvas(selectedCanvas, [filename], [extension]), saveCanvas([filename], [extension])",
+    insert: "saveCanvas(${1:selectedCanvas})",
+    syntax: [
+      {
+        parameter: "selectedCanvas: p5.Element|HTMLCanvasElement",
+        description: "a variable representing a specific html5 canvas (optional)",
+      },
+      {
+        parameter: "filename: String",
+        description: "(Optional)",
+      },
+      {
+        parameter: "extension: String",
+        description: "'jpg' or 'png' (Optional)",
+      },
+    ],
+  },
+  {
+    element: "saveFrames",
+    description: "Capture a sequence of frames that can be used to create a movie. Accepts a callback. For example, you may wish to send the frames to a server where they can be stored or converted into a movie. If no callback is provided, the browser will pop up save dialogues in an attempt to download all of the images that have just been created. With the callback provided the image data isn't saved by default but instead passed as an argument to the callback function as an array of objects, with the size of array equal to the total number of frames. Note that saveFrames() will only save the first 15 frames of an animation. To export longer animations, you might look into a library like ccapture.js.",
+    code: "saveFrames(filename, extension, duration, framerate, [callback])",
+    insert: "saveFrames(${1:filename}, ${2:extension}, ${3:duration}, ${4:framerate})",
+    syntax: [
+      {
+        parameter: "filename: String",
+        description: "",
+      },
+      {
+        parameter: "extension: String",
+        description: "'jpg' or 'png'",
+      },
+      {
+        parameter: "duration: Number",
+        description: "Duration in seconds to save the frames for.",
+      },
+      {
+        parameter: "framerate: Number",
+        description: "Framerate to save the frames in.",
+      },
+      {
+        parameter: "callback: Function(Array)",
+        description: "A callback function that will be executed to handle the image data. This function should accept an array as argument. The array will contain the specified number of frames of objects. Each object has three properties: imageData - an image/octet-stream, filename and extension. (Optional)",
+      },
+    ],
+  },
+  {
+    element: "p5.Image",
+    description:
+      "Creates a new p5.Image. A p5.Image is a canvas backed representation of an image. p5 can display .gif, .jpg and .png images. Images may be displayed in 2D and 3D space. Before an image is used, it must be loaded with the loadImage() function. The p5.Image class contains fields for the width and height of the image, as well as an array called pixels[] that contains the values for every pixel in the image.",
+    code: "new p5.Image(width, height)",
+    insert: "new p5.Image(${1:width}, ${2:height})",
+    syntax: [
+      {
+        parameter: "width: Number",
+        description: "",
+      },
+      {
+        parameter: "height: Number",
+        description: "",
+      },
+    ],
+  },
+  {
+    element: "loadImage",
+    description:
+      "Loads an image from a path and creates a p5.Image from it. The image may not be immediately available for rendering. If you want to ensure that the image is ready before doing anything with it, place the loadImage() call in preload(). You may also supply a callback function to handle the image when it's ready.",
+    code: "loadImage(path, [successCallback], [failureCallback])",
+    insert: "loadImage(${1:path})",
+    syntax: [
+      {
+        parameter: "path: String",
+        description: "Path of the image to be loaded",
+      },
+      {
+        parameter: "successCallback: function(p5.Image)",
+        description:
+          "Function to be called once the image is loaded. Will be passed the p5.Image. (Optional)",
+      },
+      {
+        parameter: "failureCallback: function(Event)",
+        description:
+          "called with event error if the image fails to load. (Optional)",
+      },
+    ],
+    return: {
+      type: "p5.Image",
+      description: "the p5.Image object",
+    },
+  },
+  {
+    element: "image",
+    description:
+      "Draw an image to the p5.js canvas. This function can be used with different numbers of parameters. The simplest use requires only three parameters: img, x, and y—where (x, y) is the position of the image. Two more parameters can optionally be added to specify the width and height of the image.",
+    code: "image(img, x, y, [width], [height]), image(img, dx, dy, dWidth, dHeight, sx, sy, [sWidth], [sHeight])",
+    insert: "image(${1:img}, ${2:x}, ${3:y})",
+    syntax: [
+      {
+        parameter: "img: p5.Image|p5.Element|p5.Texture",
+        description: "the image to display",
+      },
+      {
+        parameter: "x: Number",
+        description: "the x-coordinate of the top-left corner of the image",
+      },
+      {
+        parameter: "y: Number",
+        description: "the y-coordinate of the top-left corner of the image",
+      },
+      {
+        parameter: "width: Number",
+        description: "the width to draw the image (Optional)",
+      },
+      {
+        parameter: "height: Number",
+        description: "the height to draw the image (Optional)",
+      },
+      {
+        parameter: "dx: Number",
+        description: "the x-coordinate of the destination rectangle in which to draw the source image",
+      },
+      {
+        parameter: "dy: Number",
+        description:
+          "the y-coordinate of the destination rectangle in which to draw the source image",
+      },
+      {
+        parameter: "dWidth: Number",
+        description:
+          "the width of the destination rectangle",
+      },
+      {
+        parameter: "dHeight: Number",
+        description:
+          "the height of the destination rectangle",
+      },
+      {
+        parameter: "sx: Number",
+        description:
+          "the x-coordinate of the subsection of the source image to draw into the destination rectangle",
+      },
+      {
+        parameter: "sy: Number",
+        description:
+          "the y-coordinate of the subsection of the source image to draw into the destination rectangle",
+      },
+      {
+        parameter: "sWidth: Number",
+        description:
+          "the width of the subsection of the source image to draw into the destination rectangle (Optional)",
+      },
+      {
+        parameter: "sHeight: Number",
+        description:
+          "the height of the subsection of the source image to draw into the destination rectangle (Optional)",
+      },
+    ],
+  },
+  {
+    element: "tint",
+    description:
+      "Sets the fill value for displaying images. Images can be tinted to specified colors or made transparent by including an alpha value. To apply transparency to an image without affecting its color, use white as the tint color and specify an alpha value. For instance, tint(255, 128) will make an image 50% transparent (assuming the default alpha range of 0-255, which can be changed with colorMode()). The value for the gray parameter must be less than or equal to the current maximum value as specified by colorMode(). The default maximum value is 255.",
+    code: "tint(v1, v2, v3, [alpha]), tint(value), tint(gray, [alpha]), tint(values), tint(color)",
+    insert: "tint(${1:v1}, ${2:v2}, ${3:v3})",
+    syntax: [
+      {
+        parameter: "v1: Number",
+        description: "red or hue value relative to the current color range",
+      },
+      {
+        parameter: "v2: Number",
+        description:
+          "green or saturation value relative to the current color range",
+      },
+      {
+        parameter: "v3: Number",
+        description:
+          "blue or brightness value relative to the current color range",
+      },
+      {
+        parameter: "alpha: Number",
+        description:
+          "(Optional)",
+      },
+      {
+        parameter: "value: String",
+        description: "a color string",
+      },
+      {
+        parameter: "gray: Number",
+        description: "a gray value",
+      },
+      {
+        parameter: "values: Number[]",
+        description:
+          "an array containing the red,green,blue & and alpha components of the color",
+      },
+      {
+        parameter: "color: p5.Color",
+        description: "the tint color",
+      },
+    ],
+  },
+  {
+    element: "noTint",
+    description:
+      "Removes the current fill value for displaying images and reverts to displaying images with their original hues.",
+    code: "noTint()",
+    insert: "noTint()",
+    syntax: [
+    ],
+  },
+  {
+    element: "imageMode",
+    description:
+      "Set image mode. Modifies the location from which images are drawn by changing the way in which parameters given to image() are interpreted. The default mode is imageMode(CORNER), which interprets the second and third parameters of image() as the upper-left corner of the image. If two additional parameters are specified, they are used to set the image's width and height.",
+    code: "imageMode(mode)",
+    insert: "imageMode(${1:mode})",
+    syntax: [
+      {
+        parameter: "mode: Constant",
+        description: "either CORNER, CORNERS, or CENTER",
+      },
+    ],
+  },
+  {
+    element: "pixels",
+    description:
+      "Uint8ClampedArray containing the values for all the pixels in the display window. These values are numbers. This array is the size (include an appropriate factor for pixelDensity) of the display window x4, representing the R, G, B, A values in order for each pixel, moving from left to right across each row, then down each column. Retina and other high density displays will have more pixels[] (by a factor of pixelDensity^2). For example, if the image is 100×100 pixels, there will be 40,000. On a retina display, there will be 160,000.",
+    code: "pixels",
+    insert: "pixels",
+    syntax: [
+    ],
+  },
+  {
+    element: "blend",
+    description:
+      "Copies a region of pixels from one image to another, using a specified blend mode to do the operation.",
+    code: "blend(srcImage, sx, sy, sw, sh, dx, dy, dw, dh, blendMode), blend(sx, sy, sw, sh, dx, dy, dw, dh, blendMode)",
+    insert: "blend(${1:srcImage}, ${2:sx}, ${3:sy}, ${4:sw}, ${5:sh}, ${6:dx}, ${7:dy}, ${8:dw}, ${9:dh}, ${10:blendMode})",
+    syntax: [
+      {
+        parameter: "srcImage: p5.Image",
+        description: "source image",
+      },
+      {
+        parameter: "sx: Integer",
+        description:
+          "X coordinate of the source's upper left corner",
+      },
+      {
+        parameter: "sy: Integer",
+        description:
+          "Y coordinate of the source's upper left corner",
+      },
+      {
+        parameter: "sw: Integer",
+        description: "source image width",
+      },
+      {
+        parameter: "sh: Integer",
+        description: "source image height",
+      },
+      {
+        parameter: "dx: Integer",
+        description: "X coordinate of the destination's upper left corner",
+      },
+      {
+        parameter: "dy: Integer",
+        description:
+          "Y coordinate of the destination's upper left corner",
+      },
+      {
+        parameter: "dw: Integer",
+        description:
+          "destination image width",
+      },
+      {
+        parameter: "dh: Integer",
+        description:
+          "destination image height",
+      },
+      {
+        parameter: "blendMode: Constant",
+        description:
+          "the blend mode. either BLEND, DARKEST, LIGHTEST, DIFFERENCE, MULTIPLY, EXCLUSION, SCREEN, REPLACE, OVERLAY, HARD_LIGHT, SOFT_LIGHT, DODGE, BURN, ADD or NORMAL.",
+      },
+    ],
+  },
+  {
+    element: "copy",
+    description:
+      "Copies a region of the canvas to another region of the canvas and copies a region of pixels from an image used as the srcImg parameter into the canvas srcImage is specified this is used as the source. If the source and destination regions aren't the same size, it will automatically resize source pixels to fit the specified target region.",
+    code: "copy(srcImage, sx, sy, sw, sh, dx, dy, dw, dh), blend(sx, sy, sw, sh, dx, dy, dw, dh)",
+    insert: "copy(${1:srcImage}, ${2:sx}, ${3:sy}, ${4:sw}, ${5:sh}, ${6:dx}, ${7:dy}, ${8:dw}, ${9:dh})",
+    syntax: [
+      {
+        parameter: "srcImage: p5.Image|p5.Element",
+        description: "source image",
+      },
+      {
+        parameter: "sx: Integer",
+        description:
+          "X coordinate of the source's upper left corner",
+      },
+      {
+        parameter: "sy: Integer",
+        description:
+          "Y coordinate of the source's upper left corner",
+      },
+      {
+        parameter: "sw: Integer",
+        description: "source image width",
+      },
+      {
+        parameter: "sh: Integer",
+        description: "source image height",
+      },
+      {
+        parameter: "dx: Integer",
+        description: "X coordinate of the destination's upper left corner",
+      },
+      {
+        parameter: "dy: Integer",
+        description:
+          "Y coordinate of the destination's upper left corner",
+      },
+      {
+        parameter: "dw: Integer",
+        description:
+          "destination image width",
+      },
+      {
+        parameter: "dh: Integer",
+        description:
+          "destination image height",
+      },
+    ],
+  },
+  {
+    element: "filter",
+    description:
+      "Applies a filter to the canvas.",
+    code: "filter(filterType, [filterParam])",
+    insert: "filter(${1:filterType})",
+    syntax: [
+      {
+        parameter: "filterType: Constant",
+        description: "either THRESHOLD, GRAY, OPAQUE, INVERT, POSTERIZE, BLUR, ERODE, DILATE or BLUR. See Filters.js for docs on each available filter",
+      },
+      {
+        parameter: "filterParam: Number",
+        description: "an optional parameter unique to each filter, see above (Optional)",
+      },
+    ],
+  },
+  {
+    element: "get",
+    description:
+      "Get a region of pixels, or a single pixel, from the canvas. Returns an array of [R,G,B,A] values for any pixel or grabs a section of an image. If no parameters are specified, the entire image is returned. Use the x and y parameters to get the value of one pixel. Get a section of the display window by specifying additional w and h parameters. When getting an image, the x and y parameters define the coordinates for the upper-left corner of the image, regardless of the current imageMode().",
+    code: "get(x, y, w, h), get(), get(x, y)",
+    insert: "get(${1:x}, ${2:y}, ${3:w}, ${4:h})",
+    syntax: [
+      {
+        parameter: "x: Number",
+        description: "x-coordinate of the pixel",
+      },
+      {
+        parameter: "y: Number",
+        description: "y-coordinate of the pixel",
+      },
+      {
+        parameter: "w: Number",
+        description: "width",
+      },
+      {
+        parameter: "h: Number",
+        description: "height",
+      },
+    ],
+    return: {
+      type: "p5.Image",
+      description: "the rectangle p5.Image",
+    },
+  },
+  {
+    element: "loadPixels",
+    description:
+      "Loads the pixel data for the display window into the pixels[] array. This function must always be called before reading from or writing to pixels[]. Note that only changes made with set() or direct manipulation of pixels[] will occur.",
+    code: "loadPixels()",
+    insert: "loadPixels()",
+    syntax: [
+    ],
+  },
+  {
+    element: "set",
+    description:
+      "Changes the color of any pixel, or writes an image directly to the display window. The x and y parameters specify the pixel to change and the c parameter specifies the color value. This can be a p5.Color object, or [R, G, B, A] pixel array. It can also be a single grayscale value. When setting an image, the x and y parameters define the coordinates for the upper-left corner of the image, regardless of the current imageMode(). After using set(), you must call updatePixels() for your changes to appear. This should be called once all pixels have been set, and must be called before calling .get() or drawing the image.",
+    code: "set(x, y, c)",
+    insert: "set(${1:x}, ${2:y}, ${3:c})",
+    syntax: [
+      {
+        parameter: "x: Number",
+        description: "x-coordinate of the pixel",
+      },
+      {
+        parameter: "y: Number",
+        description: "y-coordinate of the pixel",
+      },
+      {
+        parameter: "c: Number|Number[]|Object",
+        description: "insert a grayscale value | a pixel array | a p5.Color object | a p5.Image to copy",
+      },
+    ],
+  },
+  {
+    element: "updatePixels",
+    description:
+      "Updates the display window with the data in the pixels[] array. Use in conjunction with loadPixels(). If you're only reading pixels from the array, there's no need to call updatePixels() — updating is only necessary to apply changes. updatePixels() should be called anytime the pixels array is manipulated or set() is called, and only changes made with set() or direct changes to pixels[] will occur.",
+    code: "updatePixels([x], [y], [w], [h])",
+    insert: "updatePixels()",
+    syntax: [
+      {
+        parameter: "x: Number",
+        description: "x-coordinate of the upper-left corner of region to update (Optional)",
+      },
+      {
+        parameter: "y: Number",
+        description: "y-coordinate of the upper-left corner of region to update (Optional)",
+      },
+      {
+        parameter: "w: Number",
+        description: "width of region to update (Optional)",
+      },
+      {
+        parameter: "h: Number",
+        description: "height of region to update (Optional)",
+      },
+    ],
+  },
+  {
+    element: "loadJSON",
+    description:
+      "Loads a JSON file from a file or a URL, and returns an Object. Note that even if the JSON file contains an Array, an Object will be returned with index numbers as keys. This method is asynchronous, meaning it may not finish before the next line in your sketch is executed. This method is suitable for fetching files up to size of 64MB.",
+    code: "loadJSON(path, [jsonpOptions], [datatype], [callback], [errorCallback]), loadJSON(path, datatype, [callback], [errorCallback]), loadJSON(path, callback, [errorCallback])",
+    insert: "loadJSON(${1:path})",
+    syntax: [
+      {
+        parameter: "path: String",
+        description: "name of the file or url to load",
+      },
+      {
+        parameter: "jsonpOptions: Object",
+        description: "options object for jsonp related settings (Optional)",
+      },
+      {
+        parameter: "datatype: String",
+        description: "'json or 'jsonp' (Optional)",
+      },
+      {
+        parameter: "callback: Function",
+        description: "function to be executed after loadJSON() completes, data is passed in as first argument (Optional)",
+      },
+      {
+        parameter: "errorCallback: Function",
+        description: "function to be executed if there is an error, response is passed in as first argument (Optional)",
+      },
+    ],
+    return: {
+      type: "Object|Array",
+      description: "JSON data",
+    },
+  },
+  {
+    element: "loadStrings",
+    description:
+      "Reads the contents of a file and creates a String array of its individual lines. If the name of the file is used as the parameter, as in the above example, the file must be located in the sketch directory/folder.",
+    code: "loadStrings(filename, [callback], [errorCallback])",
+    insert: "loadStrings(${1:filename})",
+    syntax: [
+      {
+        parameter: "filename: String",
+        description: "name of the file or url to load",
+      },
+      {
+        parameter: "callback: Function",
+        description:
+          "function to be executed after loadStrings() completes, Array is passed in as first argument (Optional)",
+      },
+      {
+        parameter: "errorCallback: Function",
+        description:
+          "function to be executed if there is an error, response is passed in as first argument (Optional)",
+      },
+    ],
+    return: {
+      type: "String[]",
+      description: "Array of Strings",
+    },
+  },
+  {
+    element: "loadTable",
+    description:
+      "Reads the contents of a file or URL and creates a p5.Table object with its values. If a file is specified, it must be located in the sketch's 'data' folder. The filename parameter can also be a URL to a file found online. By default, the file is assumed to be comma-separated (in CSV format). Table only looks for a header row if the 'header' option is included. This method is asynchronous, meaning it may not finish before the next line in your sketch is executed.",
+    code: "loadTable(filename, [extension], [header], [callback], [errorCallback])",
+    insert: "loadTable(${1:filename})",
+    syntax: [
+      {
+        parameter: "filename: String",
+        description: "name of the file or url to load",
+      },
+      {
+        parameter: "extension: String",
+        description: "parse the table by comma-separated values 'csv', semicolon-separated values 'ssv', or tab-separated values 'tsv' (Optional)",
+      },
+      {
+        parameter: "header: String",
+        description: "'header' to indicate table has header row (Optional)",
+      },
+      {
+        parameter: "callback: Function",
+        description:
+          "function to be executed after loadTable() completes. On success, the Table object is passed in as the first argument. (Optional)",
+      },
+      {
+        parameter: "errorCallback: Function",
+        description:
+          "function to be executed if there is an error, response is passed in as first argument (Optional)",
+      },
+    ],
+    return: {
+      type: "Object",
+      description: "Table object containing data",
+    },
+  },
+  {
+    element: "loadXML",
+    description:
+      "Reads the contents of a file and creates an XML object with its values. If the name of the file is used as the parameter, as in the above example, the file must be located in the sketch directory/folder. This method is asynchronous, meaning it may not finish before the next line in your sketch is executed. This method is suitable for fetching files up to size of 64MB.",
+    code: "loadXML(filename, [callback], [errorCallback])",
+    insert: "loadXML(${1:filename})",
+    syntax: [
+      {
+        parameter: "filename: String",
+        description: "name of the file or url to load",
+      },
+      {
+        parameter: "callback: Function",
+        description:
+          "function to be executed after loadXML() completes, XML object is passed in as first argument (Optional)",
+      },
+      {
+        parameter: "errorCallback: Function",
+        description:
+          "function to be executed if there is an error, response is passed in as first argument (Optional)",
+      },
+    ],
+    return: {
+      type: "Object",
+      description: "XML object containing data",
+    },
+  },
+  {
+    element: "loadBytes",
+    description:
+      "This method is suitable for fetching files up to size of 64MB.",
+    code: "loadBytes(file, [callback], [errorCallback])",
+    insert: "loadBytes(${1:file})",
+    syntax: [
+      {
+        parameter: "file: String",
+        description: "name of the file or url to load",
+      },
+      {
+        parameter: "callback: Function",
+        description:
+          "function to be executed after loadBytes() completes (Optional)",
+      },
+      {
+        parameter: "errorCallback: Function",
+        description:
+          "function to be executed if there is an error (Optional)",
+      },
+    ],
+    return: {
+      type: "Object",
+      description: "an object whose 'bytes' property will be the loaded buffer",
+    },
+  },
+  {
+    element: "httpGet",
+    description:
+      "Method for executing an HTTP GET request. If data type is not specified, p5 will try to guess based on the URL, defaulting to text. This is equivalent to calling httpDo(path, 'GET'). The 'binary' datatype will return a Blob object, and the 'arrayBuffer' datatype will return an ArrayBuffer which can be used to initialize typed arrays (such as Uint8Array).",
+    code: "httpGet(path, [datatype], [data], [callback], [errorCallback]), httpGet(path, data, [callback], [errorCallback]), httpGet(path, callback, [errorCallback])",
+    insert: "httpGet(${1:path})",
+    syntax: [
+      {
+        parameter: "path: String",
+        description: "name of the file or url to load",
+      },
+      {
+        parameter: "datatype: String",
+        description:
+          "'json', 'jsonp', 'binary', 'arrayBuffer', 'xml', or 'text' (Optional)",
+      },
+      {
+        parameter: "data: Object|Boolean",
+        description:
+          "param data passed sent with request (Optional)",
+      },
+      {
+        parameter: "callback: Function",
+        description:
+          "function to be executed after httpGet() completes, data is passed in as first argument (Optional)",
+      },
+      {
+        parameter: "errorCallback: Function",
+        description:
+          "function to be executed if there is an error, response is passed in as first argument (Optional)",
+      },
+    ],
+    return: {
+      type: "Promise",
+      description: "A promise that resolves with the data when the operation completes successfully or rejects with the error after one occurs.",
+    },
+  },
+  {
+    element: "httpPost",
+    description:
+      "Method for executing an HTTP POST request. If data type is not specified, p5 will try to guess based on the URL, defaulting to text. This is equivalent to calling httpDo(path, 'POST').",
+    code: "httpPost(path, [datatype], [data], [callback], [errorCallback]), httpPost(path, data, [callback], [errorCallback]), httpPost(path, callback, [errorCallback])",
+    insert: "httpPost(${1:path})",
+    syntax: [
+      {
+        parameter: "path: String",
+        description: "name of the file or url to load",
+      },
+      {
+        parameter: "datatype: String",
+        description:
+          "'json', 'jsonp', 'xml', or 'text'. If omitted, httpPost() will guess. (Optional)",
+      },
+      {
+        parameter: "data: Object|Boolean",
+        description:
+          "param data passed sent with request (Optional)",
+      },
+      {
+        parameter: "callback: Function",
+        description:
+          "function to be executed after httpPost() completes, data is passed in as first argument (Optional)",
+      },
+      {
+        parameter: "errorCallback: Function",
+        description:
+          "function to be executed if there is an error, response is passed in as first argument (Optional)",
+      },
+    ],
+    return: {
+      type: "Promise",
+      description: "A promise that resolves with the data when the operation completes successfully or rejects with the error after one occurs.",
+    },
+  },
+  {
+    element: "httpDo",
+    description:
+      "Method for executing an HTTP request. If data type is not specified, p5 will try to guess based on the URL, defaulting to text. For more advanced use, you may also pass in the path as the first argument and a object as the second argument, the signature follows the one specified in the Fetch API specification. This method is suitable for fetching files up to size of 64MB when 'GET' is used.",
+    code: "httpDo(path, [method], [datatype], [data], [callback], [errorCallback]), httpDo(path, options, [callback], [errorCallback])",
+    insert: "httpDo(${1:path})",
+    syntax: [
+      {
+        parameter: "path: String",
+        description: "name of the file or url to load",
+      },
+      {
+        parameter: "method: String",
+        description:
+          "either 'GET', 'POST', or 'PUT', defaults to 'GET' (Optional)",
+      },
+      {
+        parameter: "datatype: String",
+        description:
+          "'json', 'jsonp', 'xml', or 'text' (Optional)",
+      },
+      {
+        parameter: "data: Object",
+        description:
+          "param data passed sent with request (Optional)",
+      },
+      {
+        parameter: "callback: Function",
+        description:
+          "function to be executed after httpDo() completes, data is passed in as first argument (Optional)",
+      },
+      {
+        parameter: "errorCallback: Function",
+        description:
+          "function to be executed if there is an error, response is passed in as first argument (Optional)",
+      },
+      {
+        parameter: "options: Object",
+        description:
+          "Request object options as documented in the 'fetch' API reference",
+      },
+    ],
+    return: {
+      type: "Promise",
+      description: "A promise that resolves with the data when the operation completes successfully or rejects with the error after one occurs.",
+    },
+  },
+  {
+    element: "p5.XML",
+    description:
+      "XML is a representation of an XML object, able to parse XML code. Use loadXML() to load external XML files and create XML objects.",
+    code: "new p5.XML()",
+    insert: "new p5.XML()",
+    syntax: [
+    ],
+  },
+  {
+    element: "createWriter",
+    description: "",
+    code: "createWriter(name, [extension])",
+    insert: "createWriter(${1:name})",
+    syntax: [
+      {
+        parameter: "name: String",
+        description: "name of the file to be created",
+      },
+      {
+        parameter: "extension: String",
+        description:
+          "(Optional)",
+      },
+    ],
+    return: {
+      type: "p5.PrintWriter",
+      description: "",
+    },
+  },
+  {
+    element: "save",
+    description: "Saves a given element(image, text, json, csv, wav, or html) to the client's computer. The first parameter can be a pointer to element we want to save. The element can be one of p5.Element,an Array of Strings, an Array of JSON, a JSON object, a p5.Table , a p5.Image, or a p5.SoundFile (requires p5.sound). The second parameter is a filename (including extension).The third parameter is for options specific to this type of object. This method will save a file that fits the given parameters. If it is called without specifying an element, by default it will save the whole canvas as an image file. You can optionally specify a filename as the first parameter in such a case. Note that it is not recommended to call this method within draw, as it will open a new save dialog on every render.",
+    code: "save([objectOrFilename], [filename], [options])",
+    insert: "save()",
+    syntax: [
+      {
+        parameter: "objectOrFilename: Object|String",
+        description: "If filename is provided, will save canvas as an image with either png or jpg extension depending on the filename. If object is provided, will save depending on the object and filename (see examples above). (Optional)",
+      },
+      {
+        parameter: "filename: String",
+        description:
+          "If an object is provided as the first parameter, then the second parameter indicates the filename, and should include an appropriate file extension (see examples above). (Optional)",
+      },
+      {
+        parameter: "options: Boolean|String",
+        description:
+          "Additional options depend on filetype. For example, when saving JSON, true indicates that the output will be optimized for filesize, rather than readability. (Optional)",
+      },
+    ],
+  },
+  {
+    element: "saveJSON",
+    description: "Writes the contents of an Array or a JSON object to a .json file. The file saving process and location of the saved file will vary between web browsers.",
+    code: "saveJSON(json, filename, [optimize])",
+    insert: "saveJSON(${1:json}, ${2:filename})",
+    syntax: [
+      {
+        parameter: "json: Array|Object",
+        description: "",
+      },
+      {
+        parameter: "filename: String",
+        description:
+          "",
+      },
+      {
+        parameter: "optimize: Boolean",
+        description:
+          "If true, removes line breaks and spaces from the output file to optimize filesize (but not readability). (Optional)",
+      },
+    ],
+  },
+  {
+    element: "saveStrings",
+    description: "Writes an array of Strings to a text file, one line per String. The file saving process and location of the saved file will vary between web browsers.",
+    code: "saveStrings(list, filename, [extension], [isCRLF])",
+    insert: "saveStrings(${1:list}, ${2:filename})",
+    syntax: [
+      {
+        parameter: "list: String[]",
+        description: "string array to be written",
+      },
+      {
+        parameter: "filename: String",
+        description:
+          "filename for output",
+      },
+      {
+        parameter: "extension: String",
+        description:
+          "the filename's extension (Optional)",
+      },
+      {
+        parameter: "isCRLF: Boolean",
+        description:
+          "if true, change line-break to CRLF (Optional)",
+      },
+    ],
+  },
+  {
+    element: "saveTable",
+    description: "Writes the contents of a Table object to a file. Defaults to a text file with comma-separated-values ('csv') but can also use tab separation ('tsv'), or generate an HTML table ('html'). The file saving process and location of the saved file will vary between web browsers.",
+    code: "saveTable(Table, filename, [options])",
+    insert: "saveTable(${1:Table}, ${2:filename})",
+    syntax: [
+      {
+        parameter: "Table: p5.Table",
+        description: "the Table object to save to a file",
+      },
+      {
+        parameter: "filename: String",
+        description:
+          "the filename to which the Table should be saved",
+      },
+      {
+        parameter: "options: String",
+        description:
+          "can be one of 'tsv', 'csv', or 'html' (Optional)",
+      },
+    ],
+  },
+  {
+    element: "p5.Table",
+    description:
+      "Table objects store data with multiple rows and columns, much like in a traditional spreadsheet. Tables can be generated from scratch, dynamically, or using data from an existing file.",
+    code: "new p5.Table([rows])",
+    insert: "new p5.Table()",
+    syntax: [
+      {
+        parameter: "rows: p5.TableRow[]",
+        description:
+          "An array of p5.TableRow objects (Optional)",
+      },
+    ],
+  },
+  {
+    element: "p5.TableRow",
+    description:
+      "A TableRow object represents a single row of data values, stored in columns, from a table. A Table Row contains both an ordered array, and an unordered JSON object.",
+    code: "new p5.TableRow([str], [separator])",
+    insert: "new p5.TableRow()",
+    syntax: [
+      {
+        parameter: "str: String",
+        description:
+          "optional: populate the row with a string of values, separated by the separator (Optional)",
+      },
+      {
+        parameter: "separator: String",
+        description:
+          "comma separated values (csv) by default (Optional)",
+      },
+    ],
+  },
+  {
+    element: "day",
+    description: "p5.js communicates with the clock on your computer. The day() function returns the current day as a value from 1 - 31.",
+    code: "day()",
+    insert: "day()",
+    syntax: [
+    ],
+    return: {
+      type: "Integer",
+      description: "the current day",
+    },
+  },
+  {
+    element: "hour",
+    description: "p5.js communicates with the clock on your computer. The hour() function returns the current hour as a value from 0 - 23.",
+    code: "hour()",
+    insert: "hour()",
+    syntax: [
+    ],
+    return: {
+      type: "Integer",
+      description: "the current hour",
+    },
+  },
+  {
+    element: "minute",
+    description: "p5.js communicates with the clock on your computer. The minute() function returns the current minute as a value from 0 - 59.",
+    code: "minute()",
+    insert: "minute()",
+    syntax: [
+    ],
+    return: {
+      type: "Integer",
+      description: "the current minute",
+    },
+  },
+  {
+    element: "millis",
+    description: "Returns the number of milliseconds (thousandths of a second) since starting the sketch (when setup() is called). This information is often used for timing events and animation sequences.",
+    code: "millis()",
+    insert: "millis()",
+    syntax: [
+    ],
+    return: {
+      type: "Number",
+      description: "the number of milliseconds since starting the sketch",
+    },
+  },
+  {
+    element: "month",
+    description: "p5.js communicates with the clock on your computer. The month() function returns the current month as a value from 1 - 12.",
+    code: "month()",
+    insert: "month()",
+    syntax: [
+    ],
+    return: {
+      type: "Integer",
+      description: "the current month",
+    },
+  },
+  {
+    element: "second",
+    description: "p5.js communicates with the clock on your computer. The second() function returns the current second as a value from 0 - 59.",
+    code: "second()",
+    insert: "second()",
+    syntax: [
+    ],
+    return: {
+      type: "Integer",
+      description: "the current second",
+    },
+  },
+  {
+    element: "year",
+    description: "p5.js communicates with the clock on your computer. The year() function returns the current year as an integer (2014, 2015, 2016, etc).",
+    code: "year()",
+    insert: "year()",
+    syntax: [
+    ],
+    return: {
+      type: "Integer",
+      description: "the current year",
+    },
   },
 ];
