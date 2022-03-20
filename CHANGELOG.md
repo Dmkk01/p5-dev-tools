@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.2.0
+
+- Complete the references from p5.js documentation
+
 ## 0.1.1
 
 - Update README.md

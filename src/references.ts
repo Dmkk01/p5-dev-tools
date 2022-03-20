@@ -2703,8 +2703,7 @@ export const references = [
       "Removes the default canvas for a p5 sketch that doesn't require a canvas",
     code: "noCanvas()",
     insert: "noCanvas()",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "createGraphics",
@@ -2736,7 +2735,8 @@ export const references = [
     syntax: [
       {
         parameter: "mode: Constant",
-        description: "blend mode to set for canvas. either BLEND, DARKEST, LIGHTEST, DIFFERENCE, MULTIPLY, EXCLUSION, SCREEN, REPLACE, OVERLAY, HARD_LIGHT, SOFT_LIGHT, DODGE, BURN, ADD, REMOVE or SUBTRACT",
+        description:
+          "blend mode to set for canvas. either BLEND, DARKEST, LIGHTEST, DIFFERENCE, MULTIPLY, EXCLUSION, SCREEN, REPLACE, OVERLAY, HARD_LIGHT, SOFT_LIGHT, DODGE, BURN, ADD, REMOVE or SUBTRACT",
       },
     ],
   },
@@ -2746,8 +2746,7 @@ export const references = [
       "The p5.js API provides a lot of functionality for creating graphics, but there is some native HTML5 Canvas functionality that is not exposed by p5. You can still call it directly using the variable drawingContext, as in the example shown. This is the equivalent of calling canvas.getContext('2d'); or canvas.getContext('webgl');.",
     code: "drawingContext",
     insert: "drawingContext",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "setAttributes",
@@ -2779,7 +2778,8 @@ export const references = [
     syntax: [
       {
         parameter: "a: Number|Array",
-        description: "numbers which define the 2x3 matrix to be multiplied, or an array of numbers",
+        description:
+          "numbers which define the 2x3 matrix to be multiplied, or an array of numbers",
       },
       {
         parameter: "b: Number",
@@ -2805,12 +2805,10 @@ export const references = [
   },
   {
     element: "resetMatrix",
-    description:
-      "Replaces the current matrix with the identity matrix.",
+    description: "Replaces the current matrix with the identity matrix.",
     code: "resetMatrix()",
     insert: "resetMatrix()",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "rotate",
@@ -2821,7 +2819,8 @@ export const references = [
     syntax: [
       {
         parameter: "angle: Number",
-        description: "the angle of rotation, specified in radians or degrees, depending on current angleMode",
+        description:
+          "the angle of rotation, specified in radians or degrees, depending on current angleMode",
       },
       {
         parameter: "axis: p5.Vector|Number[]",
@@ -2838,7 +2837,8 @@ export const references = [
     syntax: [
       {
         parameter: "angle: Number",
-        description: "the angle of rotation, specified in radians or degrees, depending on current angleMode",
+        description:
+          "the angle of rotation, specified in radians or degrees, depending on current angleMode",
       },
     ],
   },
@@ -2851,7 +2851,8 @@ export const references = [
     syntax: [
       {
         parameter: "angle: Number",
-        description: "the angle of rotation, specified in radians or degrees, depending on current angleMode",
+        description:
+          "the angle of rotation, specified in radians or degrees, depending on current angleMode",
       },
     ],
   },
@@ -2864,7 +2865,8 @@ export const references = [
     syntax: [
       {
         parameter: "angle: Number",
-        description: "the angle of rotation, specified in radians or degrees, depending on current angleMode",
+        description:
+          "the angle of rotation, specified in radians or degrees, depending on current angleMode",
       },
     ],
   },
@@ -2877,7 +2879,8 @@ export const references = [
     syntax: [
       {
         parameter: "s: Number|p5.Vector|Number[]",
-        description: "percent to scale the object, or percentage to scale the object in the x-axis if multiple arguments are given",
+        description:
+          "percent to scale the object, or percentage to scale the object in the x-axis if multiple arguments are given",
       },
       {
         parameter: "y: Number",
@@ -2885,7 +2888,8 @@ export const references = [
       },
       {
         parameter: "z: Number",
-        description: "percent to scale the object in the z-axis (webgl only) (Optional)",
+        description:
+          "percent to scale the object in the z-axis (webgl only) (Optional)",
       },
       {
         parameter: "scales: p5.Vector|Number[]",
@@ -2902,7 +2906,8 @@ export const references = [
     syntax: [
       {
         parameter: "angle: Number",
-        description: "angle of shear specified in radians or degrees, depending on current angleMode",
+        description:
+          "angle of shear specified in radians or degrees, depending on current angleMode",
       },
     ],
   },
@@ -2915,7 +2920,8 @@ export const references = [
     syntax: [
       {
         parameter: "angle: Number",
-        description: "angle of shear specified in radians or degrees, depending on current angleMode",
+        description:
+          "angle of shear specified in radians or degrees, depending on current angleMode",
       },
     ],
   },
@@ -2984,13 +2990,11 @@ export const references = [
       "Clears all local storage items set with storeItem() for the current domain.",
     code: "clearStorage()",
     insert: "clearStorage()",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "removeItem",
-    description:
-      "Removes an item that was stored with storeItem()",
+    description: "Removes an item that was stored with storeItem()",
     code: "removeItem(key)",
     insert: "removeItem(${1:key})",
     syntax: [
@@ -3017,7 +3021,7 @@ export const references = [
       },
       {
         parameter: "object: Object",
-        description: "object",
+        description: "",
       },
     ],
     return: {
@@ -3056,17 +3060,14 @@ export const references = [
       "Base class for all p5.Dictionary types. Specifically typed Dictionary classes inherit from this class.",
     code: "new p5.TypedDict()",
     insert: "new p5.TypedDict()",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "p5.NumberDict",
-    description:
-      "A simple Dictionary class for Numbers. Extends p5.TypedDict",
+    description: "A simple Dictionary class for Numbers. Extends p5.TypedDict",
     code: "new p5.NumberDict()",
     insert: "new p5.NumberDict()",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "shuffle",
@@ -3137,8 +3138,7 @@ export const references = [
       "A boolean is one of the 7 primitive data types in Javascript. A boolean can only be true or false. From the MDN entry: Boolean represents a logical entity and can have two values: true, and false.",
     code: "boolean",
     insert: "boolean",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "char",
@@ -3304,11 +3304,13 @@ export const references = [
       },
       {
         parameter: "left: Integer|String",
-        description: "number of digits to the left of the decimal point (Optional)",
+        description:
+          "number of digits to the left of the decimal point (Optional)",
       },
       {
         parameter: "right: Integer|String",
-        description: "number of digits to the right of the decimal point (Optional)",
+        description:
+          "number of digits to the right of the decimal point (Optional)",
       },
       {
         parameter: "nums: Array",
@@ -3333,7 +3335,8 @@ export const references = [
       },
       {
         parameter: "right: Integer|String",
-        description: "number of digits to the right of the decimal point (Optional)",
+        description:
+          "number of digits to the right of the decimal point (Optional)",
       },
       {
         parameter: "nums: Array",
@@ -3358,11 +3361,13 @@ export const references = [
       },
       {
         parameter: "left: Integer",
-        description: "number of digits to the left of the decimal point (Optional)",
+        description:
+          "number of digits to the left of the decimal point (Optional)",
       },
       {
         parameter: "right: Integer",
-        description: "number of digits to the right of the decimal point (Optional)",
+        description:
+          "number of digits to the right of the decimal point (Optional)",
       },
       {
         parameter: "nums: Number[]",
@@ -3387,11 +3392,13 @@ export const references = [
       },
       {
         parameter: "left: Integer",
-        description: "number of digits to the left of the decimal point (Optional)",
+        description:
+          "number of digits to the left of the decimal point (Optional)",
       },
       {
         parameter: "right: Integer",
-        description: "number of digits to the right of the decimal point (Optional)",
+        description:
+          "number of digits to the right of the decimal point (Optional)",
       },
       {
         parameter: "nums: Array",
@@ -3437,7 +3444,8 @@ export const references = [
       },
       {
         parameter: "delim: String",
-        description: "list of individual Strings that will be used as separators (Optional)",
+        description:
+          "list of individual Strings that will be used as separators (Optional)",
       },
     ],
     return: {
@@ -3472,8 +3480,7 @@ export const references = [
       "The system variable deviceOrientation always contains the orientation of the device. The value of this variable will either be set 'landscape' or 'portrait'. If no data is available it will be set to 'undefined'. either LANDSCAPE or PORTRAIT.",
     code: "deviceOrientation",
     insert: "deviceOrientation",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "accelerationX",
@@ -3481,8 +3488,7 @@ export const references = [
       "The system variable accelerationX always contains the acceleration of the device along the x axis. Value is represented as meters per second squared.",
     code: "accelerationX",
     insert: "accelerationX",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "accelerationY",
@@ -3490,8 +3496,7 @@ export const references = [
       "The system variable accelerationY always contains the acceleration of the device along the y axis. Value is represented as meters per second squared.",
     code: "accelerationY",
     insert: "accelerationY",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "accelerationZ",
@@ -3499,8 +3504,7 @@ export const references = [
       "The system variable accelerationZ always contains the acceleration of the device along the z axis. Value is represented as meters per second squared.",
     code: "accelerationZ",
     insert: "accelerationZ",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "pAccelerationX",
@@ -3508,8 +3512,7 @@ export const references = [
       "The system variable pAccelerationX always contains the acceleration of the device along the x axis in the frame previous to the current frame. Value is represented as meters per second squared.",
     code: "pAccelerationX",
     insert: "pAccelerationX",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "pAccelerationY",
@@ -3517,8 +3520,7 @@ export const references = [
       "The system variable pAccelerationY always contains the acceleration of the device along the y axis in the frame previous to the current frame. Value is represented as meters per second squared.",
     code: "pAccelerationY",
     insert: "pAccelerationY",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "pAccelerationZ",
@@ -3526,8 +3528,7 @@ export const references = [
       "The system variable pAccelerationZ always contains the acceleration of the device along the z axis in the frame previous to the current frame. Value is represented as meters per second squared.",
     code: "pAccelerationZ",
     insert: "pAccelerationZ",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "rotationX",
@@ -3535,8 +3536,7 @@ export const references = [
       "The system variable rotationX always contains the rotation of the device along the x axis. If the sketch angleMode() is set to DEGREES, the value will be -180 to 180. If it is set to RADIANS, the value will be -PI to PI. Note: The order the rotations are called is important, ie. if used together, it must be called in the order Z-X-Y or there might be unexpected behaviour.",
     code: "rotationX",
     insert: "rotationX",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "rotationY",
@@ -3544,8 +3544,7 @@ export const references = [
       "The system variable rotationY always contains the rotation of the device along the y axis. If the sketch angleMode() is set to DEGREES, the value will be -90 to 90. If it is set to RADIANS, the value will be -PI/2 to PI/2. Note: The order the rotations are called is important, ie. if used together, it must be called in the order Z-X-Y or there might be unexpected behaviour.",
     code: "rotationY",
     insert: "rotationY",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "rotationZ",
@@ -3553,8 +3552,7 @@ export const references = [
       "The system variable rotationZ always contains the rotation of the device along the z axis. If the sketch angleMode() is set to DEGREES, the value will be 0 to 360. If it is set to RADIANS, the value will be 0 to 2*PI. Unlike rotationX and rotationY, this variable is available for devices with a built-in compass only. Note: The order the rotations are called is important, ie. if used together, it must be called in the order Z-X-Y or there might be unexpected behaviour.",
     code: "rotationZ",
     insert: "rotationZ",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "pRotationX",
@@ -3562,8 +3560,7 @@ export const references = [
       "The system variable pRotationX always contains the rotation of the device along the x axis in the frame previous to the current frame. If the sketch angleMode() is set to DEGREES, the value will be -180 to 180. If it is set to RADIANS, the value will be -PI to PI. pRotationX can also be used with rotationX to determine the rotate direction of the device along the X-axis.",
     code: "pRotationX",
     insert: "pRotationX",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "pRotationY",
@@ -3571,8 +3568,7 @@ export const references = [
       "The system variable pRotationY always contains the rotation of the device along the y axis in the frame previous to the current frame. If the sketch angleMode() is set to DEGREES, the value will be -90 to 90. If it is set to RADIANS, the value will be -PI/2 to PI/2. pRotationY can also be used with rotationY to determine the rotate direction of the device along the Y-axis.",
     code: "pRotationY",
     insert: "pRotationY",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "pRotationZ",
@@ -3580,8 +3576,7 @@ export const references = [
       "The system variable pRotationZ always contains the rotation of the device along the z axis in the frame previous to the current frame. If the sketch angleMode() is set to DEGREES, the value will be 0 to 360. If it is set to RADIANS, the value will be 0 to 2*PI. pRotationZ can also be used with rotationZ to determine the rotate direction of the device along the Z-axis.",
     code: "pRotationZ",
     insert: "pRotationZ",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "turnAxis",
@@ -3589,8 +3584,7 @@ export const references = [
       "When a device is rotated, the axis that triggers the deviceTurned() method is stored in the turnAxis variable. The turnAxis variable is only defined within the scope of deviceTurned().",
     code: "turnAxis",
     insert: "turnAxis",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "setMoveThreshold",
@@ -3624,8 +3618,7 @@ export const references = [
       "The deviceMoved() function is called when the device is moved by more than the threshold value along X, Y or Z axis. The default threshold is set to 0.5. The threshold value can be changed using setMoveThreshold().",
     code: "deviceMoved()",
     insert: "deviceMoved()",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "deviceTurned",
@@ -3633,8 +3626,7 @@ export const references = [
       "The deviceTurned() function is called when the device rotates by more than 90 degrees continuously. The axis that triggers the deviceTurned() method is stored in the turnAxis variable. The deviceTurned() method can be locked to trigger on any axis: X, Y or Z by comparing the turnAxis variable to 'X', 'Y' or 'Z'.",
     code: "deviceTurned()",
     insert: "deviceTurned()",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "deviceShaken",
@@ -3642,8 +3634,7 @@ export const references = [
       "The deviceShaken() function is called when the device total acceleration changes of accelerationX and accelerationY values is more than the threshold value. The default threshold is set to 30. The threshold value can be changed using setShakeThreshold().",
     code: "deviceShaken()",
     insert: "deviceShaken()",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "keyIsPressed",
@@ -3651,8 +3642,7 @@ export const references = [
       "The boolean system variable keyIsPressed is true if any key is pressed and false if no keys are pressed.",
     code: "keyIsPressed",
     insert: "keyIsPressed",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "key",
@@ -3660,8 +3650,7 @@ export const references = [
       "The system variable key always contains the value of the most recent key on the keyboard that was typed. To get the proper capitalization, it is best to use it within keyTyped(). For non-ASCII keys, use the keyCode variable.",
     code: "key",
     insert: "key",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "keyCode",
@@ -3669,8 +3658,7 @@ export const references = [
       "The variable keyCode is used to detect special keys such as BACKSPACE, DELETE, ENTER, RETURN, TAB, ESCAPE, SHIFT, CONTROL, OPTION, ALT, UP_ARROW, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW.",
     code: "keyCode",
     insert: "keyCode",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "keyPressed",
@@ -3734,8 +3722,7 @@ export const references = [
       "The variable movedX contains the horizontal movement of the mouse since the last frame",
     code: "movedX",
     insert: "movedX",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "movedY",
@@ -3743,8 +3730,7 @@ export const references = [
       "The variable movedY contains the vertical movement of the mouse since the last frame",
     code: "movedY",
     insert: "movedY",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "mouseX",
@@ -3752,8 +3738,7 @@ export const references = [
       "The system variable mouseX always contains the current horizontal position of the mouse, relative to (0, 0) of the canvas. The value at the top-left corner is (0, 0) for 2-D and (-width/2, -height/2) for WebGL. If touch is used instead of mouse input, mouseX will hold the x value of the most recent touch point.",
     code: "mouseX",
     insert: "mouseX",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "mouseY",
@@ -3761,8 +3746,7 @@ export const references = [
       "The system variable mouseY always contains the current vertical position of the mouse, relative to (0, 0) of the canvas. The value at the top-left corner is (0, 0) for 2-D and (-width/2, -height/2) for WebGL. If touch is used instead of mouse input, mouseY will hold the y value of the most recent touch point.",
     code: "mouseY",
     insert: "mouseY",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "pmouseX",
@@ -3770,8 +3754,7 @@ export const references = [
       "The system variable pmouseX always contains the horizontal position of the mouse or finger in the frame previous to the current frame, relative to (0, 0) of the canvas. The value at the top-left corner is (0, 0) for 2-D and (-width/2, -height/2) for WebGL. Note: pmouseX will be reset to the current mouseX value at the start of each touch event.",
     code: "pmouseX",
     insert: "pmouseX",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "pmouseY",
@@ -3779,8 +3762,7 @@ export const references = [
       "The system variable pmouseY always contains the vertical position of the mouse or finger in the frame previous to the current frame, relative to (0, 0) of the canvas. The value at the top-left corner is (0, 0) for 2-D and (-width/2, -height/2) for WebGL. Note: pmouseY will be reset to the current mouseY value at the start of each touch event.",
     code: "pmouseY",
     insert: "pmouseY",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "winMouseX",
@@ -3788,8 +3770,7 @@ export const references = [
       "The system variable winMouseX always contains the current horizontal position of the mouse, relative to (0, 0) of the window.",
     code: "winMouseX",
     insert: "winMouseX",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "winMouseY",
@@ -3797,8 +3778,7 @@ export const references = [
       "The system variable winMouseY always contains the current vertical position of the mouse, relative to (0, 0) of the window.",
     code: "winMouseY",
     insert: "winMouseY",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "pwinMouseX",
@@ -3806,8 +3786,7 @@ export const references = [
       "The system variable pwinMouseX always contains the horizontal position of the mouse in the frame previous to the current frame, relative to (0, 0) of the window. Note: pwinMouseX will be reset to the current winMouseX value at the start of each touch event.",
     code: "pwinMouseX",
     insert: "pwinMouseX",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "pwinMouseY",
@@ -3815,8 +3794,7 @@ export const references = [
       "The system variable pwinMouseY always contains the vertical position of the mouse in the frame previous to the current frame, relative to (0, 0) of the window. Note: pwinMouseY will be reset to the current winMouseY value at the start of each touch event.",
     code: "pwinMouseY",
     insert: "pwinMouseY",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "mouseButton",
@@ -3824,8 +3802,7 @@ export const references = [
       "p5 automatically tracks if the mouse button is pressed and which button is pressed. The value of the system variable mouseButton is either LEFT, RIGHT, or CENTER depending on which button was pressed last. Warning: different browsers may track mouseButton differently.",
     code: "mouseButton",
     insert: "mouseButton",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "mouseIsPressed",
@@ -3833,8 +3810,7 @@ export const references = [
       "The boolean system variable mouseIsPressed is true if the mouse is pressed and false if not.",
     code: "mouseIsPressed",
     insert: "mouseIsPressed",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "mouseMoved",
@@ -3933,8 +3909,7 @@ export const references = [
       "The function requestPointerLock() locks the pointer to its current position and makes it invisible. Use movedX and movedY to get the difference the mouse was moved since the last call of draw. Note that not all browsers support this feature. This enables you to create experiences that aren't limited by the mouse moving out of the screen even if it is repeatedly moved into one direction. For example, a first person perspective experience.",
     code: "requestPointerLock()",
     insert: "requestPointerLock()",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "exitPointerLock",
@@ -3942,8 +3917,7 @@ export const references = [
       "The function exitPointerLock() exits a previously triggered pointer Lock for example to make ui elements usable etc",
     code: "exitPointerLock()",
     insert: "exitPointerLock()",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "touches",
@@ -3951,8 +3925,7 @@ export const references = [
       "The system variable touches[] contains an array of the positions of all current touch points, relative to (0, 0) of the canvas, and IDs identifying a unique touch as it moves. Each element in the array is an object with x, y, and id properties. The touches[] array is not supported on Safari and IE on touch-based desktops (laptops).",
     code: "touches",
     insert: "touches",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "touchStarted",
@@ -4016,13 +3989,15 @@ export const references = [
   },
   {
     element: "saveCanvas",
-    description: "Save the current canvas as an image. The browser will either save the file immediately, or prompt the user with a dialogue window.",
+    description:
+      "Save the current canvas as an image. The browser will either save the file immediately, or prompt the user with a dialogue window.",
     code: "saveCanvas(selectedCanvas, [filename], [extension]), saveCanvas([filename], [extension])",
     insert: "saveCanvas(${1:selectedCanvas})",
     syntax: [
       {
         parameter: "selectedCanvas: p5.Element|HTMLCanvasElement",
-        description: "a variable representing a specific html5 canvas (optional)",
+        description:
+          "a variable representing a specific html5 canvas (optional)",
       },
       {
         parameter: "filename: String",
@@ -4036,9 +4011,11 @@ export const references = [
   },
   {
     element: "saveFrames",
-    description: "Capture a sequence of frames that can be used to create a movie. Accepts a callback. For example, you may wish to send the frames to a server where they can be stored or converted into a movie. If no callback is provided, the browser will pop up save dialogues in an attempt to download all of the images that have just been created. With the callback provided the image data isn't saved by default but instead passed as an argument to the callback function as an array of objects, with the size of array equal to the total number of frames. Note that saveFrames() will only save the first 15 frames of an animation. To export longer animations, you might look into a library like ccapture.js.",
+    description:
+      "Capture a sequence of frames that can be used to create a movie. Accepts a callback. For example, you may wish to send the frames to a server where they can be stored or converted into a movie. If no callback is provided, the browser will pop up save dialogues in an attempt to download all of the images that have just been created. With the callback provided the image data isn't saved by default but instead passed as an argument to the callback function as an array of objects, with the size of array equal to the total number of frames. Note that saveFrames() will only save the first 15 frames of an animation. To export longer animations, you might look into a library like ccapture.js.",
     code: "saveFrames(filename, extension, duration, framerate, [callback])",
-    insert: "saveFrames(${1:filename}, ${2:extension}, ${3:duration}, ${4:framerate})",
+    insert:
+      "saveFrames(${1:filename}, ${2:extension}, ${3:duration}, ${4:framerate})",
     syntax: [
       {
         parameter: "filename: String",
@@ -4058,7 +4035,8 @@ export const references = [
       },
       {
         parameter: "callback: Function(Array)",
-        description: "A callback function that will be executed to handle the image data. This function should accept an array as argument. The array will contain the specified number of frames of objects. Each object has three properties: imageData - an image/octet-stream, filename and extension. (Optional)",
+        description:
+          "A callback function that will be executed to handle the image data. This function should accept an array as argument. The array will contain the specified number of frames of objects. Each object has three properties: imageData - an image/octet-stream, filename and extension. (Optional)",
       },
     ],
   },
@@ -4135,7 +4113,8 @@ export const references = [
       },
       {
         parameter: "dx: Number",
-        description: "the x-coordinate of the destination rectangle in which to draw the source image",
+        description:
+          "the x-coordinate of the destination rectangle in which to draw the source image",
       },
       {
         parameter: "dy: Number",
@@ -4144,13 +4123,11 @@ export const references = [
       },
       {
         parameter: "dWidth: Number",
-        description:
-          "the width of the destination rectangle",
+        description: "the width of the destination rectangle",
       },
       {
         parameter: "dHeight: Number",
-        description:
-          "the height of the destination rectangle",
+        description: "the height of the destination rectangle",
       },
       {
         parameter: "sx: Number",
@@ -4197,8 +4174,7 @@ export const references = [
       },
       {
         parameter: "alpha: Number",
-        description:
-          "(Optional)",
+        description: "(Optional)",
       },
       {
         parameter: "value: String",
@@ -4225,8 +4201,7 @@ export const references = [
       "Removes the current fill value for displaying images and reverts to displaying images with their original hues.",
     code: "noTint()",
     insert: "noTint()",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "imageMode",
@@ -4247,15 +4222,15 @@ export const references = [
       "Uint8ClampedArray containing the values for all the pixels in the display window. These values are numbers. This array is the size (include an appropriate factor for pixelDensity) of the display window x4, representing the R, G, B, A values in order for each pixel, moving from left to right across each row, then down each column. Retina and other high density displays will have more pixels[] (by a factor of pixelDensity^2). For example, if the image is 100×100 pixels, there will be 40,000. On a retina display, there will be 160,000.",
     code: "pixels",
     insert: "pixels",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "blend",
     description:
       "Copies a region of pixels from one image to another, using a specified blend mode to do the operation.",
     code: "blend(srcImage, sx, sy, sw, sh, dx, dy, dw, dh, blendMode), blend(sx, sy, sw, sh, dx, dy, dw, dh, blendMode)",
-    insert: "blend(${1:srcImage}, ${2:sx}, ${3:sy}, ${4:sw}, ${5:sh}, ${6:dx}, ${7:dy}, ${8:dw}, ${9:dh}, ${10:blendMode})",
+    insert:
+      "blend(${1:srcImage}, ${2:sx}, ${3:sy}, ${4:sw}, ${5:sh}, ${6:dx}, ${7:dy}, ${8:dw}, ${9:dh}, ${10:blendMode})",
     syntax: [
       {
         parameter: "srcImage: p5.Image",
@@ -4263,13 +4238,11 @@ export const references = [
       },
       {
         parameter: "sx: Integer",
-        description:
-          "X coordinate of the source's upper left corner",
+        description: "X coordinate of the source's upper left corner",
       },
       {
         parameter: "sy: Integer",
-        description:
-          "Y coordinate of the source's upper left corner",
+        description: "Y coordinate of the source's upper left corner",
       },
       {
         parameter: "sw: Integer",
@@ -4285,18 +4258,15 @@ export const references = [
       },
       {
         parameter: "dy: Integer",
-        description:
-          "Y coordinate of the destination's upper left corner",
+        description: "Y coordinate of the destination's upper left corner",
       },
       {
         parameter: "dw: Integer",
-        description:
-          "destination image width",
+        description: "destination image width",
       },
       {
         parameter: "dh: Integer",
-        description:
-          "destination image height",
+        description: "destination image height",
       },
       {
         parameter: "blendMode: Constant",
@@ -4310,7 +4280,8 @@ export const references = [
     description:
       "Copies a region of the canvas to another region of the canvas and copies a region of pixels from an image used as the srcImg parameter into the canvas srcImage is specified this is used as the source. If the source and destination regions aren't the same size, it will automatically resize source pixels to fit the specified target region.",
     code: "copy(srcImage, sx, sy, sw, sh, dx, dy, dw, dh), blend(sx, sy, sw, sh, dx, dy, dw, dh)",
-    insert: "copy(${1:srcImage}, ${2:sx}, ${3:sy}, ${4:sw}, ${5:sh}, ${6:dx}, ${7:dy}, ${8:dw}, ${9:dh})",
+    insert:
+      "copy(${1:srcImage}, ${2:sx}, ${3:sy}, ${4:sw}, ${5:sh}, ${6:dx}, ${7:dy}, ${8:dw}, ${9:dh})",
     syntax: [
       {
         parameter: "srcImage: p5.Image|p5.Element",
@@ -4318,13 +4289,11 @@ export const references = [
       },
       {
         parameter: "sx: Integer",
-        description:
-          "X coordinate of the source's upper left corner",
+        description: "X coordinate of the source's upper left corner",
       },
       {
         parameter: "sy: Integer",
-        description:
-          "Y coordinate of the source's upper left corner",
+        description: "Y coordinate of the source's upper left corner",
       },
       {
         parameter: "sw: Integer",
@@ -4340,35 +4309,33 @@ export const references = [
       },
       {
         parameter: "dy: Integer",
-        description:
-          "Y coordinate of the destination's upper left corner",
+        description: "Y coordinate of the destination's upper left corner",
       },
       {
         parameter: "dw: Integer",
-        description:
-          "destination image width",
+        description: "destination image width",
       },
       {
         parameter: "dh: Integer",
-        description:
-          "destination image height",
+        description: "destination image height",
       },
     ],
   },
   {
     element: "filter",
-    description:
-      "Applies a filter to the canvas.",
+    description: "Applies a filter to the canvas.",
     code: "filter(filterType, [filterParam])",
     insert: "filter(${1:filterType})",
     syntax: [
       {
         parameter: "filterType: Constant",
-        description: "either THRESHOLD, GRAY, OPAQUE, INVERT, POSTERIZE, BLUR, ERODE, DILATE or BLUR. See Filters.js for docs on each available filter",
+        description:
+          "either THRESHOLD, GRAY, OPAQUE, INVERT, POSTERIZE, BLUR, ERODE, DILATE or BLUR. See Filters.js for docs on each available filter",
       },
       {
         parameter: "filterParam: Number",
-        description: "an optional parameter unique to each filter, see above (Optional)",
+        description:
+          "an optional parameter unique to each filter, see above (Optional)",
       },
     ],
   },
@@ -4407,8 +4374,7 @@ export const references = [
       "Loads the pixel data for the display window into the pixels[] array. This function must always be called before reading from or writing to pixels[]. Note that only changes made with set() or direct manipulation of pixels[] will occur.",
     code: "loadPixels()",
     insert: "loadPixels()",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "set",
@@ -4427,7 +4393,8 @@ export const references = [
       },
       {
         parameter: "c: Number|Number[]|Object",
-        description: "insert a grayscale value | a pixel array | a p5.Color object | a p5.Image to copy",
+        description:
+          "insert a grayscale value | a pixel array | a p5.Color object | a p5.Image to copy",
       },
     ],
   },
@@ -4440,11 +4407,13 @@ export const references = [
     syntax: [
       {
         parameter: "x: Number",
-        description: "x-coordinate of the upper-left corner of region to update (Optional)",
+        description:
+          "x-coordinate of the upper-left corner of region to update (Optional)",
       },
       {
         parameter: "y: Number",
-        description: "y-coordinate of the upper-left corner of region to update (Optional)",
+        description:
+          "y-coordinate of the upper-left corner of region to update (Optional)",
       },
       {
         parameter: "w: Number",
@@ -4477,11 +4446,13 @@ export const references = [
       },
       {
         parameter: "callback: Function",
-        description: "function to be executed after loadJSON() completes, data is passed in as first argument (Optional)",
+        description:
+          "function to be executed after loadJSON() completes, data is passed in as first argument (Optional)",
       },
       {
         parameter: "errorCallback: Function",
-        description: "function to be executed if there is an error, response is passed in as first argument (Optional)",
+        description:
+          "function to be executed if there is an error, response is passed in as first argument (Optional)",
       },
     ],
     return: {
@@ -4529,7 +4500,8 @@ export const references = [
       },
       {
         parameter: "extension: String",
-        description: "parse the table by comma-separated values 'csv', semicolon-separated values 'ssv', or tab-separated values 'tsv' (Optional)",
+        description:
+          "parse the table by comma-separated values 'csv', semicolon-separated values 'ssv', or tab-separated values 'tsv' (Optional)",
       },
       {
         parameter: "header: String",
@@ -4596,8 +4568,7 @@ export const references = [
       },
       {
         parameter: "errorCallback: Function",
-        description:
-          "function to be executed if there is an error (Optional)",
+        description: "function to be executed if there is an error (Optional)",
       },
     ],
     return: {
@@ -4623,8 +4594,7 @@ export const references = [
       },
       {
         parameter: "data: Object|Boolean",
-        description:
-          "param data passed sent with request (Optional)",
+        description: "param data passed sent with request (Optional)",
       },
       {
         parameter: "callback: Function",
@@ -4639,7 +4609,8 @@ export const references = [
     ],
     return: {
       type: "Promise",
-      description: "A promise that resolves with the data when the operation completes successfully or rejects with the error after one occurs.",
+      description:
+        "A promise that resolves with the data when the operation completes successfully or rejects with the error after one occurs.",
     },
   },
   {
@@ -4660,8 +4631,7 @@ export const references = [
       },
       {
         parameter: "data: Object|Boolean",
-        description:
-          "param data passed sent with request (Optional)",
+        description: "param data passed sent with request (Optional)",
       },
       {
         parameter: "callback: Function",
@@ -4676,7 +4646,8 @@ export const references = [
     ],
     return: {
       type: "Promise",
-      description: "A promise that resolves with the data when the operation completes successfully or rejects with the error after one occurs.",
+      description:
+        "A promise that resolves with the data when the operation completes successfully or rejects with the error after one occurs.",
     },
   },
   {
@@ -4697,13 +4668,11 @@ export const references = [
       },
       {
         parameter: "datatype: String",
-        description:
-          "'json', 'jsonp', 'xml', or 'text' (Optional)",
+        description: "'json', 'jsonp', 'xml', or 'text' (Optional)",
       },
       {
         parameter: "data: Object",
-        description:
-          "param data passed sent with request (Optional)",
+        description: "param data passed sent with request (Optional)",
       },
       {
         parameter: "callback: Function",
@@ -4723,7 +4692,8 @@ export const references = [
     ],
     return: {
       type: "Promise",
-      description: "A promise that resolves with the data when the operation completes successfully or rejects with the error after one occurs.",
+      description:
+        "A promise that resolves with the data when the operation completes successfully or rejects with the error after one occurs.",
     },
   },
   {
@@ -4732,8 +4702,7 @@ export const references = [
       "XML is a representation of an XML object, able to parse XML code. Use loadXML() to load external XML files and create XML objects.",
     code: "new p5.XML()",
     insert: "new p5.XML()",
-    syntax: [
-    ],
+    syntax: [],
   },
   {
     element: "createWriter",
@@ -4747,8 +4716,7 @@ export const references = [
       },
       {
         parameter: "extension: String",
-        description:
-          "(Optional)",
+        description: "(Optional)",
       },
     ],
     return: {
@@ -4758,13 +4726,15 @@ export const references = [
   },
   {
     element: "save",
-    description: "Saves a given element(image, text, json, csv, wav, or html) to the client's computer. The first parameter can be a pointer to element we want to save. The element can be one of p5.Element,an Array of Strings, an Array of JSON, a JSON object, a p5.Table , a p5.Image, or a p5.SoundFile (requires p5.sound). The second parameter is a filename (including extension).The third parameter is for options specific to this type of object. This method will save a file that fits the given parameters. If it is called without specifying an element, by default it will save the whole canvas as an image file. You can optionally specify a filename as the first parameter in such a case. Note that it is not recommended to call this method within draw, as it will open a new save dialog on every render.",
+    description:
+      "Saves a given element(image, text, json, csv, wav, or html) to the client's computer. The first parameter can be a pointer to element we want to save. The element can be one of p5.Element,an Array of Strings, an Array of JSON, a JSON object, a p5.Table , a p5.Image, or a p5.SoundFile (requires p5.sound). The second parameter is a filename (including extension).The third parameter is for options specific to this type of object. This method will save a file that fits the given parameters. If it is called without specifying an element, by default it will save the whole canvas as an image file. You can optionally specify a filename as the first parameter in such a case. Note that it is not recommended to call this method within draw, as it will open a new save dialog on every render.",
     code: "save([objectOrFilename], [filename], [options])",
     insert: "save()",
     syntax: [
       {
         parameter: "objectOrFilename: Object|String",
-        description: "If filename is provided, will save canvas as an image with either png or jpg extension depending on the filename. If object is provided, will save depending on the object and filename (see examples above). (Optional)",
+        description:
+          "If filename is provided, will save canvas as an image with either png or jpg extension depending on the filename. If object is provided, will save depending on the object and filename (see examples above). (Optional)",
       },
       {
         parameter: "filename: String",
@@ -4780,7 +4750,8 @@ export const references = [
   },
   {
     element: "saveJSON",
-    description: "Writes the contents of an Array or a JSON object to a .json file. The file saving process and location of the saved file will vary between web browsers.",
+    description:
+      "Writes the contents of an Array or a JSON object to a .json file. The file saving process and location of the saved file will vary between web browsers.",
     code: "saveJSON(json, filename, [optimize])",
     insert: "saveJSON(${1:json}, ${2:filename})",
     syntax: [
@@ -4790,8 +4761,7 @@ export const references = [
       },
       {
         parameter: "filename: String",
-        description:
-          "",
+        description: "",
       },
       {
         parameter: "optimize: Boolean",
@@ -4802,7 +4772,8 @@ export const references = [
   },
   {
     element: "saveStrings",
-    description: "Writes an array of Strings to a text file, one line per String. The file saving process and location of the saved file will vary between web browsers.",
+    description:
+      "Writes an array of Strings to a text file, one line per String. The file saving process and location of the saved file will vary between web browsers.",
     code: "saveStrings(list, filename, [extension], [isCRLF])",
     insert: "saveStrings(${1:list}, ${2:filename})",
     syntax: [
@@ -4812,24 +4783,22 @@ export const references = [
       },
       {
         parameter: "filename: String",
-        description:
-          "filename for output",
+        description: "filename for output",
       },
       {
         parameter: "extension: String",
-        description:
-          "the filename's extension (Optional)",
+        description: "the filename's extension (Optional)",
       },
       {
         parameter: "isCRLF: Boolean",
-        description:
-          "if true, change line-break to CRLF (Optional)",
+        description: "if true, change line-break to CRLF (Optional)",
       },
     ],
   },
   {
     element: "saveTable",
-    description: "Writes the contents of a Table object to a file. Defaults to a text file with comma-separated-values ('csv') but can also use tab separation ('tsv'), or generate an HTML table ('html'). The file saving process and location of the saved file will vary between web browsers.",
+    description:
+      "Writes the contents of a Table object to a file. Defaults to a text file with comma-separated-values ('csv') but can also use tab separation ('tsv'), or generate an HTML table ('html'). The file saving process and location of the saved file will vary between web browsers.",
     code: "saveTable(Table, filename, [options])",
     insert: "saveTable(${1:Table}, ${2:filename})",
     syntax: [
@@ -4839,13 +4808,11 @@ export const references = [
       },
       {
         parameter: "filename: String",
-        description:
-          "the filename to which the Table should be saved",
+        description: "the filename to which the Table should be saved",
       },
       {
         parameter: "options: String",
-        description:
-          "can be one of 'tsv', 'csv', or 'html' (Optional)",
+        description: "can be one of 'tsv', 'csv', or 'html' (Optional)",
       },
     ],
   },
@@ -4858,8 +4825,7 @@ export const references = [
     syntax: [
       {
         parameter: "rows: p5.TableRow[]",
-        description:
-          "An array of p5.TableRow objects (Optional)",
+        description: "An array of p5.TableRow objects (Optional)",
       },
     ],
   },
@@ -4877,18 +4843,17 @@ export const references = [
       },
       {
         parameter: "separator: String",
-        description:
-          "comma separated values (csv) by default (Optional)",
+        description: "comma separated values (csv) by default (Optional)",
       },
     ],
   },
   {
     element: "day",
-    description: "p5.js communicates with the clock on your computer. The day() function returns the current day as a value from 1 - 31.",
+    description:
+      "p5.js communicates with the clock on your computer. The day() function returns the current day as a value from 1 - 31.",
     code: "day()",
     insert: "day()",
-    syntax: [
-    ],
+    syntax: [],
     return: {
       type: "Integer",
       description: "the current day",
@@ -4896,11 +4861,11 @@ export const references = [
   },
   {
     element: "hour",
-    description: "p5.js communicates with the clock on your computer. The hour() function returns the current hour as a value from 0 - 23.",
+    description:
+      "p5.js communicates with the clock on your computer. The hour() function returns the current hour as a value from 0 - 23.",
     code: "hour()",
     insert: "hour()",
-    syntax: [
-    ],
+    syntax: [],
     return: {
       type: "Integer",
       description: "the current hour",
@@ -4908,11 +4873,11 @@ export const references = [
   },
   {
     element: "minute",
-    description: "p5.js communicates with the clock on your computer. The minute() function returns the current minute as a value from 0 - 59.",
+    description:
+      "p5.js communicates with the clock on your computer. The minute() function returns the current minute as a value from 0 - 59.",
     code: "minute()",
     insert: "minute()",
-    syntax: [
-    ],
+    syntax: [],
     return: {
       type: "Integer",
       description: "the current minute",
@@ -4920,11 +4885,11 @@ export const references = [
   },
   {
     element: "millis",
-    description: "Returns the number of milliseconds (thousandths of a second) since starting the sketch (when setup() is called). This information is often used for timing events and animation sequences.",
+    description:
+      "Returns the number of milliseconds (thousandths of a second) since starting the sketch (when setup() is called). This information is often used for timing events and animation sequences.",
     code: "millis()",
     insert: "millis()",
-    syntax: [
-    ],
+    syntax: [],
     return: {
       type: "Number",
       description: "the number of milliseconds since starting the sketch",
@@ -4932,11 +4897,11 @@ export const references = [
   },
   {
     element: "month",
-    description: "p5.js communicates with the clock on your computer. The month() function returns the current month as a value from 1 - 12.",
+    description:
+      "p5.js communicates with the clock on your computer. The month() function returns the current month as a value from 1 - 12.",
     code: "month()",
     insert: "month()",
-    syntax: [
-    ],
+    syntax: [],
     return: {
       type: "Integer",
       description: "the current month",
@@ -4944,11 +4909,11 @@ export const references = [
   },
   {
     element: "second",
-    description: "p5.js communicates with the clock on your computer. The second() function returns the current second as a value from 0 - 59.",
+    description:
+      "p5.js communicates with the clock on your computer. The second() function returns the current second as a value from 0 - 59.",
     code: "second()",
     insert: "second()",
-    syntax: [
-    ],
+    syntax: [],
     return: {
       type: "Integer",
       description: "the current second",
@@ -4956,11 +4921,11 @@ export const references = [
   },
   {
     element: "year",
-    description: "p5.js communicates with the clock on your computer. The year() function returns the current year as an integer (2014, 2015, 2016, etc).",
+    description:
+      "p5.js communicates with the clock on your computer. The year() function returns the current year as an integer (2014, 2015, 2016, etc).",
     code: "year()",
     insert: "year()",
-    syntax: [
-    ],
+    syntax: [],
     return: {
       type: "Integer",
       description: "the current year",
@@ -4968,14 +4933,14 @@ export const references = [
   },
   {
     element: "abs",
-    description: "Calculates the absolute value (magnitude) of a number. Maps to Math.abs(). The absolute value of a number is always positive.",
+    description:
+      "Calculates the absolute value (magnitude) of a number. Maps to Math.abs(). The absolute value of a number is always positive.",
     code: "abs(n)",
     insert: "abs(${1:n})",
     syntax: [
       {
         parameter: "n: Number",
-        description:
-          "number to compute",
+        description: "number to compute",
       },
     ],
     return: {
@@ -4985,14 +4950,14 @@ export const references = [
   },
   {
     element: "ceil",
-    description: "Calculates the closest int value that is greater than or equal to the value of the parameter. Maps to Math.ceil(). For example, ceil(9.03) returns the value 10.",
+    description:
+      "Calculates the closest int value that is greater than or equal to the value of the parameter. Maps to Math.ceil(). For example, ceil(9.03) returns the value 10.",
     code: "ceil(n)",
     insert: "ceil(${1:n})",
     syntax: [
       {
         parameter: "n: Number",
-        description:
-          "number to round up",
+        description: "number to round up",
       },
     ],
     return: {
@@ -5008,18 +4973,15 @@ export const references = [
     syntax: [
       {
         parameter: "n: Number",
-        description:
-          "number to constrain",
+        description: "number to constrain",
       },
       {
         parameter: "low: Number",
-        description:
-          "minimum limit",
+        description: "minimum limit",
       },
       {
         parameter: "high: Number",
-        description:
-          "maximum limit",
+        description: "maximum limit",
       },
     ],
     return: {
@@ -5029,39 +4991,34 @@ export const references = [
   },
   {
     element: "dist",
-    description: "Calculates the distance between two points, in either two or three dimensions.",
+    description:
+      "Calculates the distance between two points, in either two or three dimensions.",
     code: "dist(x1, y1, x2, y2), dist(x1, y1, z1, x2, y2, z2)",
     insert: "dist(${1:x1}, ${2:y1}, ${3:x2}, ${4:y2})",
     syntax: [
       {
         parameter: "x1: Number",
-        description:
-          "x-coordinate of the first point",
+        description: "x-coordinate of the first point",
       },
       {
         parameter: "y1: Number",
-        description:
-          "y-coordinate of the first point",
+        description: "y-coordinate of the first point",
       },
       {
         parameter: "x2: Number",
-        description:
-          "x-coordinate of the second point",
+        description: "x-coordinate of the second point",
       },
       {
         parameter: "y2: Number",
-        description:
-          "y-coordinate of the second point",
+        description: "y-coordinate of the second point",
       },
       {
         parameter: "z1: Number",
-        description:
-          "z-coordinate of the first point",
+        description: "z-coordinate of the first point",
       },
       {
         parameter: "z2: Number",
-        description:
-          "z-coordinate of the second point",
+        description: "z-coordinate of the second point",
       },
     ],
     return: {
@@ -5071,14 +5028,14 @@ export const references = [
   },
   {
     element: "exp",
-    description: "Returns Euler's number e (2.71828...) raised to the power of the n parameter. Maps to Math.exp().",
+    description:
+      "Returns Euler's number e (2.71828...) raised to the power of the n parameter. Maps to Math.exp().",
     code: "exp(n)",
     insert: "exp(${1:n})",
     syntax: [
       {
         parameter: "n: Number",
-        description:
-          "exponent to raise",
+        description: "exponent to raise",
       },
     ],
     return: {
@@ -5088,14 +5045,14 @@ export const references = [
   },
   {
     element: "floor",
-    description: "Calculates the closest int value that is less than or equal to the value of the parameter. Maps to Math.floor().",
+    description:
+      "Calculates the closest int value that is less than or equal to the value of the parameter. Maps to Math.floor().",
     code: "floor(n)",
     insert: "floor(${1:n})",
     syntax: [
       {
         parameter: "n: Number",
-        description:
-          "number to round down",
+        description: "number to round down",
       },
     ],
     return: {
@@ -5105,24 +5062,22 @@ export const references = [
   },
   {
     element: "lerp",
-    description: "Calculates a number between two numbers at a specific increment. The amt parameter is the amount to interpolate between the two values where 0.0 equal to the first point, 0.1 is very near the first point, 0.5 is half-way in between, and 1.0 is equal to the second point. If the value of amt is more than 1.0 or less than 0.0, the number will be calculated accordingly in the ratio of the two given numbers. The lerp function is convenient for creating motion along a straight path and for drawing dotted lines.",
+    description:
+      "Calculates a number between two numbers at a specific increment. The amt parameter is the amount to interpolate between the two values where 0.0 equal to the first point, 0.1 is very near the first point, 0.5 is half-way in between, and 1.0 is equal to the second point. If the value of amt is more than 1.0 or less than 0.0, the number will be calculated accordingly in the ratio of the two given numbers. The lerp function is convenient for creating motion along a straight path and for drawing dotted lines.",
     code: "lerp(start, stop, amt)",
     insert: "lerp(${1:start}, ${2:stop}, ${3:amt})",
     syntax: [
       {
         parameter: "start: Number",
-        description:
-          "first value",
+        description: "first value",
       },
       {
         parameter: "stop: Number",
-        description:
-          "second value",
+        description: "second value",
       },
       {
         parameter: "amt: Number",
-        description:
-          "number",
+        description: "number",
       },
     ],
     return: {
@@ -5132,14 +5087,14 @@ export const references = [
   },
   {
     element: "log",
-    description: "Calculates the natural logarithm (the base-e logarithm) of a number. This function expects the n parameter to be a value greater than 0.0. Maps to Math.log().",
+    description:
+      "Calculates the natural logarithm (the base-e logarithm) of a number. This function expects the n parameter to be a value greater than 0.0. Maps to Math.log().",
     code: "log(n)",
     insert: "log(${1:n})",
     syntax: [
       {
         parameter: "n: Number",
-        description:
-          "number greater than 0",
+        description: "number greater than 0",
       },
     ],
     return: {
@@ -5149,19 +5104,18 @@ export const references = [
   },
   {
     element: "mag",
-    description: "Calculates the magnitude (or length) of a vector. A vector is a direction in space commonly used in computer graphics and linear algebra. Because it has no 'start' position, the magnitude of a vector can be thought of as the distance from the coordinate 0,0 to its x,y value. Therefore, mag() is a shortcut for writing dist(0, 0, x, y).",
+    description:
+      "Calculates the magnitude (or length) of a vector. A vector is a direction in space commonly used in computer graphics and linear algebra. Because it has no 'start' position, the magnitude of a vector can be thought of as the distance from the coordinate 0,0 to its x,y value. Therefore, mag() is a shortcut for writing dist(0, 0, x, y).",
     code: "mag(a, b)",
     insert: "mag(${1:a}, ${2:b})",
     syntax: [
       {
         parameter: "a: Number",
-        description:
-          "first value",
+        description: "first value",
       },
       {
         parameter: "b: Number",
-        description:
-          "second value",
+        description: "second value",
       },
     ],
     return: {
@@ -5171,39 +5125,34 @@ export const references = [
   },
   {
     element: "map",
-    description: "Re-maps a number from one range to another. In the first example above, the number 25 is converted from a value in the range of 0 to 100 into a value that ranges from the left edge of the window (0) to the right edge (width).",
+    description:
+      "Re-maps a number from one range to another. In the first example above, the number 25 is converted from a value in the range of 0 to 100 into a value that ranges from the left edge of the window (0) to the right edge (width).",
     code: "map(value, start1, stop1, start2, stop2, [withinBounds])",
     insert: "map(${1:value}, ${2:start1}, ${3:stop1}, ${4:start2}, ${5:stop2})",
     syntax: [
       {
         parameter: "value: Number",
-        description:
-          "the incoming value to be converted",
+        description: "the incoming value to be converted",
       },
       {
         parameter: "start1: Number",
-        description:
-          "lower bound of the value's current range",
+        description: "lower bound of the value's current range",
       },
       {
         parameter: "stop1: Number",
-        description:
-          "upper bound of the value's current range",
+        description: "upper bound of the value's current range",
       },
       {
         parameter: "start2: Number",
-        description:
-          "lower bound of the value's target range",
+        description: "lower bound of the value's target range",
       },
       {
         parameter: "stop2: Number",
-        description:
-          "upper bound of the value's target range",
+        description: "upper bound of the value's target range",
       },
       {
         parameter: "withinBounds: Boolean",
-        description:
-          "constrain the value to the newly mapped range (Optional)",
+        description: "constrain the value to the newly mapped range (Optional)",
       },
     ],
     return: {
@@ -5213,24 +5162,22 @@ export const references = [
   },
   {
     element: "max",
-    description: "Determines the largest value in a sequence of numbers, and then returns that value. max() accepts any number of Number parameters, or an Array of any length.",
+    description:
+      "Determines the largest value in a sequence of numbers, and then returns that value. max() accepts any number of Number parameters, or an Array of any length.",
     code: "max(n0, n1), max(nums)",
     insert: "max(${1:n0}, ${2:n1})",
     syntax: [
       {
         parameter: "n0: Number",
-        description:
-          "Number to compare",
+        description: "Number to compare",
       },
       {
         parameter: "n1: Number",
-        description:
-          "Number to compare",
+        description: "Number to compare",
       },
       {
         parameter: "nums: Number[]",
-        description:
-          "Numbers to compare",
+        description: "Numbers to compare",
       },
     ],
     return: {
@@ -5240,24 +5187,22 @@ export const references = [
   },
   {
     element: "min",
-    description: "Determines the smallest value in a sequence of numbers, and then returns that value. min() accepts any number of Number parameters, or an Array of any length.",
+    description:
+      "Determines the smallest value in a sequence of numbers, and then returns that value. min() accepts any number of Number parameters, or an Array of any length.",
     code: "min(n0, n1), min(nums)",
     insert: "min(${1:n0}, ${2:n1})",
     syntax: [
       {
         parameter: "n0: Number",
-        description:
-          "Number to compare",
+        description: "Number to compare",
       },
       {
         parameter: "n1: Number",
-        description:
-          "Number to compare",
+        description: "Number to compare",
       },
       {
         parameter: "nums: Number[]",
-        description:
-          "Numbers to compare",
+        description: "Numbers to compare",
       },
     ],
     return: {
@@ -5267,24 +5212,22 @@ export const references = [
   },
   {
     element: "norm",
-    description: "Normalizes a number from another range into a value between 0 and 1. Identical to map(value, low, high, 0, 1). Numbers outside of the range are not clamped to 0 and 1, because out-of-range values are often intentional and useful.",
+    description:
+      "Normalizes a number from another range into a value between 0 and 1. Identical to map(value, low, high, 0, 1). Numbers outside of the range are not clamped to 0 and 1, because out-of-range values are often intentional and useful.",
     code: "norm(value, start, stop)",
     insert: "norm(${1:value}, ${2:start}, ${3:stop})",
     syntax: [
       {
         parameter: "value: Number",
-        description:
-          "incoming value to be normalized",
+        description: "incoming value to be normalized",
       },
       {
         parameter: "start: Number",
-        description:
-          "lower bound of the value's current range",
+        description: "lower bound of the value's current range",
       },
       {
         parameter: "stop: Number",
-        description:
-          "upper bound of the value's current range",
+        description: "upper bound of the value's current range",
       },
     ],
     return: {
@@ -5294,19 +5237,18 @@ export const references = [
   },
   {
     element: "pow",
-    description: "Facilitates exponential expressions. The pow() function is an efficient way of multiplying numbers by themselves (or their reciprocals) in large quantities. For example, pow(3, 5) is equivalent to the expression 3 x 3 x 3 x 3 x 3 and pow(3, -5) is equivalent to 1 / 3 x 3 x 3 x 3 x 3. Maps to Math.pow().",
+    description:
+      "Facilitates exponential expressions. The pow() function is an efficient way of multiplying numbers by themselves (or their reciprocals) in large quantities. For example, pow(3, 5) is equivalent to the expression 3 x 3 x 3 x 3 x 3 and pow(3, -5) is equivalent to 1 / 3 x 3 x 3 x 3 x 3. Maps to Math.pow().",
     code: "pow(n, e)",
     insert: "pow(${1:n}, ${2:e})",
     syntax: [
       {
         parameter: "n: Number",
-        description:
-          "base of the exponential expression",
+        description: "base of the exponential expression",
       },
       {
         parameter: "e: Number",
-        description:
-          "power by which to raise the base",
+        description: "power by which to raise the base",
       },
     ],
     return: {
@@ -5316,14 +5258,14 @@ export const references = [
   },
   {
     element: "round",
-    description: "Calculates the integer closest to the n parameter. For example, round(133.8) returns the value 134. Maps to Math.round().",
+    description:
+      "Calculates the integer closest to the n parameter. For example, round(133.8) returns the value 134. Maps to Math.round().",
     code: "round(n, [decimals])",
     insert: "round(${1:n})",
     syntax: [
       {
         parameter: "n: Number",
-        description:
-          "number to round",
+        description: "number to round",
       },
       {
         parameter: "decimals: Number",
@@ -5338,14 +5280,14 @@ export const references = [
   },
   {
     element: "sq",
-    description: "Squares a number (multiplies a number by itself). The result is always a positive number, as multiplying two negative numbers always yields a positive result. For example, -1 * -1 = 1.",
+    description:
+      "Squares a number (multiplies a number by itself). The result is always a positive number, as multiplying two negative numbers always yields a positive result. For example, -1 * -1 = 1.",
     code: "sq(n)",
     insert: "sq(${1:n})",
     syntax: [
       {
         parameter: "n: Number",
-        description:
-          "number to square",
+        description: "number to square",
       },
     ],
     return: {
@@ -5355,14 +5297,14 @@ export const references = [
   },
   {
     element: "sqrt",
-    description: "Calculates the square root of a number. The square root of a number is always positive, even though there may be a valid negative root. The square root s of number a is such that s*s = a. It is the opposite of squaring. Maps to Math.sqrt().",
+    description:
+      "Calculates the square root of a number. The square root of a number is always positive, even though there may be a valid negative root. The square root s of number a is such that s*s = a. It is the opposite of squaring. Maps to Math.sqrt().",
     code: "sqrt(n)",
     insert: "sqrt(${1:n})",
     syntax: [
       {
         parameter: "n: Number",
-        description:
-          "non-negative number to square root",
+        description: "non-negative number to square root",
       },
     ],
     return: {
@@ -5378,8 +5320,7 @@ export const references = [
     syntax: [
       {
         parameter: "num: Number",
-        description:
-          "Number whose fractional part needs to be found out",
+        description: "Number whose fractional part needs to be found out",
       },
     ],
     return: {
@@ -5389,24 +5330,22 @@ export const references = [
   },
   {
     element: "createVector",
-    description: "Creates a new p5.Vector (the datatype for storing vectors). This provides a two or three dimensional vector, specifically a Euclidean (also known as geometric) vector. A vector is an entity that has both magnitude and direction.",
+    description:
+      "Creates a new p5.Vector (the datatype for storing vectors). This provides a two or three dimensional vector, specifically a Euclidean (also known as geometric) vector. A vector is an entity that has both magnitude and direction.",
     code: "createVector([x], [y], [z])",
     insert: "createVector()",
     syntax: [
       {
         parameter: "x: Number",
-        description:
-          "x component of the vector (Optional)",
+        description: "x component of the vector (Optional)",
       },
       {
         parameter: "y: Number",
-        description:
-          "y component of the vector (Optional)",
+        description: "y component of the vector (Optional)",
       },
       {
         parameter: "z: Number",
-        description:
-          "z component of the vector (Optional)",
+        description: "z component of the vector (Optional)",
       },
     ],
     return: {
@@ -5416,95 +5355,91 @@ export const references = [
   },
   {
     element: "p5.Vector",
-    description: "A class to describe a two or three dimensional vector, specifically a Euclidean (also known as geometric) vector. A vector is an entity that has both magnitude and direction. The datatype, however, stores the components of the vector (x, y for 2D, and x, y, z for 3D).",
+    description:
+      "A class to describe a two or three dimensional vector, specifically a Euclidean (also known as geometric) vector. A vector is an entity that has both magnitude and direction. The datatype, however, stores the components of the vector (x, y for 2D, and x, y, z for 3D).",
     code: "new p5.Vector([x], [y], [z])",
     insert: "new p5.Vector()",
     syntax: [
       {
         parameter: "x: Number",
-        description:
-          "x component of the vector (Optional)",
+        description: "x component of the vector (Optional)",
       },
       {
         parameter: "y: Number",
-        description:
-          "y component of the vector (Optional)",
+        description: "y component of the vector (Optional)",
       },
       {
         parameter: "z: Number",
-        description:
-          "z component of the vector (Optional)",
+        description: "z component of the vector (Optional)",
       },
     ],
   },
   {
     element: "noise",
-    description: "Returns the Perlin noise value at specified coordinates. Perlin noise is a random sequence generator producing a more naturally ordered, harmonic succession of numbers compared to the standard random() function. It was invented by Ken Perlin in the 1980s and been used since in graphical applications to produce procedural textures, natural motion, shapes, terrains etc.",
+    description:
+      "Returns the Perlin noise value at specified coordinates. Perlin noise is a random sequence generator producing a more naturally ordered, harmonic succession of numbers compared to the standard random() function. It was invented by Ken Perlin in the 1980s and been used since in graphical applications to produce procedural textures, natural motion, shapes, terrains etc.",
     code: "noise(x, [y], [z])",
     insert: "noise(${1:x})",
     syntax: [
       {
         parameter: "x: Number",
-        description:
-          "x-coordinate in noise space",
+        description: "x-coordinate in noise space",
       },
       {
         parameter: "y: Number",
-        description:
-          "y-coordinate in noise space (Optional)",
+        description: "y-coordinate in noise space (Optional)",
       },
       {
         parameter: "z: Number",
-        description:
-          "z-coordinate in noise space (Optional)",
+        description: "z-coordinate in noise space (Optional)",
       },
     ],
     return: {
       type: "Number",
-      description: "Perlin noise value (between 0 and 1) at specified coordinates",
+      description:
+        "Perlin noise value (between 0 and 1) at specified coordinates",
     },
   },
   {
     element: "noiseDetail",
-    description: "Adjusts the character and level of detail produced by the Perlin noise function. Similar to harmonics in physics, noise is computed over several octaves. Lower octaves contribute more to the output signal and as such define the overall intensity of the noise, whereas higher octaves create finer grained details in the noise sequence. By default, noise is computed over 4 octaves with each octave contributing exactly half than its predecessor, starting at 50% strength for the 1st octave.",
+    description:
+      "Adjusts the character and level of detail produced by the Perlin noise function. Similar to harmonics in physics, noise is computed over several octaves. Lower octaves contribute more to the output signal and as such define the overall intensity of the noise, whereas higher octaves create finer grained details in the noise sequence. By default, noise is computed over 4 octaves with each octave contributing exactly half than its predecessor, starting at 50% strength for the 1st octave.",
     code: "noiseDetail(lod, falloff)",
     insert: "noiseDetail(${1:lod}, ${2:falloff})",
     syntax: [
       {
         parameter: "lod: Number",
-        description:
-          "number of octaves to be used by the noise",
+        description: "number of octaves to be used by the noise",
       },
       {
         parameter: "falloff: Number",
-        description:
-          "falloff factor for each octave",
+        description: "falloff factor for each octave",
       },
     ],
   },
   {
     element: "noiseSeed",
-    description: "Sets the seed value for noise(). By default, noise() produces different results each time the program is run. Set the value parameter to a constant to return the same pseudo-random numbers each time the software is run.",
+    description:
+      "Sets the seed value for noise(). By default, noise() produces different results each time the program is run. Set the value parameter to a constant to return the same pseudo-random numbers each time the software is run.",
     code: "noiseSeed(seed)",
     insert: "noiseSeed(${1:seed})",
     syntax: [
       {
         parameter: "seed: Number",
-        description:
-          "the seed value",
+        description: "the seed value",
       },
     ],
   },
   {
     element: "randomSeed",
-    description: "Sets the seed value for random(). By default, random() produces different results each time the program is run. Set the seed parameter to a constant to return the same pseudo-random numbers each time the software is run.",
+    description:
+      "Sets the seed value for random(). By default, random() produces different results each time the program is run. Set the seed parameter to a constant to return the same pseudo-random numbers each time the software is run.",
     code: "randomSeed(seed)",
     insert: "randomSeed(${1:seed})",
     syntax: [
       {
         parameter: "seed: Number",
-        description:
-          "the seed value",
+        description: "the seed value",
       },
     ],
   },
@@ -5516,18 +5451,15 @@ export const references = [
     syntax: [
       {
         parameter: "min: Number",
-        description:
-          "the lower bound (inclusive) (Optional)",
+        description: "the lower bound (inclusive) (Optional)",
       },
       {
         parameter: "max: Number",
-        description:
-          "the upper bound (exclusive) (Optional)",
+        description: "the upper bound (exclusive) (Optional)",
       },
       {
         parameter: "choices: Array",
-        description:
-          "the array to choose from",
+        description: "the array to choose from",
       },
     ],
     return: {
@@ -5537,19 +5469,18 @@ export const references = [
   },
   {
     element: "randomGaussian",
-    description: "Returns a random number fitting a Gaussian, or normal, distribution. There is theoretically no minimum or maximum value that randomGaussian() might return. Rather, there is just a very low probability that values far from the mean will be returned; and a higher probability that numbers near the mean will be returned. Takes either 0, 1 or 2 arguments. If no args, returns a mean of 0 and standard deviation of 1.",
+    description:
+      "Returns a random number fitting a Gaussian, or normal, distribution. There is theoretically no minimum or maximum value that randomGaussian() might return. Rather, there is just a very low probability that values far from the mean will be returned; and a higher probability that numbers near the mean will be returned. Takes either 0, 1 or 2 arguments. If no args, returns a mean of 0 and standard deviation of 1.",
     code: "randomGaussian([mean], [sd])",
     insert: "randomGaussian()",
     syntax: [
       {
         parameter: "mean: Number",
-        description:
-          "the mean (Optional)",
+        description: "the mean (Optional)",
       },
       {
         parameter: "sd: Number",
-        description:
-          "the standard deviation (Optional)",
+        description: "the standard deviation (Optional)",
       },
     ],
     return: {
@@ -5559,14 +5490,14 @@ export const references = [
   },
   {
     element: "acos",
-    description: "The inverse of cos(), returns the arc cosine of a value. This function expects the values in the range of -1 to 1 and values are returned in the range 0 to PI (3.1415927) if the angleMode is RADIANS or 0 to 180 if the angle mode is DEGREES.",
+    description:
+      "The inverse of cos(), returns the arc cosine of a value. This function expects the values in the range of -1 to 1 and values are returned in the range 0 to PI (3.1415927) if the angleMode is RADIANS or 0 to 180 if the angle mode is DEGREES.",
     code: "acos(value)",
     insert: "acos(${1:value})",
     syntax: [
       {
         parameter: "value: Number",
-        description:
-          "the value whose arc cosine is to be returned",
+        description: "the value whose arc cosine is to be returned",
       },
     ],
     return: {
@@ -5576,14 +5507,14 @@ export const references = [
   },
   {
     element: "asin",
-    description: "The inverse of sin(), returns the arc sine of a value. This function expects the values in the range of -1 to 1 and values are returned in the range -PI/2 to PI/2 if the angleMode is RADIANS or -90 to 90 if the angle mode is DEGREES.",
+    description:
+      "The inverse of sin(), returns the arc sine of a value. This function expects the values in the range of -1 to 1 and values are returned in the range -PI/2 to PI/2 if the angleMode is RADIANS or -90 to 90 if the angle mode is DEGREES.",
     code: "asin(value)",
     insert: "asin(${1:value})",
     syntax: [
       {
         parameter: "value: Number",
-        description:
-          "the value whose arc sine is to be returned",
+        description: "the value whose arc sine is to be returned",
       },
     ],
     return: {
@@ -5593,14 +5524,14 @@ export const references = [
   },
   {
     element: "atan",
-    description: "The inverse of tan(), returns the arc tangent of a value. This function expects the values in the range of -Infinity to Infinity (exclusive) and values are returned in the range -PI/2 to PI/2 if the angleMode is RADIANS or -90 to 90 if the angle mode is DEGREES.",
+    description:
+      "The inverse of tan(), returns the arc tangent of a value. This function expects the values in the range of -Infinity to Infinity (exclusive) and values are returned in the range -PI/2 to PI/2 if the angleMode is RADIANS or -90 to 90 if the angle mode is DEGREES.",
     code: "atan(value)",
     insert: "atan(${1:value})",
     syntax: [
       {
         parameter: "value: Number",
-        description:
-          "the value whose arc tangent is to be returned",
+        description: "the value whose arc tangent is to be returned",
       },
     ],
     return: {
@@ -5610,19 +5541,18 @@ export const references = [
   },
   {
     element: "atan2",
-    description: "Calculates the angle (in radians) from a specified point to the coordinate origin as measured from the positive x-axis. Values are returned as a float in the range from PI to -PI if the angleMode is RADIANS or 180 to -180 if the angleMode is DEGREES. The atan2() function is most often used for orienting geometry to the position of the cursor. Note: The y-coordinate of the point is the first parameter, and the x-coordinate is the second parameter, due the the structure of calculating the tangent.",
+    description:
+      "Calculates the angle (in radians) from a specified point to the coordinate origin as measured from the positive x-axis. Values are returned as a float in the range from PI to -PI if the angleMode is RADIANS or 180 to -180 if the angleMode is DEGREES. The atan2() function is most often used for orienting geometry to the position of the cursor. Note: The y-coordinate of the point is the first parameter, and the x-coordinate is the second parameter, due the the structure of calculating the tangent.",
     code: "atan2(y, x)",
     insert: "atan2(${1:y}, ${2:x})",
     syntax: [
       {
         parameter: "y: Number",
-        description:
-          "y-coordinate of the point",
+        description: "y-coordinate of the point",
       },
       {
         parameter: "x: Number",
-        description:
-          "x-coordinate of the point",
+        description: "x-coordinate of the point",
       },
     ],
     return: {
@@ -5632,14 +5562,14 @@ export const references = [
   },
   {
     element: "cos",
-    description: "Calculates the cosine of an angle. This function takes into account the current angleMode. Values are returned in the range -1 to 1.",
+    description:
+      "Calculates the cosine of an angle. This function takes into account the current angleMode. Values are returned in the range -1 to 1.",
     code: "cos(angle)",
     insert: "cos(${1:angle})",
     syntax: [
       {
         parameter: "angle: Number",
-        description:
-          "the angle",
+        description: "the angle",
       },
     ],
     return: {
@@ -5649,14 +5579,14 @@ export const references = [
   },
   {
     element: "sin",
-    description: "Calculates the sine of an angle. This function takes into account the current angleMode. Values are returned in the range -1 to 1.",
+    description:
+      "Calculates the sine of an angle. This function takes into account the current angleMode. Values are returned in the range -1 to 1.",
     code: "sin(angle)",
     insert: "sin(${1:angle})",
     syntax: [
       {
         parameter: "angle: Number",
-        description:
-          "the angle",
+        description: "the angle",
       },
     ],
     return: {
@@ -5666,14 +5596,14 @@ export const references = [
   },
   {
     element: "tan",
-    description: "Calculates the tangent of an angle. This function takes into account the current angleMode. Values are returned in the range of all real numbers.",
+    description:
+      "Calculates the tangent of an angle. This function takes into account the current angleMode. Values are returned in the range of all real numbers.",
     code: "tan(angle)",
     insert: "tan(${1:angle})",
     syntax: [
       {
         parameter: "angle: Number",
-        description:
-          "the angle",
+        description: "the angle",
       },
     ],
     return: {
@@ -5683,14 +5613,14 @@ export const references = [
   },
   {
     element: "degrees",
-    description: "Converts a radian measurement to its corresponding value in degrees. Radians and degrees are two ways of measuring the same thing. There are 360 degrees in a circle and 2*PI radians in a circle. For example, 90° = PI/2 = 1.5707964. This function does not take into account the current angleMode.",
+    description:
+      "Converts a radian measurement to its corresponding value in degrees. Radians and degrees are two ways of measuring the same thing. There are 360 degrees in a circle and 2*PI radians in a circle. For example, 90° = PI/2 = 1.5707964. This function does not take into account the current angleMode.",
     code: "degrees(radians)",
     insert: "degrees(${1:radians})",
     syntax: [
       {
         parameter: "radians: Number",
-        description:
-          "the radians value to convert to degrees",
+        description: "the radians value to convert to degrees",
       },
     ],
     return: {
@@ -5700,14 +5630,14 @@ export const references = [
   },
   {
     element: "radians",
-    description: "Converts a degree measurement to its corresponding value in radians. Radians and degrees are two ways of measuring the same thing. There are 360 degrees in a circle and 2*PI radians in a circle. For example, 90° = PI/2 = 1.5707964. This function does not take into account the current angleMode.",
+    description:
+      "Converts a degree measurement to its corresponding value in radians. Radians and degrees are two ways of measuring the same thing. There are 360 degrees in a circle and 2*PI radians in a circle. For example, 90° = PI/2 = 1.5707964. This function does not take into account the current angleMode.",
     code: "radians(degrees)",
     insert: "radians(${1:degrees})",
     syntax: [
       {
         parameter: "degrees: Number",
-        description:
-          "the degree value to convert to radians",
+        description: "the degree value to convert to radians",
       },
     ],
     return: {
@@ -5717,15 +5647,1005 @@ export const references = [
   },
   {
     element: "angleMode",
-    description: "Sets the current mode of p5 to given mode. Default mode is RADIANS.",
+    description:
+      "Sets the current mode of p5 to given mode. Default mode is RADIANS.",
     code: "angleMode(mode)",
     insert: "angleMode(${1:mode})",
     syntax: [
       {
         parameter: "mode: Constant",
-        description:
-          "either RADIANS or DEGREES",
+        description: "either RADIANS or DEGREES",
       },
     ],
+  },
+  {
+    element: "textAlign",
+    description:
+      "Sets the current alignment for drawing text. Accepts two arguments: horizAlign (LEFT, CENTER, or RIGHT) and vertAlign (TOP, BOTTOM, CENTER, or BASELINE).",
+    code: "textAlign(horizAlign, [vertAlign]), textAlign()",
+    insert: "textAlign(${1:horizAlign})",
+    syntax: [
+      {
+        parameter: "horizAlign: Constant",
+        description: "horizontal alignment, either LEFT, CENTER, or RIGHT",
+      },
+      {
+        parameter: "vertAlign: Constant",
+        description:
+          "vertical alignment, either TOP, BOTTOM, CENTER, or BASELINE (Optional)",
+      },
+    ],
+  },
+  {
+    element: "textLeading",
+    description:
+      "Sets/gets the spacing, in pixels, between lines of text. This setting will be used in all subsequent calls to the text() function.",
+    code: "textLeading(leading), textLeading()",
+    insert: "textLeading(${1:leading})",
+    syntax: [
+      {
+        parameter: "leading: Number",
+        description: "the size in pixels for spacing between lines",
+      },
+    ],
+  },
+  {
+    element: "textSize",
+    description:
+      "Sets/gets the current font size. This size will be used in all subsequent calls to the text() function. Font size is measured in pixels.",
+    code: "textSize(theSize), textSize()",
+    insert: "textSize(${1:theSize})",
+    syntax: [
+      {
+        parameter: "theSize: Number",
+        description: "the size of the letters in units of pixels",
+      },
+    ],
+  },
+  {
+    element: "textStyle",
+    description:
+      "Sets/gets the style of the text for system fonts to NORMAL, ITALIC, BOLD or BOLDITALIC. Note: this may be is overridden by CSS styling. For non-system fonts (opentype, truetype, etc.) please load styled fonts instead.",
+    code: "textStyle(theStyle), textStyle()",
+    insert: "textStyle(${1:theStyle})",
+    syntax: [
+      {
+        parameter: "theStyle: Constant",
+        description:
+          "styling for text, either NORMAL, ITALIC, BOLD or BOLDITALIC",
+      },
+    ],
+  },
+  {
+    element: "textWidth",
+    description:
+      "Calculates and returns the width of any character or text string.",
+    code: "textWidth(theText)",
+    insert: "textWidth(${1:theText})",
+    syntax: [
+      {
+        parameter: "theText: String",
+        description: "the String of characters to measure",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "the calculated width",
+    },
+  },
+  {
+    element: "textAscent",
+    description:
+      "Returns the ascent of the current font at its current size. The ascent represents the distance, in pixels, of the tallest character above the baseline.",
+    code: "textAscent()",
+    insert: "textAscent()",
+    syntax: [],
+    return: {
+      type: "Number",
+      description: "",
+    },
+  },
+  {
+    element: "textDescent",
+    description:
+      "Returns the descent of the current font at its current size. The descent represents the distance, in pixels, of the character with the longest descender below the baseline.",
+    code: "textDescent()",
+    insert: "textDescent()",
+    syntax: [],
+    return: {
+      type: "Number",
+      description: "the descent of the current font at its current size",
+    },
+  },
+  {
+    element: "textWrap",
+    description:
+      "Specifies how lines of text are wrapped within a text box. This requires a max-width set on the text area, specified in text() as parameter x2.",
+    code: "textWrap(wrapStyle)",
+    insert: "textWrap(${1:wrapStyle})",
+    syntax: [
+      {
+        parameter: "wrapStyle: Constant",
+        description: "text wrapping style, either WORD or CHAR",
+      },
+    ],
+    return: {
+      type: "String",
+      description: "wrapStyle",
+    },
+  },
+  {
+    element: "loadFont",
+    description:
+      "Loads an opentype font file (.otf, .ttf) from a file or a URL, and returns a PFont Object. This method is asynchronous, meaning it may not finish before the next line in your sketch is executed.",
+    code: "loadFont(path, [callback], [onError])",
+    insert: "loadFont(${1:path})",
+    syntax: [
+      {
+        parameter: "path: String",
+        description: "name of the file or url to load",
+      },
+      {
+        parameter: "callback: function",
+        description:
+          "function to be executed after loadFont() completes (Optional)",
+      },
+      {
+        parameter: "onError: function",
+        description: "function to be executed if an error occurs (Optional)",
+      },
+    ],
+    return: {
+      type: "p5.Font",
+      description: "p5.Font object",
+    },
+  },
+  {
+    element: "text",
+    description:
+      "Draws text to the screen. Displays the information specified in the first parameter on the screen in the position specified by the additional parameters. A default font will be used unless a font is set with the textFont() function and a default size will be used unless a font is set with textSize(). Change the color of the text with the fill() function. Change the outline of the text with the stroke() and strokeWeight() functions.",
+    code: "text(str, x, y, [x2], [y2])",
+    insert: "text(${1:str}, ${2:x}, ${3:y})",
+    syntax: [
+      {
+        parameter: "str: String|Object|Array|Number|Boolean",
+        description: "the alphanumeric symbols to be displayed",
+      },
+      {
+        parameter: "x: Number",
+        description: "x-coordinate of text",
+      },
+      {
+        parameter: "y: Number",
+        description: "y-coordinate of text",
+      },
+      {
+        parameter: "x2: Number",
+        description: "by default, the width of the text box (Optional)",
+      },
+      {
+        parameter: "y2: Number",
+        description: "by default, the height of the text box (Optional)",
+      },
+    ],
+  },
+  {
+    element: "textFont",
+    description:
+      "Sets the current font that will be drawn with the text() function. If textFont() is called without any argument, it will return the current font if one has been set already. If not, it will return the name of the default font as a string. If textFont() is called with a font to use, it will return the p5 object.",
+    code: "textFont(font, [size]), textFont()",
+    insert: "textFont(${1:font})",
+    syntax: [
+      {
+        parameter: "font: Object|String",
+        description:
+          "a font loaded via loadFont(), or a String representing a web safe font (a font that is generally available across all systems)",
+      },
+      {
+        parameter: "size: Number",
+        description: "the font size to use (Optional)",
+      },
+    ],
+    return: {
+      type: "Object",
+      description: "the current font / p5 Object",
+    },
+  },
+  {
+    element: "orbitControl",
+    description:
+      "Allows movement around a 3D sketch using a mouse or trackpad. Left-clicking and dragging will rotate the camera position about the center of the sketch, right-clicking and dragging will pan the camera position without rotation, and using the mouse wheel (scrolling) will move the camera closer or further from the center of the sketch.",
+    code: "orbitControl([sensitivityX], [sensitivityY], [sensitivityZ])",
+    insert: "orbitControl()",
+    syntax: [
+      {
+        parameter: "sensitivityX: Number",
+        description: "sensitivity to mouse movement along X axis (Optional)",
+      },
+      {
+        parameter: "sensitivityY: Number",
+        description: "sensitivity to mouse movement along Y axis (Optional)",
+      },
+      {
+        parameter: "sensitivityZ: Number",
+        description: "sensitivity to mouse movement along Z axis (Optional)",
+      },
+    ],
+  },
+  {
+    element: "debugMode",
+    description:
+      "It helps visualize 3D space by adding a grid to indicate where the ‘ground’ is in a sketch and an axes icon which indicates the +X, +Y, and +Z directions. This function can be called without parameters to create a default grid and axes icon, or it can be called according to the examples above to customize the size and position of the grid and/or axes icon. The grid is drawn using the most recently set stroke color and weight. To specify these parameters, add a call to stroke() and strokeWeight() just before the end of the draw() loop.",
+    code: "debugMode(), debugMode(mode), debugMode(mode, [gridSize], [gridDivisions], [xOff], [yOff], [zOff]), debugMode(mode, [axesSize], [xOff], [yOff], [zOff]), debugMode([gridSize], [gridDivisions], [gridXOff], [gridYOff], [gridZOff], [axesSize], [axesXOff], [axesYOff], [axesZOff])",
+    insert: "debugMode(${1:mode})",
+    syntax: [
+      {
+        parameter: "mode: Constant",
+        description: "either GRID or AXES",
+      },
+      {
+        parameter: "gridSize: Number",
+        description: "size of one side of the grid (Optional)",
+      },
+      {
+        parameter: "gridDivisions: Number",
+        description: "number of divisions in the grid (Optional)",
+      },
+      {
+        parameter: "xOff: Number",
+        description: "X axis offset from origin (0,0,0) (Optional)",
+      },
+      {
+        parameter: "yOff: Number",
+        description: "Y axis offset from origin (0,0,0) (Optional)",
+      },
+      {
+        parameter: "zOff: Number",
+        description: "Z axis offset from origin (0,0,0) (Optional)",
+      },
+      {
+        parameter: "axesSize: Number",
+        description: "size of axes icon (Optional)",
+      },
+      {
+        parameter: "gridXOff: Number",
+        description: "(Optional)",
+      },
+      {
+        parameter: "gridYOff: Number",
+        description: "(Optional)",
+      },
+      {
+        parameter: "gridZOff: Number",
+        description: "(Optional)",
+      },
+      {
+        parameter: "axesXOff: Number",
+        description: "(Optional)",
+      },
+      {
+        parameter: "axesYOff: Number",
+        description: "(Optional)",
+      },
+      {
+        parameter: "axesZOff: Number",
+        description: "(Optional)",
+      },
+    ],
+  },
+  {
+    element: "noDebugMode",
+    description: "Turns off debugMode() in a 3D sketch.",
+    code: "noDebugMode()",
+    insert: "noDebugMode()",
+    syntax: [],
+  },
+  {
+    element: "ambientLight",
+    description:
+      "Creates an ambient light with a color. Ambient light is light that comes from everywhere on the canvas. It has no particular source.",
+    code: "ambientLight(v1, v2, v3, [alpha]), ambientLight(value), ambientLight(gray, [alpha]), ambientLight(values), ambientLight(color)",
+    insert: "ambientLight(${1:v1}, ${2:v2}, ${3:v3})",
+    syntax: [
+      {
+        parameter: "v1: Number",
+        description: "red or hue value relative to the current color range",
+      },
+      {
+        parameter: "v2: Number",
+        description:
+          "green or saturation value relative to the current color range",
+      },
+      {
+        parameter: "v3: Number",
+        description:
+          "blue or brightness value relative to the current color range",
+      },
+      {
+        parameter: "alpha: Number",
+        description: "he alpha value (Optional)",
+      },
+      {
+        parameter: "value: String",
+        description: "a color string",
+      },
+      {
+        parameter: "gray: Number",
+        description: "a gray value",
+      },
+      {
+        parameter: "values: Number[]",
+        description:
+          "an array containing the red,green,blue & and alpha components of the color",
+      },
+      {
+        parameter: "color: p5.Color",
+        description: "the ambient light color",
+      },
+    ],
+  },
+  {
+    element: "specularColor",
+    description:
+      "Set's the color of the specular highlight when using a specular material and specular light.",
+    code: "specularColor(v1, v2, v3), specularColor(value), specularColor(gray), specularColor(values), specularColor(color)",
+    insert: "specularColor(${1:v1}, ${2:v2}, ${3:v3})",
+    syntax: [
+      {
+        parameter: "v1: Number",
+        description: "red or hue value relative to the current color range",
+      },
+      {
+        parameter: "v2: Number",
+        description:
+          "green or saturation value relative to the current color range",
+      },
+      {
+        parameter: "v3: Number",
+        description:
+          "blue or brightness value relative to the current color range",
+      },
+      {
+        parameter: "value: String",
+        description: "a color string",
+      },
+      {
+        parameter: "gray: Number",
+        description: "a gray value",
+      },
+      {
+        parameter: "values: Number[]",
+        description:
+          "an array containing the red,green,blue & and alpha components of the color",
+      },
+      {
+        parameter: "color: p5.Color",
+        description: "the ambient light color",
+      },
+    ],
+  },
+  {
+    element: "directionalLight",
+    description:
+      "Creates a directional light with a color and a direction. A maximum of 5 directionalLight can be active at one time",
+    code: "directionalLight(v1, v2, v3, position), directionalLight(color, x, y, z), directionalLight(color, position), directionalLight(v1, v2, v3, x, y, z)",
+    insert: "directionalLight(${1:v1}, ${2:v2}, ${3:v3}, ${4:position})",
+    syntax: [
+      {
+        parameter: "v1: Number",
+        description: "red or hue value relative to the current color range",
+      },
+      {
+        parameter: "v2: Number",
+        description:
+          "green or saturation value relative to the current color range",
+      },
+      {
+        parameter: "v3: Number",
+        description:
+          "blue or brightness value relative to the current color range",
+      },
+      {
+        parameter: "position: p5.Vector",
+        description: "the direction of the light",
+      },
+      {
+        parameter: "color: Number[]|String|p5.Color",
+        description: "color Array, CSS color string, or p5.Color value",
+      },
+      {
+        parameter: "x: Number",
+        description: "x axis direction",
+      },
+      {
+        parameter: "y: Number",
+        description: "y axis direction",
+      },
+      {
+        parameter: "z: Number",
+        description: "z axis direction",
+      },
+    ],
+  },
+  {
+    element: "pointLight",
+    description:
+      "Creates a point light with a color and a light position. A maximum of 5 pointLight can be active at one time",
+    code: "pointLight(v1, v2, v3, x, y, z), pointLight(v1, v2, v3, position), pointLight(color, x, y, z), pointLight(color, position)",
+    insert: "pointLight(${1:v1}, ${2:v2}, ${3:v3}, ${4:position})",
+    syntax: [
+      {
+        parameter: "v1: Number",
+        description: "red or hue value relative to the current color range",
+      },
+      {
+        parameter: "v2: Number",
+        description:
+          "green or saturation value relative to the current color range",
+      },
+      {
+        parameter: "v3: Number",
+        description:
+          "blue or brightness value relative to the current color range",
+      },
+      {
+        parameter: "x: Number",
+        description: "x axis direction",
+      },
+      {
+        parameter: "y: Number",
+        description: "y axis direction",
+      },
+      {
+        parameter: "z: Number",
+        description: "z axis direction",
+      },
+      {
+        parameter: "position: p5.Vector",
+        description: "the position of the light",
+      },
+      {
+        parameter: "color: Number[]|String|p5.Color",
+        description: "color Array, CSS color string, or p5.Color value",
+      },
+    ],
+  },
+  {
+    element: "lights",
+    description:
+      "Sets the default ambient and directional light. The defaults are ambientLight(128, 128, 128) and directionalLight(128, 128, 128, 0, 0, -1). ",
+    code: "lights()",
+    insert: "lights()",
+    syntax: [],
+  },
+  {
+    element: "lightFalloff",
+    description:
+      "Sets the falloff rates for point lights. It affects only the elements which are created after it in the code. The default value is lightFalloff(1.0, 0.0, 0.0), and the parameters are used to calculate the falloff with the following equation: d = distance from light position to vertex position, falloff = 1 / (CONSTANT + d * LINEAR + ( d * d ) * QUADRATIC)",
+    code: "lightFalloff(constant, linear, quadratic)",
+    insert: "lightFalloff(${1:constant}, ${2:linear}, ${3:quadratic})",
+    syntax: [
+      {
+        parameter: "constant: Number",
+        description: "constant value for determining falloff",
+      },
+      {
+        parameter: "linear: Number",
+        description:
+          "linear value for determining falloff",
+      },
+      {
+        parameter: "quadratic: Number",
+        description:
+          "quadratic value for determining falloff",
+      },
+    ],
+  },
+  {
+    element: "spotLight",
+    description:
+      "Creates a spotlight with a given color, position, direction of light, angle and concentration. Here, angle refers to the opening or aperture of the cone of the spotlight, and concentration is used to focus the light towards the center. Both angle and concentration are optional, but if you want to provide concentration, you will also have to specify the angle.",
+    code: "spotLight(v1, v2, v3, x, y, z, rx, ry, rz, [angle], [conc]), spotLight(color, position, direction, [angle], [conc]), spotLight(v1, v2, v3, position, direction, [angle], [conc]), spotLight(color, x, y, z, direction, [angle], [conc]), spotLight(color, position, rx, ry, rz, [angle], [conc]), spotLight(v1, v2, v3, x, y, z, direction, [angle], [conc]), spotLight(v1, v2, v3, position, rx, ry, rz, [angle], [conc]), spotLight(color, x, y, z, rx, ry, rz, [angle], [conc])",
+    insert: "spotLight(${1:v1}, ${2:v2}, ${3:v3}, ${4:x}, ${5:y}, ${6:z}, ${7:rx}, ${8:ry}, ${9:rz}",
+    syntax: [
+      {
+        parameter: "v1: Number",
+        description: "red or hue value relative to the current color range",
+      },
+      {
+        parameter: "v2: Number",
+        description:
+          "green or saturation value relative to the current color range",
+      },
+      {
+        parameter: "v3: Number",
+        description:
+          "blue or brightness value relative to the current color range",
+      },
+      {
+        parameter: "x: Number",
+        description: "x axis direction",
+      },
+      {
+        parameter: "y: Number",
+        description: "y axis direction",
+      },
+      {
+        parameter: "z: Number",
+        description: "z axis direction",
+      },
+      {
+        parameter: "rx: Number",
+        description: "x axis direction of light",
+      },
+      {
+        parameter: "ry: Number",
+        description: "y axis direction of light",
+      },
+      {
+        parameter: "rz: Number",
+        description: "z axis direction of light",
+      },
+      {
+        parameter: "angle: Number",
+        description: "optional parameter for angle. Defaults to PI/3 (Optional)",
+      },
+      {
+        parameter: "conc: Number",
+        description: "optional parameter for concentration. Defaults to 100 (Optional)",
+      },
+      {
+        parameter: "color: Number[]|String|p5.Color",
+        description: "color Array, CSS color string, or p5.Color value",
+      },
+      {
+        parameter: "position: p5.Vector",
+        description: "the position of the light",
+      },
+      {
+        parameter: "direction: p5.Vector",
+        description: "the direction of the light",
+      },
+    ],
+  },
+  {
+    element: "noLights",
+    description:
+      "This function will remove all the lights from the sketch for the subsequent materials rendered. It affects all the subsequent methods. Calls to lighting methods made after noLights() will re-enable lights in the sketch.",
+    code: "noLights()",
+    insert: "noLights()",
+    syntax: [],
+  },
+  {
+    element: "loadShader",
+    description:
+      "Creates a new p5.Shader object from the provided vertex and fragment shader files.",
+    code: "loadShader(vertFilename, fragFilename, [callback], [errorCallback])",
+    insert: "loadShader(${1:vertFilename}, ${2:fragFilename})",
+    syntax: [
+      {
+        parameter: "vertFilename: String",
+        description:
+          "path to file containing vertex shader source code",
+      },
+      {
+        parameter: "fragFilename: String",
+        description: "path to file containing fragment shader source code",
+      },
+      {
+        parameter: "callback: function",
+        description: "callback to be executed after loadShader completes. On success, the p5.Shader object is passed as the first argument. (Optional)",
+      },
+      {
+        parameter: "errorCallback: function",
+        description: "callback to be executed when an error occurs inside loadShader. On error, the error is passed as the first argument. (Optional)",
+      },
+    ],
+    return: {
+      type: "p5.Shader",
+      description: "a shader object created from the provided vertex and fragment shader files",
+    },
+  },
+  {
+    element: "createShader",
+    description:
+      "Creates a new p5.Shader object from the provided vertex and fragment shader code. Note, shaders can only be used in WEBGL mode.",
+    code: "createShader(vertSrc, fragSrc)",
+    insert: "createShader(${1:vertSrc}, ${2:fragSrc})",
+    syntax: [
+      {
+        parameter: "vertSrc: String",
+        description:
+          "source code for the vertex shader",
+      },
+      {
+        parameter: "fragSrc: String",
+        description: "source code for the fragment shader",
+      },
+    ],
+    return: {
+      type: "p5.Shader",
+      description: "a shader object created from the provided vertex and fragment shaders.",
+    },
+  },
+  {
+    element: "shader",
+    description:
+      "Sets the p5.Shader object to be used to render subsequent shapes. Custom shaders can be created using the createShader() and loadShader() functions. Use resetShader() to restore the default shaders. Note, shaders can only be used in WEBGL mode.",
+    code: "shader(s)",
+    insert: "shader(${1:s})",
+    syntax: [
+      {
+        parameter: "s: p5.Shader",
+        description:
+          "the p5.Shader object to use for rendering shapes.",
+      },
+    ]
+  },
+  {
+    element: "resetShader",
+    description:
+      "Restores the default shaders. Code that runs after resetShader() will not be affected by the shader previously set by shader()",
+    code: "resetShader()",
+    insert: "resetShader()",
+    syntax: [],
+  },
+  {
+    element: "texture",
+    description:
+      "Sets the texture that will be used to render subsequent shapes. A texture is like a skin that wraps around a 3D geometry. Currently supported textures are images, video, and offscreen renders. To texture a geometry created with beginShape(), you will need to specify uv coordinates in vertex(). Note, texture() can only be used in WEBGL mode.",
+    code: "texture(tex)",
+    insert: "texture(${1:tex})",
+    syntax: [
+      {
+        parameter: "tex: p5.Image|p5.MediaElement|p5.Graphics|p5.Texture",
+        description:
+          "image to use as texture",
+      },
+    ]
+  },
+  {
+    element: "textureMode",
+    description:
+      "Sets the coordinate space for texture mapping. The default mode is IMAGE which refers to the actual coordinates of the image. NORMAL refers to a normalized space of values ranging from 0 to 1.",
+    code: "textureMode(mode)",
+    insert: "textureMode(${1:mode})",
+    syntax: [
+      {
+        parameter: "mode: Constant",
+        description:
+          "either IMAGE or NORMAL",
+      },
+    ]
+  },
+  {
+    element: "textureWrap",
+    description:
+      "Sets the global texture wrapping mode. This controls how textures behave when their uv's go outside of the 0 to 1 range. There are three options: CLAMP, REPEAT, and MIRROR.",
+    code: "textureWrap(wrapX, [wrapY])",
+    insert: "textureWrap(${1:wrapX})",
+    syntax: [
+      {
+        parameter: "wrapX: Constant",
+        description:
+          "either CLAMP, REPEAT, or MIRROR",
+      },
+      {
+        parameter: "wrapY: Constant",
+        description:
+          "either CLAMP, REPEAT, or MIRROR (Optional)",
+      },
+    ]
+  },
+  {
+    element: "normalMaterial",
+    description:
+      "Normal material for geometry is a material that is not affected by light. It is not reflective and is a placeholder material often used for debugging. Surfaces facing the X-axis, become red, those facing the Y-axis, become green and those facing the Z-axis, become blue.",
+    code: "normalMaterial()",
+    insert: "normalMaterial()",
+    syntax: [],
+  },
+  {
+    element: "ambientMaterial",
+    description:
+      "Ambient material for geometry with a given color. Ambient material defines the color the object reflects under any lighting. For example, if the ambient material of an object is pure red, but the ambient lighting only contains green, the object will not reflect any light.",
+    code: "ambientMaterial(v1, [v2], [v3]), ambientMaterial(color)",
+    insert: "ambientMaterial(${1:v1})",
+    syntax: [
+      {
+        parameter: "v1: Number",
+        description:
+          "gray value, red or hue value (depending on the current color mode)",
+      },
+      {
+        parameter: "v2: Number",
+        description:
+          "green or saturation value (Optional)",
+      },
+      {
+        parameter: "v3: Number",
+        description:
+          "blue or brightness value (Optional)",
+      },
+      {
+        parameter: "color: Number[]|String|p5.Color",
+        description:
+          "color, color Array, or CSS color string",
+      },
+    ]
+  },
+  {
+    element: "emissiveMaterial",
+    description:
+      "Sets the emissive color of the material used for geometry drawn to the screen. This is a misnomer in the sense that the material does not actually emit light that effects surrounding polygons. Instead, it gives the appearance that the object is glowing. An emissive material will display at full strength even if there is no light for it to reflect.",
+    code: "emissiveMaterial(v1, [v2], [v3], [a]), emissiveMaterial(color)",
+    insert: "emissiveMaterial(${1:v1})",
+    syntax: [
+      {
+        parameter: "v1: Number",
+        description:
+          "gray value, red or hue value (depending on the current color mode)",
+      },
+      {
+        parameter: "v2: Number",
+        description:
+          "green or saturation value (Optional)",
+      },
+      {
+        parameter: "v3: Number",
+        description:
+          "blue or brightness value (Optional)",
+      },
+      {
+        parameter: "a: Number",
+        description:
+          "opacity (Optional)",
+      },
+      {
+        parameter: "color: Number[]|String|p5.Color",
+        description:
+          "color, color Array, or CSS color string",
+      },
+    ]
+  },
+  {
+    element: "specularMaterial",
+    description:
+      "Specular material for geometry with a given color. Specular material is a shiny reflective material. Like ambient material it also defines the color the object reflects under ambient lighting. For example, if the specular material of an object is pure red, but the ambient lighting only contains green, the object will not reflect any light. For all other types of light like point and directional light, a specular material will reflect the color of the light source to the viewer.",
+    code: "specularMaterial(gray, [alpha]), specularMaterial(v1, v2, v3, [alpha]), specularMaterial(color)",
+    insert: "specularMaterial(${1:v1}, ${2:v2}, ${3:v3})",
+    syntax: [
+      {
+        parameter: "v1: Number",
+        description:
+          "red or hue value relative to the current color range",
+      },
+      {
+        parameter: "v2: Number",
+        description:
+          "green or saturation value relative to the current color range",
+      },
+      {
+        parameter: "v3: Number",
+        description:
+          "blue or brightness value relative to the current color range",
+      },
+      {
+        parameter: "gray: Number",
+        description:
+          "number specifying value between white and black.",
+      },
+      {
+        parameter: "alpha: Number",
+        description:
+          "alpha value relative to current color range (default is 0-255) (Optional)",
+      },
+      {
+        parameter: "color: Number[]|String|p5.Color",
+        description:
+          "color, color Array, or CSS color string",
+      },
+    ]
+  },
+  {
+    element: "shininess",
+    description:
+      "Sets the amount of gloss in the surface of shapes. Used in combination with specularMaterial() in setting the material properties of shapes. The default and minimum value is 1.",
+    code: "shininess(shine)",
+    insert: "shininess(${1:shine})",
+    syntax: [
+      {
+        parameter: "shine: Number",
+        description:
+          "Degree of Shininess. Defaults to 1",
+      },
+    ]
+  },
+  {
+    element: "camera",
+    description:
+      "Sets the position of the current camera in a 3D sketch. Parameters for this function define the camera's position, the center of the sketch (where the camera is pointing), and an up direction (the orientation of the camera).",
+    code: "camera([x], [y], [z], [centerX], [centerY], [centerZ], [upX], [upY], [upZ])",
+    insert: "camera()",
+    syntax: [
+      {
+        parameter: "x: Number",
+        description:
+          "camera position value on x axis (Optional)",
+      },
+      {
+        parameter: "y: Number",
+        description:
+          "camera position value on y axis (Optional)",
+      },
+      {
+        parameter: "z: Number",
+        description:
+          "camera position value on z axis (Optional)",
+      },
+      {
+        parameter: "centerX: Number",
+        description:
+          "x coordinate representing center of the sketch (Optional)",
+      },
+      {
+        parameter: "centerY: Number",
+        description:
+          "y coordinate representing center of the sketch (Optional)",
+      },
+      {
+        parameter: "centerZ: Number",
+        description:
+          "z coordinate representing center of the sketch (Optional)",
+      },
+      {
+        parameter: "upX: Number",
+        description:
+          "x component of direction 'up' from camera (Optional)",
+      },
+      {
+        parameter: "upY: Number",
+        description:
+          "y component of direction 'up' from camera (Optional)",
+      },
+      {
+        parameter: "upZ: Number",
+        description:
+          "z component of direction 'up' from camera (Optional)",
+      },
+    ]
+  },
+  {
+    element: "perspective",
+    description:
+      "Sets a perspective projection for the current camera in a 3D sketch. This projection represents depth through foreshortening: objects that are close to the camera appear their actual size while those that are further away from the camera appear smaller.",
+    code: "perspective([fovy], [aspect], [near], [far])",
+    insert: "perspective()",
+    syntax: [
+      {
+        parameter: "fovy: Number",
+        description:
+          "camera frustum vertical field of view, from bottom to top of view, in angleMode units (Optional)",
+      },
+      {
+        parameter: "aspect: Number",
+        description:
+          "camera frustum aspect ratio (Optional)",
+      },
+      {
+        parameter: "near: Number",
+        description:
+          "frustum near plane length (Optional)",
+      },
+      {
+        parameter: "far: Number",
+        description:
+          "frustum far plane length (Optional)",
+      }
+    ]
+  },
+  {
+    element: "ortho",
+    description:
+      "Sets an orthographic projection for the current camera in a 3D sketch and defines a box-shaped viewing frustum within which objects are seen. In this projection, all objects with the same dimension appear the same size, regardless of whether they are near or far from the camera.",
+    code: "ortho([left], [right], [bottom], [top], [near], [far])",
+    insert: "ortho()",
+    syntax: [
+      {
+        parameter: "left: Number",
+        description:
+          "camera frustum left plane (Optional)",
+      },
+      {
+        parameter: "right: Number",
+        description:
+          "camera frustum right plane (Optional)",
+      },
+      {
+        parameter: "bottom: Number",
+        description:
+          "camera frustum bottom plane (Optional)",
+      },
+      {
+        parameter: "top: Number",
+        description:
+          "camera frustum top plane (Optional)",
+      },
+      {
+        parameter: "near: Number",
+        description:
+          "camera frustum near plane (Optional)",
+      },
+      {
+        parameter: "far: Number",
+        description:
+          "camera frustum far plane (Optional)",
+      }
+    ]
+  },
+  {
+    element: "frustum",
+    description:
+      "Sets the frustum of the current camera as defined by the parameters. A frustum is a geometric form: a pyramid with its top cut off. With the viewer's eye at the imaginary top of the pyramid, the six planes of the frustum act as clipping planes when rendering a 3D view. Thus, any form inside the clipping planes is visible; anything outside those planes is not visible.",
+    code: "frustum([left], [right], [bottom], [top], [near], [far])",
+    insert: "frustum()",
+    syntax: [
+      {
+        parameter: "left: Number",
+        description:
+          "camera frustum left plane (Optional)",
+      },
+      {
+        parameter: "right: Number",
+        description:
+          "camera frustum right plane (Optional)",
+      },
+      {
+        parameter: "bottom: Number",
+        description:
+          "camera frustum bottom plane (Optional)",
+      },
+      {
+        parameter: "top: Number",
+        description:
+          "camera frustum top plane (Optional)",
+      },
+      {
+        parameter: "near: Number",
+        description:
+          "camera frustum near plane (Optional)",
+      },
+      {
+        parameter: "far: Number",
+        description:
+          "camera frustum far plane (Optional)",
+      }
+    ]
+  },
+  {
+    element: "createCamera",
+    description:
+      "Creates a new p5.Camera object and sets it as the current (active) camera. The new camera is initialized with a default position (see camera()) and a default perspective projection (see perspective()). Its properties can be controlled with the p5.Camera methods.",
+    code: "createCamera()",
+    insert: "createCamera()",
+    syntax: [],
+    return: {
+      type: "p5.Camera",
+      description: "The newly created camera object",
+    },
+  },
+  {
+    element: "setCamera",
+    description:
+      "Sets the current (active) camera of a 3D sketch. Allows for switching between multiple cameras.",
+    code: "setCamera(cam)",
+    insert: "setCamera(${1:cam})",
+    syntax: [
+      {
+        parameter: "cam: p5.Camera",
+        description:
+          "p5.Camera object",
+      }
+    ]
   },
 ];

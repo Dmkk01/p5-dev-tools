@@ -23,6 +23,10 @@ It also includes references from the original p5 documentation. It allows for au
 
 ## Release Notes
 
+### 0.2.0
+
+- Complete the references from p5.js documentation
+
 ### 0.1.1
 
 - Add color and basic function snippets
@@ -34,7 +38,8 @@ It also includes references from the original p5 documentation. It allows for au
 - Complete the 'Create standard p5.js project' command
 - Add basic snippets
 
-### 0.0.1
 
-- Initial release
+## Keeping in Touch
+Bug reports, suggestions, and other contributions are cheerfully accepted. Please use the [Issues page of the GitHubrepository](https://github.com/Dmkk01/p5-dev-tools/issues).
+
 
