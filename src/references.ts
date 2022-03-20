@@ -4966,4 +4966,766 @@ export const references = [
       description: "the current year",
     },
   },
+  {
+    element: "abs",
+    description: "Calculates the absolute value (magnitude) of a number. Maps to Math.abs(). The absolute value of a number is always positive.",
+    code: "abs(n)",
+    insert: "abs(${1:n})",
+    syntax: [
+      {
+        parameter: "n: Number",
+        description:
+          "number to compute",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "absolute value of given number",
+    },
+  },
+  {
+    element: "ceil",
+    description: "Calculates the closest int value that is greater than or equal to the value of the parameter. Maps to Math.ceil(). For example, ceil(9.03) returns the value 10.",
+    code: "ceil(n)",
+    insert: "ceil(${1:n})",
+    syntax: [
+      {
+        parameter: "n: Number",
+        description:
+          "number to round up",
+      },
+    ],
+    return: {
+      type: "Integer",
+      description: "rounded up number",
+    },
+  },
+  {
+    element: "constrain",
+    description: "Constrains a value between a minimum and maximum value.",
+    code: "constrain(n, low, high)",
+    insert: "constrain(${1:n}, ${2:low}, ${3:high})",
+    syntax: [
+      {
+        parameter: "n: Number",
+        description:
+          "number to constrain",
+      },
+      {
+        parameter: "low: Number",
+        description:
+          "minimum limit",
+      },
+      {
+        parameter: "high: Number",
+        description:
+          "maximum limit",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "constrained number",
+    },
+  },
+  {
+    element: "dist",
+    description: "Calculates the distance between two points, in either two or three dimensions.",
+    code: "dist(x1, y1, x2, y2), dist(x1, y1, z1, x2, y2, z2)",
+    insert: "dist(${1:x1}, ${2:y1}, ${3:x2}, ${4:y2})",
+    syntax: [
+      {
+        parameter: "x1: Number",
+        description:
+          "x-coordinate of the first point",
+      },
+      {
+        parameter: "y1: Number",
+        description:
+          "y-coordinate of the first point",
+      },
+      {
+        parameter: "x2: Number",
+        description:
+          "x-coordinate of the second point",
+      },
+      {
+        parameter: "y2: Number",
+        description:
+          "y-coordinate of the second point",
+      },
+      {
+        parameter: "z1: Number",
+        description:
+          "z-coordinate of the first point",
+      },
+      {
+        parameter: "z2: Number",
+        description:
+          "z-coordinate of the second point",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "distance between the two points",
+    },
+  },
+  {
+    element: "exp",
+    description: "Returns Euler's number e (2.71828...) raised to the power of the n parameter. Maps to Math.exp().",
+    code: "exp(n)",
+    insert: "exp(${1:n})",
+    syntax: [
+      {
+        parameter: "n: Number",
+        description:
+          "exponent to raise",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "e^n",
+    },
+  },
+  {
+    element: "floor",
+    description: "Calculates the closest int value that is less than or equal to the value of the parameter. Maps to Math.floor().",
+    code: "floor(n)",
+    insert: "floor(${1:n})",
+    syntax: [
+      {
+        parameter: "n: Number",
+        description:
+          "number to round down",
+      },
+    ],
+    return: {
+      type: "Integer",
+      description: "rounded down number",
+    },
+  },
+  {
+    element: "lerp",
+    description: "Calculates a number between two numbers at a specific increment. The amt parameter is the amount to interpolate between the two values where 0.0 equal to the first point, 0.1 is very near the first point, 0.5 is half-way in between, and 1.0 is equal to the second point. If the value of amt is more than 1.0 or less than 0.0, the number will be calculated accordingly in the ratio of the two given numbers. The lerp function is convenient for creating motion along a straight path and for drawing dotted lines.",
+    code: "lerp(start, stop, amt)",
+    insert: "lerp(${1:start}, ${2:stop}, ${3:amt})",
+    syntax: [
+      {
+        parameter: "start: Number",
+        description:
+          "first value",
+      },
+      {
+        parameter: "stop: Number",
+        description:
+          "second value",
+      },
+      {
+        parameter: "amt: Number",
+        description:
+          "number",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "lerped value",
+    },
+  },
+  {
+    element: "log",
+    description: "Calculates the natural logarithm (the base-e logarithm) of a number. This function expects the n parameter to be a value greater than 0.0. Maps to Math.log().",
+    code: "log(n)",
+    insert: "log(${1:n})",
+    syntax: [
+      {
+        parameter: "n: Number",
+        description:
+          "number greater than 0",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "natural logarithm of n",
+    },
+  },
+  {
+    element: "mag",
+    description: "Calculates the magnitude (or length) of a vector. A vector is a direction in space commonly used in computer graphics and linear algebra. Because it has no 'start' position, the magnitude of a vector can be thought of as the distance from the coordinate 0,0 to its x,y value. Therefore, mag() is a shortcut for writing dist(0, 0, x, y).",
+    code: "mag(a, b)",
+    insert: "mag(${1:a}, ${2:b})",
+    syntax: [
+      {
+        parameter: "a: Number",
+        description:
+          "first value",
+      },
+      {
+        parameter: "b: Number",
+        description:
+          "second value",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "magnitude of vector from (0,0) to (a,b)",
+    },
+  },
+  {
+    element: "map",
+    description: "Re-maps a number from one range to another. In the first example above, the number 25 is converted from a value in the range of 0 to 100 into a value that ranges from the left edge of the window (0) to the right edge (width).",
+    code: "map(value, start1, stop1, start2, stop2, [withinBounds])",
+    insert: "map(${1:value}, ${2:start1}, ${3:stop1}, ${4:start2}, ${5:stop2})",
+    syntax: [
+      {
+        parameter: "value: Number",
+        description:
+          "the incoming value to be converted",
+      },
+      {
+        parameter: "start1: Number",
+        description:
+          "lower bound of the value's current range",
+      },
+      {
+        parameter: "stop1: Number",
+        description:
+          "upper bound of the value's current range",
+      },
+      {
+        parameter: "start2: Number",
+        description:
+          "lower bound of the value's target range",
+      },
+      {
+        parameter: "stop2: Number",
+        description:
+          "upper bound of the value's target range",
+      },
+      {
+        parameter: "withinBounds: Boolean",
+        description:
+          "constrain the value to the newly mapped range (Optional)",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "remapped number",
+    },
+  },
+  {
+    element: "max",
+    description: "Determines the largest value in a sequence of numbers, and then returns that value. max() accepts any number of Number parameters, or an Array of any length.",
+    code: "max(n0, n1), max(nums)",
+    insert: "max(${1:n0}, ${2:n1})",
+    syntax: [
+      {
+        parameter: "n0: Number",
+        description:
+          "Number to compare",
+      },
+      {
+        parameter: "n1: Number",
+        description:
+          "Number to compare",
+      },
+      {
+        parameter: "nums: Number[]",
+        description:
+          "Numbers to compare",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "maximum Number",
+    },
+  },
+  {
+    element: "min",
+    description: "Determines the smallest value in a sequence of numbers, and then returns that value. min() accepts any number of Number parameters, or an Array of any length.",
+    code: "min(n0, n1), min(nums)",
+    insert: "min(${1:n0}, ${2:n1})",
+    syntax: [
+      {
+        parameter: "n0: Number",
+        description:
+          "Number to compare",
+      },
+      {
+        parameter: "n1: Number",
+        description:
+          "Number to compare",
+      },
+      {
+        parameter: "nums: Number[]",
+        description:
+          "Numbers to compare",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "minimum Number",
+    },
+  },
+  {
+    element: "norm",
+    description: "Normalizes a number from another range into a value between 0 and 1. Identical to map(value, low, high, 0, 1). Numbers outside of the range are not clamped to 0 and 1, because out-of-range values are often intentional and useful.",
+    code: "norm(value, start, stop)",
+    insert: "norm(${1:value}, ${2:start}, ${3:stop})",
+    syntax: [
+      {
+        parameter: "value: Number",
+        description:
+          "incoming value to be normalized",
+      },
+      {
+        parameter: "start: Number",
+        description:
+          "lower bound of the value's current range",
+      },
+      {
+        parameter: "stop: Number",
+        description:
+          "upper bound of the value's current range",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "normalized number",
+    },
+  },
+  {
+    element: "pow",
+    description: "Facilitates exponential expressions. The pow() function is an efficient way of multiplying numbers by themselves (or their reciprocals) in large quantities. For example, pow(3, 5) is equivalent to the expression 3 x 3 x 3 x 3 x 3 and pow(3, -5) is equivalent to 1 / 3 x 3 x 3 x 3 x 3. Maps to Math.pow().",
+    code: "pow(n, e)",
+    insert: "pow(${1:n}, ${2:e})",
+    syntax: [
+      {
+        parameter: "n: Number",
+        description:
+          "base of the exponential expression",
+      },
+      {
+        parameter: "e: Number",
+        description:
+          "power by which to raise the base",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "n^e",
+    },
+  },
+  {
+    element: "round",
+    description: "Calculates the integer closest to the n parameter. For example, round(133.8) returns the value 134. Maps to Math.round().",
+    code: "round(n, [decimals])",
+    insert: "round(${1:n})",
+    syntax: [
+      {
+        parameter: "n: Number",
+        description:
+          "number to round",
+      },
+      {
+        parameter: "decimals: Number",
+        description:
+          "number of decimal places to round to, default is 0 (Optional)",
+      },
+    ],
+    return: {
+      type: "Integer",
+      description: "rounded number",
+    },
+  },
+  {
+    element: "sq",
+    description: "Squares a number (multiplies a number by itself). The result is always a positive number, as multiplying two negative numbers always yields a positive result. For example, -1 * -1 = 1.",
+    code: "sq(n)",
+    insert: "sq(${1:n})",
+    syntax: [
+      {
+        parameter: "n: Number",
+        description:
+          "number to square",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "squared number",
+    },
+  },
+  {
+    element: "sqrt",
+    description: "Calculates the square root of a number. The square root of a number is always positive, even though there may be a valid negative root. The square root s of number a is such that s*s = a. It is the opposite of squaring. Maps to Math.sqrt().",
+    code: "sqrt(n)",
+    insert: "sqrt(${1:n})",
+    syntax: [
+      {
+        parameter: "n: Number",
+        description:
+          "non-negative number to square root",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "square root of number",
+    },
+  },
+  {
+    element: "fract",
+    description: "Calculates the fractional part of a number.",
+    code: "fract(num)",
+    insert: "fract(${1:num})",
+    syntax: [
+      {
+        parameter: "num: Number",
+        description:
+          "Number whose fractional part needs to be found out",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "fractional part of x, i.e, {x}",
+    },
+  },
+  {
+    element: "createVector",
+    description: "Creates a new p5.Vector (the datatype for storing vectors). This provides a two or three dimensional vector, specifically a Euclidean (also known as geometric) vector. A vector is an entity that has both magnitude and direction.",
+    code: "createVector([x], [y], [z])",
+    insert: "createVector()",
+    syntax: [
+      {
+        parameter: "x: Number",
+        description:
+          "x component of the vector (Optional)",
+      },
+      {
+        parameter: "y: Number",
+        description:
+          "y component of the vector (Optional)",
+      },
+      {
+        parameter: "z: Number",
+        description:
+          "z component of the vector (Optional)",
+      },
+    ],
+    return: {
+      type: "p5.Vector",
+      description: "",
+    },
+  },
+  {
+    element: "p5.Vector",
+    description: "A class to describe a two or three dimensional vector, specifically a Euclidean (also known as geometric) vector. A vector is an entity that has both magnitude and direction. The datatype, however, stores the components of the vector (x, y for 2D, and x, y, z for 3D).",
+    code: "new p5.Vector([x], [y], [z])",
+    insert: "new p5.Vector()",
+    syntax: [
+      {
+        parameter: "x: Number",
+        description:
+          "x component of the vector (Optional)",
+      },
+      {
+        parameter: "y: Number",
+        description:
+          "y component of the vector (Optional)",
+      },
+      {
+        parameter: "z: Number",
+        description:
+          "z component of the vector (Optional)",
+      },
+    ],
+  },
+  {
+    element: "noise",
+    description: "Returns the Perlin noise value at specified coordinates. Perlin noise is a random sequence generator producing a more naturally ordered, harmonic succession of numbers compared to the standard random() function. It was invented by Ken Perlin in the 1980s and been used since in graphical applications to produce procedural textures, natural motion, shapes, terrains etc.",
+    code: "noise(x, [y], [z])",
+    insert: "noise(${1:x})",
+    syntax: [
+      {
+        parameter: "x: Number",
+        description:
+          "x-coordinate in noise space",
+      },
+      {
+        parameter: "y: Number",
+        description:
+          "y-coordinate in noise space (Optional)",
+      },
+      {
+        parameter: "z: Number",
+        description:
+          "z-coordinate in noise space (Optional)",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "Perlin noise value (between 0 and 1) at specified coordinates",
+    },
+  },
+  {
+    element: "noiseDetail",
+    description: "Adjusts the character and level of detail produced by the Perlin noise function. Similar to harmonics in physics, noise is computed over several octaves. Lower octaves contribute more to the output signal and as such define the overall intensity of the noise, whereas higher octaves create finer grained details in the noise sequence. By default, noise is computed over 4 octaves with each octave contributing exactly half than its predecessor, starting at 50% strength for the 1st octave.",
+    code: "noiseDetail(lod, falloff)",
+    insert: "noiseDetail(${1:lod}, ${2:falloff})",
+    syntax: [
+      {
+        parameter: "lod: Number",
+        description:
+          "number of octaves to be used by the noise",
+      },
+      {
+        parameter: "falloff: Number",
+        description:
+          "falloff factor for each octave",
+      },
+    ],
+  },
+  {
+    element: "noiseSeed",
+    description: "Sets the seed value for noise(). By default, noise() produces different results each time the program is run. Set the value parameter to a constant to return the same pseudo-random numbers each time the software is run.",
+    code: "noiseSeed(seed)",
+    insert: "noiseSeed(${1:seed})",
+    syntax: [
+      {
+        parameter: "seed: Number",
+        description:
+          "the seed value",
+      },
+    ],
+  },
+  {
+    element: "randomSeed",
+    description: "Sets the seed value for random(). By default, random() produces different results each time the program is run. Set the seed parameter to a constant to return the same pseudo-random numbers each time the software is run.",
+    code: "randomSeed(seed)",
+    insert: "randomSeed(${1:seed})",
+    syntax: [
+      {
+        parameter: "seed: Number",
+        description:
+          "the seed value",
+      },
+    ],
+  },
+  {
+    element: "random",
+    description: "Return a random floating-point number.",
+    code: "random([min], [max]), random(choices)",
+    insert: "random()",
+    syntax: [
+      {
+        parameter: "min: Number",
+        description:
+          "the lower bound (inclusive) (Optional)",
+      },
+      {
+        parameter: "max: Number",
+        description:
+          "the upper bound (exclusive) (Optional)",
+      },
+      {
+        parameter: "choices: Array",
+        description:
+          "the array to choose from",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "the random number",
+    },
+  },
+  {
+    element: "randomGaussian",
+    description: "Returns a random number fitting a Gaussian, or normal, distribution. There is theoretically no minimum or maximum value that randomGaussian() might return. Rather, there is just a very low probability that values far from the mean will be returned; and a higher probability that numbers near the mean will be returned. Takes either 0, 1 or 2 arguments. If no args, returns a mean of 0 and standard deviation of 1.",
+    code: "randomGaussian([mean], [sd])",
+    insert: "randomGaussian()",
+    syntax: [
+      {
+        parameter: "mean: Number",
+        description:
+          "the mean (Optional)",
+      },
+      {
+        parameter: "sd: Number",
+        description:
+          "the standard deviation (Optional)",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "the random number",
+    },
+  },
+  {
+    element: "acos",
+    description: "The inverse of cos(), returns the arc cosine of a value. This function expects the values in the range of -1 to 1 and values are returned in the range 0 to PI (3.1415927) if the angleMode is RADIANS or 0 to 180 if the angle mode is DEGREES.",
+    code: "acos(value)",
+    insert: "acos(${1:value})",
+    syntax: [
+      {
+        parameter: "value: Number",
+        description:
+          "the value whose arc cosine is to be returned",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "the arc cosine of the given value",
+    },
+  },
+  {
+    element: "asin",
+    description: "The inverse of sin(), returns the arc sine of a value. This function expects the values in the range of -1 to 1 and values are returned in the range -PI/2 to PI/2 if the angleMode is RADIANS or -90 to 90 if the angle mode is DEGREES.",
+    code: "asin(value)",
+    insert: "asin(${1:value})",
+    syntax: [
+      {
+        parameter: "value: Number",
+        description:
+          "the value whose arc sine is to be returned",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "the arc sine of the given value",
+    },
+  },
+  {
+    element: "atan",
+    description: "The inverse of tan(), returns the arc tangent of a value. This function expects the values in the range of -Infinity to Infinity (exclusive) and values are returned in the range -PI/2 to PI/2 if the angleMode is RADIANS or -90 to 90 if the angle mode is DEGREES.",
+    code: "atan(value)",
+    insert: "atan(${1:value})",
+    syntax: [
+      {
+        parameter: "value: Number",
+        description:
+          "the value whose arc tangent is to be returned",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "the arc tangent of the given value",
+    },
+  },
+  {
+    element: "atan2",
+    description: "Calculates the angle (in radians) from a specified point to the coordinate origin as measured from the positive x-axis. Values are returned as a float in the range from PI to -PI if the angleMode is RADIANS or 180 to -180 if the angleMode is DEGREES. The atan2() function is most often used for orienting geometry to the position of the cursor. Note: The y-coordinate of the point is the first parameter, and the x-coordinate is the second parameter, due the the structure of calculating the tangent.",
+    code: "atan2(y, x)",
+    insert: "atan2(${1:y}, ${2:x})",
+    syntax: [
+      {
+        parameter: "y: Number",
+        description:
+          "y-coordinate of the point",
+      },
+      {
+        parameter: "x: Number",
+        description:
+          "x-coordinate of the point",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "the arc tangent of the given point",
+    },
+  },
+  {
+    element: "cos",
+    description: "Calculates the cosine of an angle. This function takes into account the current angleMode. Values are returned in the range -1 to 1.",
+    code: "cos(angle)",
+    insert: "cos(${1:angle})",
+    syntax: [
+      {
+        parameter: "angle: Number",
+        description:
+          "the angle",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "the cosine of the angle",
+    },
+  },
+  {
+    element: "sin",
+    description: "Calculates the sine of an angle. This function takes into account the current angleMode. Values are returned in the range -1 to 1.",
+    code: "sin(angle)",
+    insert: "sin(${1:angle})",
+    syntax: [
+      {
+        parameter: "angle: Number",
+        description:
+          "the angle",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "the sine of the angle",
+    },
+  },
+  {
+    element: "tan",
+    description: "Calculates the tangent of an angle. This function takes into account the current angleMode. Values are returned in the range of all real numbers.",
+    code: "tan(angle)",
+    insert: "tan(${1:angle})",
+    syntax: [
+      {
+        parameter: "angle: Number",
+        description:
+          "the angle",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "the tangent of the angle",
+    },
+  },
+  {
+    element: "degrees",
+    description: "Converts a radian measurement to its corresponding value in degrees. Radians and degrees are two ways of measuring the same thing. There are 360 degrees in a circle and 2*PI radians in a circle. For example, 90° = PI/2 = 1.5707964. This function does not take into account the current angleMode.",
+    code: "degrees(radians)",
+    insert: "degrees(${1:radians})",
+    syntax: [
+      {
+        parameter: "radians: Number",
+        description:
+          "the radians value to convert to degrees",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "the converted angle",
+    },
+  },
+  {
+    element: "radians",
+    description: "Converts a degree measurement to its corresponding value in radians. Radians and degrees are two ways of measuring the same thing. There are 360 degrees in a circle and 2*PI radians in a circle. For example, 90° = PI/2 = 1.5707964. This function does not take into account the current angleMode.",
+    code: "radians(degrees)",
+    insert: "radians(${1:degrees})",
+    syntax: [
+      {
+        parameter: "degrees: Number",
+        description:
+          "the degree value to convert to radians",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "the converted angle",
+    },
+  },
+  {
+    element: "angleMode",
+    description: "Sets the current mode of p5 to given mode. Default mode is RADIANS.",
+    code: "angleMode(mode)",
+    insert: "angleMode(${1:mode})",
+    syntax: [
+      {
+        parameter: "mode: Constant",
+        description:
+          "either RADIANS or DEGREES",
+      },
+    ],
+  },
 ];
