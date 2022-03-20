@@ -1,74 +1,40 @@
-<!-- [![Version](https://vsmarketplacebadge.apphb.com/version/dsznajder.es7-react-js-snippets.svg)](https://vsmarketplacebadge.apphb.com/version-short/dsznajder.es7-react-js-snippets.svg)
-[![Install](https://vsmarketplacebadge.apphb.com/installs/dsznajder.es7-react-js-snippets.svg)](https://vsmarketplacebadge.apphb.com/installs-short/dsznajder.es7-react-js-snippets.svg)
-[![Downloads](https://vsmarketplacebadge.apphb.com/downloads/dsznajder.es7-react-js-snippets.svg)](https://vsmarketplacebadge.apphb.com/downloads-short/dsznajder.es7-react-js-snippets.svg)
-[![Ratings](https://vsmarketplacebadge.apphb.com/rating-short/dsznajder.es7-react-js-snippets.svg)](https://vsmarketplacebadge.apphb.com/rating-short/dsznajder.es7-react-js-snippets.svg) -->
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![vsm-version](https://img.shields.io/visual-studio-marketplace/v/dominikasinski.p5-snippets-and-tools?style=flat-square&label=VS%20Marketplace&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=dominikasinski.p5-snippets-and-tools)
+[![vsm-downloads](https://img.shields.io/visual-studio-marketplace/d/dominikasinski.p5-snippets-and-tools?style=flat-square&label=downloads&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=dominikasinski.p5-snippets-and-tools)
+[![vsm-installs](https://img.shields.io/visual-studio-marketplace/i/dominikasinski.p5-snippets-and-tools?style=flat-square&label=installs&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=dominikasinski.p5-snippets-and-tools)
+[![vsm-rating](https://img.shields.io/visual-studio-marketplace/r/dominikasinski.p5-snippets-and-tools?style=flat-square&label=rating&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=dominikasinski.p5-snippets-and-tools)
+[![vsm-stars](https://img.shields.io/visual-studio-marketplace/stars/dominikasinski.p5-snippets-and-tools?style=flat-square&label=stars&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=dominikasinski.p5-snippets-and-tools)
+
 # p5.js Dev Tools for Visual Studio Code
 
 This extension puts handy shortcuts and abbreviated p5 documentation right at your fingertips as you write p5.js in Visual Studio Code.
 
-<!-- ## Features
+## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+### Commands
+ -  Open VS Code command palette (F1 key) and type`Create a standard p5.js project`
+    This command allows to create a local or hosted version of a p5.js project that include `index.html` and `sketch.js` files.
 
-For example if there is an image subfolder under your extension project workspace:
+### Snippets
 
-\!\[feature X\]\(images/feature-x.png\)
+The extension custom snippets. They start with `p5-`, for example, `p5-blue` yields `0, 0, 255`.
+It also includes references from the original p5 documentation. It allows for autocompletion as well as highlighting for more information about the value.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 0.1.1
 
-### 1.0.0
+- Add color and basic function snippets
 
-Initial release of ...
+### 0.1.0
 
-### 1.0.1
+- Update README.md
+- Add additional p5.js references
+- Complete the 'Create standard p5.js project' command
+- Add basic snippets
 
-Fixed issue #.
+### 0.0.1
 
-### 1.1.0
+- Initial release
 
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!** -->

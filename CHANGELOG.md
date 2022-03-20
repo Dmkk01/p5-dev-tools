@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.1
+
+- Update README.md
+- Add color and basic function snippets
+
 ## 0.1.0
 
 - Update README.md
