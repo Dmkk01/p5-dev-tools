@@ -4,6 +4,8 @@
 
 - Update README.md
 - Add additional p5.js references
+- Complete the 'Create standard p5.js project' command
+- Add basic snippets
 
 ## 0.0.1
 
