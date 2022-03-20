@@ -9,12 +9,14 @@
 		"type": "git",
 		"url": "https://github.com/Dmkk01/p5-dev-tools"
 	},
-	"version": "0.0.2",
+	"version": "0.1.1",
 	"engines": {
 		"vscode": "^1.65.0"
 	},
 	"categories": [
-		"Snippets", "Other", "Programming Languages"
+		"Snippets",
+		"Other",
+		"Programming Languages"
 	],
 	"activationEvents": [
 		"onCommand:p5-snippets-and-tools.create-p5-project-standard",
@@ -33,8 +35,8 @@
 		],
 		"snippets": [
 			{
-			  "language": "javascript",
-			  "path": "./snippets/snippets.json"
+				"language": "javascript",
+				"path": "./snippets/snippets.json"
 			},
 			{
 				"language": "html",
