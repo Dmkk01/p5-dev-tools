@@ -23,6 +23,11 @@ It also includes references from the original p5 documentation. It allows for au
 
 ## Release Notes
 
+### 0.3.0
+
+- Add p5.js classes documentation
+- Add a portion of p5.js sound references
+
 ### 0.2.0
 
 - Complete the references from p5.js documentation
@@ -30,13 +35,6 @@ It also includes references from the original p5 documentation. It allows for au
 ### 0.1.1
 
 - Add color and basic function snippets
-
-### 0.1.0
-
-- Update README.md
-- Add additional p5.js references
-- Complete the 'Create standard p5.js project' command
-- Add basic snippets
 
 
 ## Keeping in Touch

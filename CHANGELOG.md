@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.3.0
+
+- Add p5.js classes documentation
+- Add a portion of p5.js sound references
+
 ## 0.2.0
 
 - Complete the references from p5.js documentation

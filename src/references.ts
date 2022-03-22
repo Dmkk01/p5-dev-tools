@@ -1904,46 +1904,6 @@ export const referencesP5 = [
     ],
   },
   {
-    element: "p5.Geometry",
-    description: "p5 Geometry class",
-    code: "new p5.Geometry([detailX], [detailY], [callback])",
-    insert: "new p5.Geometry()",
-    syntax: [
-      {
-        parameter: "detailX: Integer",
-        description: "number of vertices along the x-axis. (Optional)",
-      },
-      {
-        parameter: "detailY: Integer",
-        description: "number of vertices along the y-axis. (Optional)",
-      },
-      {
-        parameter: "callback: Function",
-        description: "function to call upon object instantiation. (Optional)",
-      },
-    ],
-  },
-  {
-    element: "p5.Geometry",
-    description: "p5 Geometry class",
-    code: "new p5.Geometry([detailX], [detailY], [callback])",
-    insert: "new p5.Geometry()",
-    syntax: [
-      {
-        parameter: "detailX: Integer",
-        description: "number of vertices along the x-axis. (Optional)",
-      },
-      {
-        parameter: "detailY: Integer",
-        description: "number of vertices along the y-axis. (Optional)",
-      },
-      {
-        parameter: "callback: Function",
-        description: "function to call upon object instantiation. (Optional)",
-      },
-    ],
-  },
-  {
     element: "HALF_PI",
     description:
       "HALF_PI is a mathematical constant with the value 1.57079632679489661923. It is half the ratio of the circumference of a circle to its diameter. It is useful in combination with the trigonometric functions sin() and cos().",
@@ -2106,23 +2066,6 @@ export const referencesP5 = [
       {
         parameter: "node: String|Object",
         description: "ID or pointer to HTML DOM node to contain sketch in",
-      },
-    ],
-  },
-  {
-    element: "p5.Element",
-    description:
-      "Base class for all elements added to a sketch, including canvas, graphics buffers, and other HTML elements. It is not called directly, but p5.Element objects are created by calling createCanvas, createGraphics, createDiv, createImg, createInput, etc.",
-    code: "new p5.Element(elt, [pInst])",
-    insert: "new p5.Element(${1:elt})",
-    syntax: [
-      {
-        parameter: "elt: String",
-        description: "DOM node that is wrapped",
-      },
-      {
-        parameter: "pInst: P5",
-        description: "pointer to p5 instance (Optional)",
       },
     ],
   },
@@ -2597,57 +2540,6 @@ export const referencesP5 = [
     },
   },
   {
-    element: "p5.MediaElement",
-    description:
-      "Extends p5.Element to handle audio and video. In addition to the methods of p5.Element, it also contains methods for controlling media. It is not called directly, but p5.MediaElements are created by calling createVideo, createAudio, and createCapture.",
-    code: "new p5.MediaElement(elt)",
-    insert: "new p5.MediaElement(${1:elt})",
-    syntax: [
-      {
-        parameter: "elt: String",
-        description: "DOM node that is wrapped",
-      },
-    ],
-  },
-  {
-    element: "p5.File",
-    description:
-      "Base class for a file. Used for Element.drop and createFileInput.",
-    code: "new p5.File(file)",
-    insert: "new p5.File(${1:file})",
-    syntax: [
-      {
-        parameter: "file: File",
-        description: "File that is wrapped",
-      },
-    ],
-  },
-  {
-    element: "p5.Graphics",
-    description:
-      "Thin wrapper around a renderer, to be used for creating a graphics buffer object. Use this class if you need to draw into an off-screen graphics buffer. The two parameters define the width and height in pixels. The fields and methods for this class are extensive, but mirror the normal drawing API for p5. Extends p5.Element",
-    code: "new p5.Graphics(w, h, renderer, [pInst])",
-    insert: "new p5.Graphics(${1:w}, ${2:h}, ${3:renderer})",
-    syntax: [
-      {
-        parameter: "w: Number",
-        description: "width",
-      },
-      {
-        parameter: "h: Number",
-        description: "height",
-      },
-      {
-        parameter: "renderer: Constant",
-        description: "the renderer to use, either P2D or WEBGL",
-      },
-      {
-        parameter: "pInst: P5",
-        description: "pointer to p5 instance (Optional)",
-      },
-    ],
-  },
-  {
     element: "createCanvas",
     description:
       "Creates a canvas element in the document, and sets the dimensions of it in pixels. This method should be called only once at the start of setup. Calling createCanvas more than once in a sketch will result in very unpredictable behavior. If you want more than one drawing canvas you could use createGraphics (hidden by default but it can be shown). Important note: in 2D mode (i.e. when p5.Renderer is not set) the origin (0,0) is positioned at the top left of the screen. In 3D mode (i.e. when p5.Renderer is set to WEBGL), the origin is positioned at the center of the canvas.",
@@ -3045,21 +2937,6 @@ export const referencesP5 = [
       type: "p5.NumberDict",
       description: "",
     },
-  },
-  {
-    element: "p5.TypedDict",
-    description:
-      "Base class for all p5.Dictionary types. Specifically typed Dictionary classes inherit from this class.",
-    code: "new p5.TypedDict()",
-    insert: "new p5.TypedDict()",
-    syntax: [],
-  },
-  {
-    element: "p5.NumberDict",
-    description: "A simple Dictionary class for Numbers. Extends p5.TypedDict",
-    code: "new p5.NumberDict()",
-    insert: "new p5.NumberDict()",
-    syntax: [],
   },
   {
     element: "shuffle",
@@ -4033,23 +3910,6 @@ export const referencesP5 = [
     ],
   },
   {
-    element: "p5.Image",
-    description:
-      "Creates a new p5.Image. A p5.Image is a canvas backed representation of an image. p5 can display .gif, .jpg and .png images. Images may be displayed in 2D and 3D space. Before an image is used, it must be loaded with the loadImage() function. The p5.Image class contains fields for the width and height of the image, as well as an array called pixels[] that contains the values for every pixel in the image.",
-    code: "new p5.Image(width, height)",
-    insert: "new p5.Image(${1:width}, ${2:height})",
-    syntax: [
-      {
-        parameter: "width: Number",
-        description: "",
-      },
-      {
-        parameter: "height: Number",
-        description: "",
-      },
-    ],
-  },
-  {
     element: "loadImage",
     description:
       "Loads an image from a path and creates a p5.Image from it. The image may not be immediately available for rendering. If you want to ensure that the image is ready before doing anything with it, place the loadImage() call in preload(). You may also supply a callback function to handle the image when it's ready.",
@@ -4689,14 +4549,6 @@ export const referencesP5 = [
     },
   },
   {
-    element: "p5.XML",
-    description:
-      "XML is a representation of an XML object, able to parse XML code. Use loadXML() to load external XML files and create XML objects.",
-    code: "new p5.XML()",
-    insert: "new p5.XML()",
-    syntax: [],
-  },
-  {
     element: "createWriter",
     description: "",
     code: "createWriter(name, [extension])",
@@ -4805,37 +4657,6 @@ export const referencesP5 = [
       {
         parameter: "options: String",
         description: "can be one of 'tsv', 'csv', or 'html' (Optional)",
-      },
-    ],
-  },
-  {
-    element: "p5.Table",
-    description:
-      "Table objects store data with multiple rows and columns, much like in a traditional spreadsheet. Tables can be generated from scratch, dynamically, or using data from an existing file.",
-    code: "new p5.Table([rows])",
-    insert: "new p5.Table()",
-    syntax: [
-      {
-        parameter: "rows: p5.TableRow[]",
-        description: "An array of p5.TableRow objects (Optional)",
-      },
-    ],
-  },
-  {
-    element: "p5.TableRow",
-    description:
-      "A TableRow object represents a single row of data values, stored in columns, from a table. A Table Row contains both an ordered array, and an unordered JSON object.",
-    code: "new p5.TableRow([str], [separator])",
-    insert: "new p5.TableRow()",
-    syntax: [
-      {
-        parameter: "str: String",
-        description:
-          "optional: populate the row with a string of values, separated by the separator (Optional)",
-      },
-      {
-        parameter: "separator: String",
-        description: "comma separated values (csv) by default (Optional)",
       },
     ],
   },
@@ -5344,27 +5165,6 @@ export const referencesP5 = [
       type: "p5.Vector",
       description: "",
     },
-  },
-  {
-    element: "p5.Vector",
-    description:
-      "A class to describe a two or three dimensional vector, specifically a Euclidean (also known as geometric) vector. A vector is an entity that has both magnitude and direction. The datatype, however, stores the components of the vector (x, y for 2D, and x, y, z for 3D).",
-    code: "new p5.Vector([x], [y], [z])",
-    insert: "new p5.Vector()",
-    syntax: [
-      {
-        parameter: "x: Number",
-        description: "x component of the vector (Optional)",
-      },
-      {
-        parameter: "y: Number",
-        description: "y component of the vector (Optional)",
-      },
-      {
-        parameter: "z: Number",
-        description: "z component of the vector (Optional)",
-      },
-    ],
   },
   {
     element: "noise",

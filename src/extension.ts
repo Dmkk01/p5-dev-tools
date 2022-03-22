@@ -154,17 +154,58 @@ export function activate(context: vscode.ExtensionContext) {
 
         return new vscode.Hover(markdown);
       } else {
-        // const p5Range = [];
-        // p5Range.push(range?.start);
+        let referenceClass;
+        const p5PosStart = new vscode.Position(range!.start.line, range!.start.character - 3);
+        const p5PosEnd = new vscode.Position(range!.start.line, range!.start.character);
+        const p5Range = new vscode.Range(p5PosStart, p5PosEnd);
+        const p5Word = document.getText(p5Range);
 
-        // const markdown = new vscode.MarkdownString(
-        //   `${JSON.stringify(position)}`
-        // );
+        const referenceClassP5 = classesP5.find((x) => x.element.substring(3) === word);
+        referenceClass = referenceClassP5 ? referenceClassP5 : null;
 
-        // markdown.isTrusted = true;
+        if (p5Word === 'p5.' && referenceClass) {
+          const markdown = new vscode.MarkdownString(
+            `${referenceClass.description}\n`
+          );
 
-        // return new vscode.Hover(markdown);
-        return ;
+          markdown.appendCodeblock(`${referenceClass.code}`, "javascript");
+  
+          if (referenceClass.parameters.length > 0) {
+            markdown.appendMarkdown("Parameters: ");
+            referenceClass.parameters.forEach((parameter) => {
+              markdown.appendCodeblock(`${parameter.name}`, "javascript");
+              if (parameter.description) {
+                markdown.appendMarkdown(`* ${parameter.description}\n`);
+              }
+            });
+          }
+
+          if (referenceClass.fields.length > 0) {
+            markdown.appendMarkdown("Fields: ");
+            referenceClass.fields.forEach((field) => {
+              markdown.appendCodeblock(`${field.name}`, "javascript");
+              if (field.description) {
+                markdown.appendMarkdown(`* ${field.description}\n`);
+              }
+            });
+          }
+
+          if (referenceClass.methods.length > 0) {
+            markdown.appendMarkdown("Methods: ");
+            referenceClass.methods.forEach((method) => {
+              markdown.appendCodeblock(`${method.name}`, "javascript");
+              if (method.description) {
+                markdown.appendMarkdown(`* ${method.description}\n`);
+              }
+            });
+          }
+  
+          markdown.isTrusted = true;
+  
+          return new vscode.Hover(markdown);
+        } else {
+          return ;
+        }
       }
     },
   });
