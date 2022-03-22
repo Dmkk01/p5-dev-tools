@@ -6644,21 +6644,559 @@ export const referencesP5 = [
 
 export const referencesP5Sound = [
   {
-    element: "brrrr",
+    element: "getAudioContext",
     description:
-      "brrr",
-    code: "brrrr(text, [display])",
-    insert: "brrrr(${1:text})",
+      "Returns the Audio Context for this sketch. Useful for users who would like to dig deeper into the Web Audio API. Some browsers require users to startAudioContext with a user gesture, such as touchStarted in the example below.",
+    code: "getAudioContext()",
+    insert: "getAudioContext()",
     syntax: [
-      {
-        parameter: "cam: p5.Camera",
-        description:
-          "p5.Camera object",
-      }
     ],
     return: {
-      type: "p5.Shader",
-      description: "a shader object created from the provided vertex and fragment shaders.",
+      type: "Object",
+      description: "AudioContext for this sketch",
+    },
+  },
+  {
+    element: "userStartAudio",
+    description:
+      "userStartAudio() starts the AudioContext on a user gesture. The default behavior will enable audio on any mouseUp or touchEnd event. It can also be placed in a specific interaction function, such as mousePressed() as in the example below. This method utilizes StartAudioContext , a library by Yotam Mann (MIT Licence, 2016).",
+    code: "userStartAudio([element(s)], [callback])",
+    insert: "userStartAudio()",
+    syntax: [
+      {
+        parameter: "element(s): Element|Array",
+        description:
+          "This argument can be an Element, Selector String, NodeList, p5.Element, jQuery Element, or an Array of any of those. (Optional)",
+      },
+      {
+        parameter: "callback: Function",
+        description:
+          "Callback to invoke when the AudioContext has started (Optional)",
+      },
+    ],
+    return: {
+      type: "Promise",
+      description: "Returns a Promise that resolves when the AudioContext state is 'running'",
+    },
+  },
+  {
+    element: "getOutputVolume",
+    description:
+      "Returns a number representing the output volume for sound in this sketch.",
+    code: "getOutputVolume()",
+    insert: "getOutputVolume()",
+    syntax: [
+    ],
+    return: {
+      type: "Number",
+      description: "Output volume for sound in this sketch. Should be between 0.0 (silence) and 1.0.",
+    },
+  },
+  {
+    element: "outputVolume",
+    description:
+      "Scale the output of all sound in this sketch. Scaled between 0.0 (silence) and 1.0 (full volume). 1.0 is the maximum amplitude of a digital sound, so multiplying by greater than 1.0 may cause digital distortion. ",
+    code: "outputVolume(volume, [rampTime], [timeFromNow])",
+    insert: "outputVolume(${1:volume})",
+    syntax: [
+      {
+        parameter: "volume: Number|Object",
+        description:
+          "Volume (amplitude) between 0.0 and 1.0 or modulating signal/oscillator",
+      },
+      {
+        parameter: "rampTime: Number",
+        description:
+          "Fade for t seconds (Optional)",
+      },
+      {
+        parameter: "timeFromNow: Number",
+        description:
+          "Schedule this event to happen at t seconds in the future (Optional)",
+      },
+    ],
+  },
+  {
+    element: "soundOut",
+    description:
+      "p5.soundOut is the p5.sound final output bus. It sends output to the destination of this window's web audio context. It contains Web Audio API nodes including a dyanmicsCompressor (.limiter), and Gain Nodes for .input and .output.",
+    code: "soundOut",
+    insert: "soundOut",
+    syntax: [
+    ],
+  },
+  {
+    element: "sampleRate",
+    description:
+      "Returns a number representing the sample rate, in samples per second, of all sound objects in this audio context. It is determined by the sampling rate of your operating system's sound card, and it is not currently possile to change. It is often 44100, or twice the range of human hearing.",
+    code: "sampleRate()",
+    insert: "sampleRate()",
+    syntax: [
+    ],
+    return: {
+      type: "Number",
+      description: "samplerate samples per second",
+    },
+  },
+  {
+    element: "freqToMidi",
+    description:
+      "Returns the closest MIDI note value for a given frequency.",
+    code: "freqToMidi(frequency)",
+    insert: "freqToMidi(${1:frequency})",
+    syntax: [
+      {
+        parameter: "frequency: Number",
+        description:
+          "A freqeuncy, for example, the 'A' above Middle C is 440Hz",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "MIDI note value",
+    },
+  },
+  {
+    element: "midiToFreq",
+    description:
+      "Returns the frequency value of a MIDI note value. General MIDI treats notes as integers where middle C is 60, C# is 61, D is 62 etc. Useful for generating musical frequencies with oscillators.",
+    code: "midiToFreq(midiNote)",
+    insert: "midiToFreq(${1:midiNote})",
+    syntax: [
+      {
+        parameter: "midiNote: Number",
+        description:
+          "The number of a MIDI note",
+      },
+    ],
+    return: {
+      type: "Number",
+      description: "Frequency value of the given MIDI note",
+    },
+  },
+  {
+    element: "soundFormats",
+    description:
+      "List the SoundFile formats that you will include. LoadSound will search your directory for these extensions, and will pick a format that is compatable with the client's web browser.",
+    code: "soundFormats([formats])",
+    insert: "soundFormats()",
+    syntax: [
+      {
+        parameter: "formats: String",
+        description:
+          "i.e. 'mp3', 'wav', 'ogg' (Optional)",
+      },
+    ],
+  },
+  {
+    element: "saveSound",
+    description:
+      "Save a p5.SoundFile as a .wav file. The browser will prompt the user to download the file to their device. For uploading audio to a server, use p5.SoundFile.saveBlob.",
+    code: "saveSound(soundFile, fileName)",
+    insert: "saveSound(${1:soundFile}, ${2:fileName})",
+    syntax: [
+      {
+        parameter: "soundFile: p5.SoundFile",
+        description:
+          "p5.SoundFile that you wish to save",
+      },
+      {
+        parameter: "fileName: String",
+        description:
+          "name of the resulting .wav file.",
+      },
+    ],
+  },
+  {
+    element: "loadSound",
+    description:
+      "loadSound() returns a new p5.SoundFile from a specified path. If called during preload(), the p5.SoundFile will be ready to play in time for setup() and draw(). If called outside of preload, the p5.SoundFile will not be ready immediately, so loadSound accepts a callback as the second parameter. Using a local server is recommended when loading external files.",
+    code: "loadSound(path, [successCallback], [errorCallback], [whileLoading])",
+    insert: "loadSound(${1:path})",
+    syntax: [
+      {
+        parameter: "path: String|Array",
+        description:
+          "Path to the sound file, or an array with paths to soundfiles in multiple formats i.e. ['sound.ogg', 'sound.mp3']. Alternately, accepts an object: either from the HTML5 File API, or a p5.File.",
+      },
+      {
+        parameter: "successCallback: Function",
+        description:
+          "Name of a function to call once file loads (Optional)",
+      },
+      {
+        parameter: "errorCallback: Function",
+        description:
+          "Name of a function to call if there is an error loading the file. (Optional)",
+      },
+      {
+        parameter: "whileLoading: Function",
+        description:
+          "Name of a function to call while file is loading. This function will receive the percentage loaded so far, from 0.0 to 1.0. (Optional)",
+      },
+    ],
+    return: {
+      type: "SoundFile",
+      description: "Returns a p5.SoundFile",
+    },
+  },
+  {
+    element: "createConvolver",
+    description:
+      "Create a p5.Convolver. Accepts a path to a soundfile that will be used to generate an impulse response.",
+    code: "createConvolver(path, [callback], [errorCallback])",
+    insert: "createConvolver(${1:path})",
+    syntax: [
+      {
+        parameter: "path: String",
+        description:
+          "path to a sound file",
+      },
+      {
+        parameter: "callback: Function",
+        description:
+          "function to call if loading is successful. The object will be passed in as the argument to the callback function. (Optional)",
+      },
+      {
+        parameter: "errorCallback: Function",
+        description:
+          "function to call if loading is not successful. A custom error will be passed in as the argument to the callback function. (Optional)",
+      },
+    ],
+    return: {
+      type: "p5.Convolver",
+      description: "",
+    },
+  },
+  {
+    element: "attackTime",
+    description:
+      "Time until envelope reaches attackLevel",
+    code: "attackTime",
+    insert: "attackTime",
+    syntax: [
+    ],
+  },
+  {
+    element: "attackLevel",
+    description:
+      "Level once attack is complete.",
+    code: "attackLevel",
+    insert: "attackLevel",
+    syntax: [
+    ],
+  },
+  {
+    element: "decayTime",
+    description:
+      "Time until envelope reaches decayLevel.",
+    code: "decayTime",
+    insert: "decayTime",
+    syntax: [
+    ],
+  },
+  {
+    element: "decayLevel",
+    description:
+      "Level after decay. The envelope will sustain here until it is released.",
+    code: "decayLevel",
+    insert: "decayLevel",
+    syntax: [
+    ],
+  },
+  {
+    element: "releaseTime",
+    description:
+      "Duration of the release portion of the envelope.",
+    code: "releaseTime",
+    insert: "releaseTime",
+    syntax: [
+    ],
+  },
+  {
+    element: "releaseLevel",
+    description:
+      "Level at the end of the release.",
+    code: "releaseLevel",
+    insert: "releaseLevel",
+    syntax: [
+    ],
+  },
+  {
+    //check this one
+    element: "set",
+    description:
+      "Create a p5.Convolver. Accepts a path to a soundfile that will be used to generate an impulse response.",
+    code: "set(attackTime, attackLevel, decayTime, decayLevel, releaseTime, releaseLevel)",
+    insert: "set(${1:attackTime}, ${2:attackLevel}, ${3:decayTime}, ${4:decayLevel}, ${5:releaseTime}, ${6:releaseLevel})",
+    syntax: [
+      {
+        parameter: "attackTime: Number",
+        description:
+          "Time (in seconds) before level reaches attackLevel",
+      },
+      {
+        parameter: "attackLevel: Number",
+        description:
+          "Typically an amplitude between 0.0 and 1.0",
+      },
+      {
+        parameter: "decayTime: Number",
+        description:
+          "Time",
+      },
+      {
+        parameter: "decayLevel: Number",
+        description:
+          "Amplitude (In a standard ADSR envelope, decayLevel = sustainLevel)",
+      },
+      {
+        parameter: "releaseTime: Number",
+        description:
+          "Release Time (in seconds)",
+      },
+      {
+        parameter: "releaseLevel: Number",
+        description:
+          "Amplitude",
+      },
+    ],
+  },
+  {
+    element: "setADSR",
+    description:
+      "Set values like a traditional ADSR envelope.",
+    code: "setADSR(attackTime, [decayTime], [susRatio], [releaseTime])",
+    insert: "setADSR(${1:attackTime}, ${2:decayTime}, ${3:susRatio}, ${4:releaseTime})",
+    syntax: [
+      {
+        parameter: "attackTime: Number",
+        description:
+          "Time (in seconds before envelope reaches Attack Level",
+      },
+      {
+        parameter: "decayTime: Number",
+        description:
+          "Time (in seconds) before envelope reaches Decay/Sustain Level (Optional)",
+      },
+      {
+        parameter: "susRatio: Number",
+        description:
+          "Ratio between attackLevel and releaseLevel, on a scale from 0 to 1, where 1.0 = attackLevel, 0.0 = releaseLevel. The susRatio determines the decayLevel and the level at which the sustain portion of the envelope will sustain. For example, if attackLevel is 0.4, releaseLevel is 0, and susAmt is 0.5, the decayLevel would be 0.2. If attackLevel is increased to 1.0 (using setRange), then decayLevel would increase proportionally, to become 0.5. (Optional)",
+      },
+      {
+        parameter: "releaseTime: Number",
+        description:
+          "Time in seconds from now (defaults to 0) (Optional)",
+      },
+    ],
+  },
+  {
+    element: "setRange",
+    description:
+      "Set max (attackLevel) and min (releaseLevel) of envelope.",
+    code: "setRange(aLevel, rLevel)",
+    insert: "setRange(${1:aLevel}, ${2:rLevel})",
+    syntax: [
+      {
+        parameter: "aLevel: Number",
+        description:
+          "attack level (defaults to 1)",
+      },
+      {
+        parameter: "rLevel: Number",
+        description:
+          "release level (defaults to 0)",
+      },
+    ],
+  },
+  {
+    element: "setInput",
+    description:
+      "Assign a parameter to be controlled by this envelope. If a p5.Sound object is given, then the p5.Envelope will control its output gain. If multiple inputs are provided, the env will control all of them.",
+    code: "setInput([inputs])",
+    insert: "setInput()",
+    syntax: [
+      {
+        parameter: "inputs: Object",
+        description:
+          "A p5.sound object or Web Audio Param. (Optional)",
+      },
+    ],
+  },
+  {
+    element: "setExp",
+    description:
+      "Set whether the envelope ramp is linear (default) or exponential. Exponential ramps can be useful because we perceive amplitude and frequency logarithmically.",
+    code: "setExp(isExp)",
+    insert: "setExp(${1:isExp})",
+    syntax: [
+      {
+        parameter: "isExp: Boolean",
+        description:
+          "true is exponential, false is linear",
+      },
+    ],
+  },
+  {
+    element: "play",
+    description:
+      "Play tells the envelope to start acting on a given input. If the input is a p5.sound object (i.e. AudioIn, Oscillator, SoundFile), then Envelope will control its output volume. Envelopes can also be used to control any Web Audio Audio Param.",
+    code: "play(unit, [startTime], [sustainTime])",
+    insert: "play(${1:unit})",
+    syntax: [
+      {
+        parameter: "unit: Object",
+        description:
+          "A p5.sound object or Web Audio Param.",
+      },
+      {
+        parameter: "startTime: Number",
+        description:
+          "time from now (in seconds) at which to play (Optional)",
+      },
+      {
+        parameter: "sustainTime: Number",
+        description:
+          "time to sustain before releasing the envelope (Optional)",
+      },
+    ],
+  },
+  {
+    element: "triggerAttack",
+    description:
+      "Trigger the Attack, and Decay portion of the Envelope. Similar to holding down a key on a piano, but it will hold the sustain level until you let go. Input can be any p5.sound object, or a Web Audio Param.",
+    code: "triggerAttack(unit, secondsFromNow)",
+    insert: "triggerAttack(${1:unit}, ${2:secondsFromNow})",
+    syntax: [
+      {
+        parameter: "unit: Object",
+        description:
+          "p5.sound Object or Web Audio Param",
+      },
+      {
+        parameter: "secondsFromNow: Number",
+        description:
+          "time from now (in seconds)",
+      },
+    ],
+  },
+  {
+    element: "triggerRelease",
+    description:
+      "Trigger the Release of the Envelope. This is similar to releasing the key on a piano and letting the sound fade according to the release level and release time.",
+    code: "triggerRelease(unit, secondsFromNow)",
+    insert: "triggerRelease(${1:unit}, ${2:secondsFromNow})",
+    syntax: [
+      {
+        parameter: "unit: Object",
+        description:
+          "p5.sound Object or Web Audio Param",
+      },
+      {
+        parameter: "secondsFromNow: Number",
+        description:
+          "time to trigger the release",
+      },
+    ],
+  },
+  {
+    element: "ramp",
+    description:
+      "Exponentially ramp to a value using the first two values from setADSR(attackTime, decayTime) as time constants for simple exponential ramps. If the value is higher than current value, it uses attackTime, while a decrease uses decayTime.",
+    code: "ramp(unit, secondsFromNow, v, [v2])",
+    insert: "ramp(${1:unit}, ${2:secondsFromNow}, ${3:v})",
+    syntax: [
+      {
+        parameter: "unit: Object",
+        description:
+          "p5.sound Object or Web Audio Param",
+      },
+      {
+        parameter: "secondsFromNow: Number",
+        description:
+          "When to trigger the ramp",
+      },
+      {
+        parameter: "v: Number",
+        description:
+          "Target value",
+      },
+      {
+        parameter: "v2: Number",
+        description:
+          "Second target value (Optional)",
+      },
+    ],
+  },
+  {
+    element: "add",
+    description:
+      "Add a value to the p5.Oscillator's output amplitude, and return the oscillator. Calling this method again will override the initial add() with new values.",
+    code: "add(number)",
+    insert: "add(${1:number})",
+    syntax: [
+      {
+        parameter: "number: Number",
+        description:
+          "Constant number to add",
+      },
+    ],
+    return: {
+      type: "p5.Envelope",
+      description: "Envelope Returns this envelope with scaled output",
+    },
+  },
+  {
+    element: "mult",
+    description:
+      "Multiply the p5.Envelope's output amplitude by a fixed value. Calling this method again will override the initial mult() with new values.",
+    code: "mult(number)",
+    insert: "mult(${1:number})",
+    syntax: [
+      {
+        parameter: "number: Number",
+        description:
+          "Constant number to multiply",
+      },
+    ],
+    return: {
+      type: "p5.Envelope",
+      description: "Envelope Returns this envelope with scaled output",
+    },
+  },
+  {
+    //check this one
+    element: "scale",
+    description:
+      "Scale this envelope's amplitude values to a given range, and return the envelope. Calling this method again will override the initial scale() with new values.",
+    code: "scale(inMin, inMax, outMin, outMax)",
+    insert: "scale(${1:inMin}, ${2:inMax}, ${3:outMin}, ${4:outMax})",
+    syntax: [
+      {
+        parameter: "inMin: Number",
+        description:
+          "input range minumum",
+      },
+      {
+        parameter: "inMax: Number",
+        description:
+          "input range maximum",
+      },
+      {
+        parameter: "outMin: Number",
+        description:
+          "output range minumum",
+      },
+      {
+        parameter: "outMax: Number",
+        description:
+          "output range maximum",
+      },
+    ],
+    return: {
+      type: "p5.Envelope",
+      description: "Envelope Returns this envelope with scaled output",
     },
   },
 ];
