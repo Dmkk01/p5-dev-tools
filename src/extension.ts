@@ -3,9 +3,10 @@ import * as fs from "fs";
 import * as path from "path";
 import axios from 'axios';
 
-import { references } from "./references";
+import { referencesP5, referencesP5Sound } from "./references";
 import { htmlTemplateHosted, htmlTemplateLocal, htmlTemplateLocalMin, sketchTemplateBasic } from "./templates";
 import { createFile, checkIfExists, createDirectory } from "./utils";
+import { classesP5 } from "./classes";
 
 
 export function activate(context: vscode.ExtensionContext) {
@@ -116,10 +117,14 @@ export function activate(context: vscode.ExtensionContext) {
 
   vscode.languages.registerHoverProvider("javascript", {
     provideHover(document, position) {
+      let reference;
       const range = document.getWordRangeAtPosition(position);
       const word = document.getText(range);
 
-      const reference = references.find((x) => x.element === word);
+      const referenceP5 = referencesP5.find((x) => x.element === word);
+      const referenceSound = referencesP5Sound.find((x) => x.element === word);
+
+      reference = referenceP5 ? referenceP5 : referenceSound ? referenceSound : null;
 
       if (reference) {
         const markdown = new vscode.MarkdownString(
@@ -149,6 +154,16 @@ export function activate(context: vscode.ExtensionContext) {
 
         return new vscode.Hover(markdown);
       } else {
+        // const p5Range = [];
+        // p5Range.push(range?.start);
+
+        // const markdown = new vscode.MarkdownString(
+        //   `${JSON.stringify(position)}`
+        // );
+
+        // markdown.isTrusted = true;
+
+        // return new vscode.Hover(markdown);
         return ;
       }
     },
@@ -161,7 +176,7 @@ export function activate(context: vscode.ExtensionContext) {
         return new Promise((resolve) => {
           let completionItems: vscode.CompletionItem[] = [];
 
-          references.forEach((reference) => {
+          referencesP5.forEach((reference) => {
             const completionItem: vscode.CompletionItem =
               new vscode.CompletionItem(reference.element);
             completionItem.detail = "p5.js";
@@ -170,6 +185,29 @@ export function activate(context: vscode.ExtensionContext) {
               reference.insert
             );
             completionItem.label = reference.element;
+            completionItems.push(completionItem);
+          });
+
+          referencesP5Sound.forEach((reference) => {
+            const completionItem: vscode.CompletionItem =
+              new vscode.CompletionItem(reference.element);
+            completionItem.detail = "p5.js sound";
+            completionItem.filterText = reference.element;
+            completionItem.insertText = new vscode.SnippetString(
+              reference.insert
+            );
+            completionItem.label = reference.element;
+            completionItems.push(completionItem);
+          });
+
+          classesP5.forEach((classP5) => {
+            const completionItem: vscode.CompletionItem = new vscode.CompletionItem(classP5.element);
+            completionItem.detail = "p5.js class";
+            completionItem.filterText = classP5.element;
+            completionItem.insertText = new vscode.SnippetString(
+              classP5.insert
+            );
+            completionItem.label = classP5.element;
             completionItems.push(completionItem);
           });
 

@@ -1,4 +1,4 @@
-export const references = [
+export const referencesP5 = [
   {
     element: "describe",
     description:
@@ -259,14 +259,6 @@ export const references = [
       type: "Number",
       description: "the saturation value",
     },
-  },
-  {
-    element: "p5.Color",
-    description:
-      "Each color stores the color mode and level maxes that was applied at the time of its construction. These are used to interpret the input arguments (at construction and later for that instance of color) and to format the output e.g. when saturation() is requested.",
-    code: "new p5.Color()",
-    insert: "new p5.Color()",
-    syntax: [],
   },
   {
     element: "background",
@@ -6647,5 +6639,26 @@ export const references = [
           "p5.Camera object",
       }
     ]
+  },
+];
+
+export const referencesP5Sound = [
+  {
+    element: "brrrr",
+    description:
+      "brrr",
+    code: "brrrr(text, [display])",
+    insert: "brrrr(${1:text})",
+    syntax: [
+      {
+        parameter: "cam: p5.Camera",
+        description:
+          "p5.Camera object",
+      }
+    ],
+    return: {
+      type: "p5.Shader",
+      description: "a shader object created from the provided vertex and fragment shaders.",
+    },
   },
 ];

@@ -12,7 +12,7 @@ This extension puts handy shortcuts and abbreviated p5 documentation right at yo
 ## Features
 
 ### Commands
- -  Open VS Code command palette (F1 key) and type`Create a standard p5.js project`
+ -  Open VS Code command palette (F1 key) and type `Create a standard p5.js project`
     This command allows to create a local or hosted version of a p5.js project that include `index.html` and `sketch.js` files.
 
 ### Snippets
@@ -40,6 +40,6 @@ It also includes references from the original p5 documentation. It allows for au
 
 
 ## Keeping in Touch
-Bug reports, suggestions, and other contributions are cheerfully accepted. Please use the [Issues page of the GitHubrepository](https://github.com/Dmkk01/p5-dev-tools/issues).
+Bug reports, suggestions, and other contributions are cheerfully accepted. Please use the [Issues page of the GitHub repository](https://github.com/Dmkk01/p5-dev-tools/issues).
 
 
