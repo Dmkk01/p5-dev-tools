@@ -20,6 +20,7 @@
 	],
 	"activationEvents": [
 		"onCommand:p5-snippets-and-tools.create-p5-project-standard",
+		"onCommand:p5-snippets-and-tools.create-p5-project-sound",
 		"onLanguage:javascript"
 	],
 	"main": "./out/extension.js",
@@ -31,6 +32,10 @@
 			{
 				"command": "p5-snippets-and-tools.create-p5-project-standard",
 				"title": "Create a standard p5.js project"
+			},
+			{
+				"command": "p5-snippets-and-tools.create-p5-project-sound",
+				"title": "Create a standard p5.js sound project"
 			}
 		],
 		"snippets": [

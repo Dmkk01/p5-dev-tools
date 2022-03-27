@@ -17,11 +17,15 @@ This extension puts handy shortcuts and abbreviated p5 documentation right at yo
 
 ### Snippets
 
-The extension custom snippets. They start with `p5-`, for example, `p5-blue` yields `0, 0, 255`.
+The extension also has custom snippets. To use them, start typing `p5-`, for example, `p5-blue` would yield `0, 0, 255`.
 It also includes references from the original p5 documentation. It allows for autocompletion as well as highlighting for more information about the value.
 
 
 ## Release Notes
+
+### 0.3.1
+
+- Add a command to create a p5.js sound project
 
 ### 0.3.0
 
@@ -31,10 +35,6 @@ It also includes references from the original p5 documentation. It allows for au
 ### 0.2.0
 
 - Complete the references from p5.js documentation
-
-### 0.1.1
-
-- Add color and basic function snippets
 
 
 ## Keeping in Touch
