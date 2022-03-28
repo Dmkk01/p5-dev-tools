@@ -2,7 +2,7 @@
 
 ## 0.3.3
 
-- Complete p5.js sound classes documentation
+- Add new command to open the p5.js online editor
 
 ## 0.3.2
 
