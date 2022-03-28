@@ -224,6 +224,16 @@ export function activate(context: vscode.ExtensionContext) {
 
   context.subscriptions.push(disposable2);
 
+  // Command to open the p5.js online editor
+  let disposable3 = vscode.commands.registerCommand(
+    "p5-snippets-and-tools.open-p5-online-editor",
+    () => {
+      vscode.env.openExternal(vscode.Uri.parse('https://editor.p5js.org/'));
+    }
+  );
+
+  context.subscriptions.push(disposable3);
+
   vscode.languages.registerHoverProvider("javascript", {
     provideHover(document, position) {
       let reference;

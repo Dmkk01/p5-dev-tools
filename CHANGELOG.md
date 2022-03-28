@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.3.3
+
+- Complete p5.js sound classes documentation
+
 ## 0.3.2
 
 - Complete p5.js sound classes documentation

@@ -13,8 +13,13 @@ All of the documentation is based on the references provided by [p5.js](https://
 ## Features
 
 ### Commands
- -  Open VS Code command palette (F1 key) and type `Create a standard p5.js project`
-    This command allows to create a local or hosted version of a p5.js (and/or p5.js sound) project that include `index.html` and `sketch.js` files.
+Open VS Code command palette (F1 key) and type:
+ -  `Create a standard p5.js project`
+    This command allows to create a local or hosted version of a p5.js project that include `index.html` and `sketch.js` files.
+ -  `Create a standard p5.js sound project`
+    This command allows to create a local or hosted version of p5.js and p5.js sound project that include `index.html` and `sketch.js` files.
+ -  `Open p5.js online editor`
+    This command opens the online p5.js editor in your default browser
 
 ### Snippets
 
@@ -24,6 +29,10 @@ It also includes references from the original p5 documentation. It allows for au
 
 ## Release Notes
 
+### 0.3.3
+
+- Add new command to open the p5.js online editor
+
 ### 0.3.2
 
 - Complete p5.js sound classes documentation
@@ -32,10 +41,6 @@ It also includes references from the original p5 documentation. It allows for au
 
 - Add a command to create a p5.js sound project
 
-### 0.3.0
-
-- Add p5.js classes documentation
-- Add a portion of p5.js sound references
 
 
 ## Keeping in Touch
