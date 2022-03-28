@@ -3,7 +3,7 @@
 	"license": "MIT",
 	"publisher": "Dominikasinski",
 	"displayName": "P5 Snippets and Tools",
-	"description": "An extension for development with p5.js",
+	"description": "An extension for development with p5.js and p5.js sound",
 	"icon": "logo.png",
 	"repository": {
 		"type": "git",
