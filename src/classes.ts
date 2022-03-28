@@ -1267,3 +1267,1066 @@ export const classesP5 = [
     ],
   },
 ];
+
+export const classesP5Sound = [
+  {
+    element: "p5.Score",
+    insert: "new p5.Score()",
+    code: "new p5.Score([parts])",
+    description:
+      "A Score consists of a series of Parts. The parts will be played back in order.",
+    parameters: [
+      {
+        name: "parts: p5.Part",
+        description: "One or multiple parts, to be played in sequence. (Optional)",
+      },
+    ],
+    fields: [],
+    methods: [
+      {
+        name: "start()",
+        description:"Start playback of the score.",
+      },
+      {
+        name: "stop()",
+        description:"Stop playback of the score.",
+      },
+      {
+        name: "pause()",
+        description:"Pause playback of the score.",
+      },
+      {
+        name: "loop()",
+        description:"Loop playback of the score.",
+      },
+      {
+        name: "noLoop()",
+        description:"Stop looping playback of the score. If it is currently playing, this will go into effect after the current round of playback completes.",
+      },
+      {
+        name: "setBPM()",
+        description:"Set the tempo for all parts in the score",
+      },
+    ],
+  },
+  {
+    element: "p5.Part",
+    insert: "new p5.Part()",
+    code: "new p5.Part([steps] [tatums])",
+    description:
+      "A p5.Part plays back one or more p5.Phrases. Instantiate a part with steps and tatums. By default, each step represents a 1/16th note.",
+    parameters: [
+      {
+        name: "steps: Number",
+        description: "Steps in the part (Optional)",
+      },
+      {
+        name: "tatums: Number",
+        description: "Divisions of a beat, e.g. use 1/4, or 0.25 for a quater note (default is 1/16, a sixteenth note) (Optional)",
+      },
+    ],
+    fields: [],
+    methods: [
+      {
+        name: "setBPM()",
+        description: "Set the tempo of this part, in Beats Per Minute.",
+      },
+      {
+        name: "getBPM()",
+        description: "Returns the tempo, in Beats Per Minute, of this part.",
+      },
+      {
+        name: "start()",
+        description: "Start playback of this part. It will play through all of its phrases at a speed determined by setBPM.",
+      },
+      {
+        name: "loop()",
+        description: "Loop playback of this part. It will begin looping through all of its phrases at a speed determined by setBPM.",
+      },
+      {
+        name: "noLoop()",
+        description: "Tell the part to stop looping.",
+      },
+      {
+        name: "stop()",
+        description: "Stop the part and cue it to step 0. Playback will resume from the begining of the Part when it is played again.",
+      },
+      {
+        name: "pause()",
+        description: "Pause the part. Playback will resume from the current step.",
+      },
+      {
+        name: "addPhrase()",
+        description: "Add a p5.Phrase to this Part.",
+      },
+      {
+        name: "removePhrase()",
+        description: "Remove a phrase from this part, based on the name it was given when it was created.",
+      },
+      {
+        name: "getPhrase()",
+        description: "Get a phrase from this part, based on the name it was given when it was created. Now you can modify its array.",
+      },
+      {
+        name: "replaceSequence()",
+        description: "Find all sequences with the specified name, and replace their patterns with the specified array.",
+      },
+      {
+        name: "onStep()",
+        description: "Set the function that will be called at every step. This will clear the previous function.",
+      },
+    ],
+  },
+  {
+    element: "p5.Phrase",
+    insert: "new p5.Phrase(${1:name}, ${2:callback}, ${3:sequence})",
+    code: "new p5.Phrase(name, callback, sequence)",
+    description:"A phrase is a pattern of musical events over time, i.e. a series of notes and rests. Phrases must be added to a p5.Part for playback, and each part can play multiple phrases at the same time. ",
+    parameters: [
+      {
+        name: "name: String",
+        description: "Name so that you can access the Phrase.",
+      },
+      {
+        name: "callback: function",
+        description: "The name of a function that this phrase will call. Typically it will play a sound, and accept two parameters: a time at which to play the sound (in seconds from now), and a value from the sequence array.",
+      },
+      {
+        name: "sequence: Array",
+        description: "Array of values to pass into the callback at each step of the phrase.",
+      },
+    ],
+    fields: [
+      {
+        name: "sequence",
+        description: "Array of values to pass into the callback at each step of the phrase. Depending on the callback function's requirements, these values may be numbers, strings, or an object with multiple parameters. Zero (0) indicates a rest.",
+      },
+    ],
+    methods: [
+    ],
+  },
+  {
+    element: "p5.SoundLoop",
+    insert: "new p5.SoundLoop(${1:callback})",
+    code: "new p5.SoundLoop(callback, [interval])",
+    description:"SoundLoop",
+    parameters: [
+      {
+        name: "callback: function",
+        description: "this function will be called on each iteration of theloop",
+      },
+      {
+        name: "interval: Number|String",
+        description: "amount of time (if a number) or beats (if a string, following Tone.Time convention) for each iteration of the loop. Defaults to 1 second. (Optional)",
+      },
+    ],
+    fields: [
+      {
+        name: "bpm",
+        description: "Getters and Setters, setting any paramter will result in a change in the clock's frequency, that will be reflected after the next callback beats per minute (defaults to 60)",
+      },
+      {
+        name: "timeSignature",
+        description: "number of quarter notes in a measure (defaults to 4)",
+      },
+      {
+        name: "interval",
+        description: "length of the loops interval",
+      },
+      {
+        name: "iterations",
+        description: "how many times the callback has been called so far",
+      },
+      {
+        name: "musicalTimeMode",
+        description: "musicalTimeMode uses Tone.Time convention true if string, false if number",
+      },
+      {
+        name: "maxIterations",
+        description: "Set a limit to the number of loops to play. defaults to Infinity",
+      },
+    ],
+    methods: [
+      {
+        name: "start()",
+        description: "Start the loop",
+      },
+      {
+        name: "stop()",
+        description: "Stop the loop",
+      },
+      {
+        name: "pause()",
+        description: "Pause the loop",
+      },
+      {
+        name: "syncedStart()",
+        description: "Synchronize loops. Use this method to start two or more loops in synchronization or to start a loop in synchronization with a loop that is already playing.",
+      },
+    ],
+  },
+  {
+    element: "p5.SoundRecorder",
+    insert: "new p5.SoundRecorder()",
+    code: "new p5.SoundRecorder()",
+    description:"Record sounds for playback and/or to save as a .wav file. The p5.SoundRecorder records all sound output from your sketch, or can be assigned a specific source with setInput().",
+    parameters: [
+
+    ],
+    fields: [
+
+    ],
+    methods: [
+      {
+        name: "setInput()",
+        description: "Connect a specific device to the p5.SoundRecorder. If no parameter is given, p5.SoundRecorer will record all audible p5.sound from your sketch.",
+      },
+      {
+        name: "record()",
+        description: "Start recording. To access the recording, provide a p5.SoundFile as the first parameter. The p5.SoundRecorder will send its recording to that p5.SoundFile for playback once recording is complete.",
+      },
+      {
+        name: "stop()",
+        description: "Stop the recording. Once the recording is stopped, the results will be sent to the p5.SoundFile that was given on .record(), and if a callback function was provided on record, that function will be called.",
+      },
+    ],
+  },
+  {
+    element: "p5.Reverb",
+    insert: "new p5.Reverb()",
+    code: "new p5.Reverb()",
+    description: "Reverb adds depth to a sound through a large number of decaying echoes. It creates the perception that sound is occurring in a physical space. The p5.Reverb has paramters for Time (how long does the reverb last) and decayRate (how much the sound decays with each echo) that can be set with the .set() or .process() methods.",
+    parameters: [
+
+    ],
+    fields: [
+
+    ],
+    methods: [
+      {
+        name: "process()",
+        description: "Connect a source to the reverb, and assign reverb parameters.",
+      },
+      {
+        name: "set()",
+        description: "Set the reverb settings. Similar to .process(), but without assigning a new input.",
+      },
+      {
+        name: "amp()",
+        description: "Set the output level of the reverb effect.",
+      },
+      {
+        name: "connect()",
+        description: "Send output to a p5.sound or web audio object",
+      },
+      {
+        name: "disconnect()",
+        description: "Disconnect all output.",
+      },
+    ],
+  },
+  {
+    element: "p5.Convolver",
+    insert: "new p5.Convolver(${1:path})",
+    code: "new p5.Convolver(path, [callback], [errorCallback])",
+    description: "p5.Convolver extends p5.Reverb. It can emulate the sound of real physical spaces through a process called convolution. Convolution multiplies any audio input by an impulse response to simulate the dispersion of sound over time. The impulse response is generated from an audio file that you provide. One way to generate an impulse response is to pop a balloon in a reverberant space and record the echo. Convolution can also be used to experiment with sound.",
+    parameters: [
+      {
+        name: "path: String",
+        description: "path to a sound file",
+      },
+      {
+        name: "callback: function",
+        description: "function to call when loading succeeds (Optional)",
+      },
+      {
+        name: "errorCallback: function",
+        description: "function to call if loading fails. This function will receive an error or XMLHttpRequest object with information about what went wrong. (Optional)",
+      },
+    ],
+    fields: [
+      {
+        name: "convolverNode",
+        description: "Internally, the p5.Convolver uses the a Web Audio Convolver Node.",
+      },
+      {
+        name: "impulses",
+        description: "If you load multiple impulse files using the .addImpulse method, they will be stored as Objects in this Array.",
+      },
+    ],
+    methods: [
+      {
+        name: "process()",
+        description: "Connect a source to the convolver.",
+      },
+      {
+        name: "addImpulse()",
+        description: "Load and assign a new Impulse Response to the p5.Convolver. The impulse is added to the .impulses array.",
+      },
+      {
+        name: "resetImpulse()",
+        description: "Similar to .addImpulse, except that the .impulses Array is reset to save memory. ",
+      },
+      {
+        name: "toggleImpulse()",
+        description: "If you have used .addImpulse() to add multiple impulses to a p5.Convolver, then you can use this method to toggle between the items in the .impulses Array. Accepts a parameter to identify which impulse you wish to use, identified either by its original filename (String) or by its position in the .impulses Array (Number).",
+      },
+    ],
+  },
+  {
+    element: "p5.Filter",
+    insert: "new p5.Filter()",
+    code: "new p5.Filter([type])",
+    description: "A p5.Filter uses a Web Audio Biquad Filter to filter the frequency response of an input source.",
+    parameters: [
+      {
+        name: "type: String",
+        description: "'lowpass' (default), 'highpass', 'bandpass' (Optional)",
+      },
+    ],
+    fields: [
+      {
+        name: "biquadFilter",
+        description: "The p5.Filter is built with a Web Audio BiquadFilter Node.",
+      },
+    ],
+    methods: [
+      {
+        name: "process()",
+        description: "Filter an audio signal according to a set of filter parameters.",
+      },
+      {
+        name: "set()",
+        description: "Set the frequency and the resonance of the filter.",
+      },
+      {
+        name: "freq()",
+        description: "Set the filter frequency, in Hz, from 10 to 22050 (the range of human hearing, although in reality most people hear in a narrower range).",
+      },
+      {
+        name: "res()",
+        description: "Controls either width of a bandpass frequency, or the resonance of a low/highpass cutoff frequency.",
+      },
+      {
+        name: "gain()",
+        description: "Controls the gain attribute of a Biquad Filter. This is distinctly different from .amp() which is inherited from p5.Effect .amp() controls the volume via the output gain node p5.Filter.gain() controls the gain parameter of a Biquad Filter node.",
+      },
+      {
+        name: "toggle()",
+        description: "Toggle function. Switches between the specified type and allpass",
+      },
+      {
+        name: "setType()",
+        description: "Set the type of a p5.Filter. Possible types include: lowpass (default), highpass, bandpass, lowshelf, highshelf, peaking, notch, allpass.",
+      },
+    ],
+  },
+  {
+    element: "p5.Delay",
+    insert: "new p5.Delay()",
+    code: "new p5.Delay()",
+    description: "Delay is an echo effect. It processes an existing sound source, and outputs a delayed version of that sound. The p5.Delay can produce different effects depending on the delayTime, feedback, filter, and type. In the example below, a feedback of 0.5 (the default value) will produce a looping delay that decreases in volume by 50% each repeat.",
+    parameters: [
+    ],
+    fields: [
+      {
+        name: "leftDelay",
+        description: "The p5.Delay is built with two Web Audio Delay Nodes, one for each stereo channel.",
+      },
+      {
+        name: "rightDelay",
+        description: "The p5.Delay is built with two Web Audio Delay Nodes, one for each stereo channel.",
+      },
+    ],
+    methods: [
+      {
+        name: "process()",
+        description: "Add delay to an audio signal according to a set of delay parameters.",
+      },
+      {
+        name: "delayTime()",
+        description: "Set the delay (echo) time, in seconds. Usually this value will be a floating point number between 0.0 and 1.0.",
+      },
+      {
+        name: "feedback()",
+        description: "Feedback occurs when Delay sends its signal back through its input in a loop. The feedback amount determines how much signal to send each time through the loop.",
+      },
+      {
+        name: "filter()",
+        description: "Set a lowpass filter frequency for the delay. A lowpass filter will cut off any frequencies higher than the filter frequency.",
+      },
+      {
+        name: "setType()",
+        description: "Choose a preset type of delay. 'pingPong' bounces the signal from the left to the right channel to produce a stereo effect.",
+      },
+      {
+        name: "amp()",
+        description: " Set the output level of the delay effect.",
+      },
+      {
+        name: "connect()",
+        description: "Send output to a p5.sound or web audio object",
+      },
+      {
+        name: "disconnect()",
+        description: "Disconnect all output.",
+      },
+    ],
+  },
+  {
+    element: "p5.Envelope",
+    insert: "new p5.Envelope()",
+    code: "new p5.Envelope()",
+    description: "Envelopes are pre-defined amplitude distribution over time. Typically, envelopes are used to control the output volume of an object, a series of fades referred to as Attack, Decay, Sustain and Release ( ADSR ). Envelopes can also control other Web Audio Parameters—for example, a p5.Envelope can control an Oscillator's frequency like this: osc.freq(env).",
+    parameters: [
+    ],
+    fields: [
+      {
+        name: "attackTime",
+        description: "Time until envelope reaches attackLevel",
+      },
+      {
+        name: "attackLevel",
+        description: "Level once attack is complete",
+      },
+      {
+        name: "decayTime",
+        description: "Time until envelope reaches decayLevel.",
+      },
+      {
+        name: "decayLevel",
+        description: " Level after decay. The envelope will sustain here until it is released.",
+      },
+      {
+        name: "releaseTime",
+        description: "Duration of the release portion of the envelope.",
+      },
+      {
+        name: "releaseLevel",
+        description: "Level at the end of the release.",
+      },
+    ],
+    methods: [
+      {
+        name: "set()",
+        description: "Reset the envelope with a series of time/value pairs.",
+      },
+      {
+        name: "setADSR()",
+        description: "Set values like a traditional ADSR envelope .",
+      },
+      {
+        name: "setRange()",
+        description: "Set max (attackLevel) and min (releaseLevel) of envelope.",
+      },
+      {
+        name: "setInput()",
+        description: "Assign a parameter to be controlled by this envelope. If a p5.Sound object is given, then the p5.Envelope will control its output gain. If multiple inputs are provided, the env will control all of them.",
+      },
+      {
+        name: "setExp()",
+        description: "Set whether the envelope ramp is linear (default) or exponential. Exponential ramps can be useful because we perceive amplitude and frequency logarithmically.",
+      },
+      {
+        name: "play()",
+        description: "Play tells the envelope to start acting on a given input.",
+      },
+      {
+        name: "triggerAttack()",
+        description: "Trigger the Attack, and Decay portion of the Envelope. ",
+      },
+      {
+        name: "triggerRelease()",
+        description: "Trigger the Release of the Envelope. This is similar to releasing the key on a piano and letting the sound fade according to the release level and release time.",
+      },
+      {
+        name: "ramp()",
+        description: "Exponentially ramp to a value using the first two values from setADSR(attackTime, decayTime) as time constants for simple exponential ramps.",
+      },
+      {
+        name: "add()",
+        description: "Add a value to the p5.Oscillator's output amplitude, and return the oscillator.",
+      },
+      {
+        name: "mult()",
+        description: "Multiply the p5.Envelope's output amplitude by a fixed value.",
+      },
+      {
+        name: "scale()",
+        description: "Scale this envelope's amplitude values to a given range, and return the envelope.",
+      },
+    ],
+  },
+  {
+    element: "p5.MonoSynth",
+    insert: "new p5.MonoSynth()",
+    code: "new p5.MonoSynth()",
+    description: "A MonoSynth is used as a single voice for sound synthesis. This is a class to be used in conjunction with the PolySynth class. Custom synthetisers should be built inheriting from this class.",
+    parameters: [
+    ],
+    fields: [
+      {
+        name: "attack",
+        description: "Getters and Setters",
+      },
+      {
+        name: "decay",
+        description: "Getters and Setters",
+      },
+      {
+        name: "sustain",
+        description: "Getters and Setters",
+      },
+      {
+        name: "release",
+        description: "Getters and Setters",
+      },
+    ],
+    methods: [
+      {
+        name: "play()",
+        description: "Play tells the MonoSynth to start playing a note. This method schedules the calling of .triggerAttack and .triggerRelease.",
+      },
+      {
+        name: "triggerAttack()",
+        description: "Trigger the Attack, and Decay portion of the Envelope. Similar to holding down a key on a piano, but it will hold the sustain level until you let go.",
+      },
+      {
+        name: "triggerRelease()",
+        description: "Trigger the release of the Envelope. This is similar to releasing the key on a piano and letting the sound fade according to the release level and release time.",
+      },
+      {
+        name: "setADSR()",
+        description: "Set values like a traditional ADSR envelope .",
+      },
+      {
+        name: "amp()",
+        description: "MonoSynth amp",
+      },
+      {
+        name: "connect()",
+        description: "Connect to a p5.sound / Web Audio object.",
+      },
+      {
+        name: "disconnect()",
+        description: "Disconnect all outputs",
+      },
+      {
+        name: "dispose()",
+        description: "Get rid of the MonoSynth and free up its resources / memory.",
+      },
+    ],
+  },
+  {
+    element: "p5.PolySynth",
+    insert: "new p5.PolySynth()",
+    code: "new p5.PolySynth([synthVoice], [maxVoices])",
+    description: "An AudioVoice is used as a single voice for sound synthesis. The PolySynth class holds an array of AudioVoice, and deals with voices allocations, with setting notes to be played, and parameters to be set.",
+    parameters: [
+      {
+        name: "synthVoice: Number",
+        description: "A monophonic synth voice inheriting the AudioVoice class. Defaults to p5.MonoSynth (Optional)",
+      },
+      {
+        name: "maxVoices: Number",
+        description: "Number of voices, defaults to 8; (Optional)",
+      },
+    ],
+    fields: [
+      {
+        name: "notes",
+        description: "An object that holds information about which notes have been played and which notes are currently being played. New notes are added as keys on the fly.",
+      },
+      {
+        name: "polyvalue",
+        description: "A PolySynth must have at least 1 voice, defaults to 8",
+      },
+      {
+        name: "AudioVoice",
+        description: "Monosynth that generates the sound for each note that is triggered. The p5.PolySynth defaults to using the p5.MonoSynth as its voice.",
+      },
+    ],
+    methods: [
+      {
+        name: "play()",
+        description: " Play a note by triggering noteAttack and noteRelease with sustain time",
+      },
+      {
+        name: "noteADSR()",
+        description: "noteADSR sets the envelope for a specific note that has just been triggered. Using this method modifies the envelope of whichever audiovoice is being used to play the desired note.",
+      },
+      {
+        name: "setADSR()",
+        description: "Set the PolySynths global envelope. This method modifies the envelopes of each monosynth so that all notes are played with this envelope.",
+      },
+      {
+        name: "noteAttack()",
+        description: "Trigger the Attack, and Decay portion of a MonoSynth. Similar to holding down a key on a piano, but it will hold the sustain level until you let go.",
+      },
+      {
+        name: "noteRelease()",
+        description: " Trigger the Release of an AudioVoice note. This is similar to releasing the key on a piano and letting the sound fade according to the release level and release time.",
+      },
+      {
+        name: "connect()",
+        description: "Connect to a p5.sound / Web Audio object.",
+      },
+      {
+        name: "disconnect()",
+        description: "Disconnect all outputs",
+      },
+      {
+        name: "dispose()",
+        description: "Get rid of the MonoSynth and free up its resources / memory",
+      },
+    ],
+  },
+  {
+    element: "p5.Pulse",
+    insert: "new p5.Pulse()",
+    code: "new p5.Pulse([freq], [w])",
+    description: "Creates a Pulse object, an oscillator that implements Pulse Width Modulation. The pulse is created with two oscillators. Accepts a parameter for frequency, and to set the width between the pulses.",
+    parameters: [
+      {
+        name: "freq: Number",
+        description: "Frequency in oscillations per second (Hz) (Optional)",
+      },
+      {
+        name: "w: Number",
+        description: "Width between the pulses (0 to 1.0, defaults to 0) (Optional)",
+      },
+    ],
+    fields: [
+    ],
+    methods: [
+      {
+        name: "width()",
+        description: "Set the width of a Pulse object (an oscillator that implements Pulse Width Modulation).",
+      },
+    ],
+  },
+  {
+    element: "p5.Noise",
+    insert: "new p5.Noise(${1:type})",
+    code: "new p5.Noise()",
+    description: "Noise is a type of oscillator that generates a buffer with random values.",
+    parameters: [
+      {
+        name: "type: String",
+        description: "Type of noise can be 'white' (default), 'brown' or 'pink'.",
+      },
+    ],
+    fields: [
+    ],
+    methods: [
+      {
+        name: "setType()",
+        description: "Set type of noise to 'white', 'pink' or 'brown'. White is the default.",
+      },
+    ],
+  },
+  {
+    element: "p5.Amplitude",
+    insert: "new p5.Amplitude()",
+    code: "new p5.Amplitude([smoothing])",
+    description: "Amplitude measures volume between 0.0 and 1.0. Listens to all p5sound by default, or use setInput() to listen to a specific sound source. Accepts an optional smoothing value, which defaults to 0.",
+    parameters: [
+      {
+        name: "smoothing: Number",
+        description: "between 0.0 and .999 to smooth amplitude readings (defaults to 0) (Optional)",
+      },
+    ],
+    fields: [
+    ],
+    methods: [
+      {
+        name: "setInput()",
+        description: "Connects to the p5sound instance (main output) by default. Optionally, you can pass in a specific source (i.e. a soundfile).",
+      },
+      {
+        name: "getLevel()",
+        description: "Returns a single Amplitude reading at the moment it is called. For continuous readings, run in the draw loop.",
+      },
+      {
+        name: "toggleNormalize()",
+        description: "Determines whether the results of Amplitude.process() will be Normalized. To normalize, Amplitude finds the difference the loudest reading it has processed and the maximum amplitude of 1.0.",
+      },
+      {
+        name: "smooth()",
+        description: "Smooth Amplitude analysis by averaging with the last analysis frame. Off by default.",
+      },
+    ],
+  },
+  {
+    element: "p5.Oscillator",
+    insert: "new p5.Oscillator()",
+    code: "new p5.Oscillator([freq], [type])",
+    description: "Creates a signal that oscillates between -1.0 and 1.0. By default, the oscillation takes the form of a sinusoidal shape ('sine'). Additional types include 'triangle', 'sawtooth' and 'square'. The frequency defaults to 440 oscillations per second (440Hz, equal to the pitch of an 'A' note).",
+    parameters: [
+      {
+        name: "freq: Number",
+        description: "frequency defaults to 440Hz (Optional)",
+      },
+      {
+        name: "type: String",
+        description: "type of oscillator. Options: 'sine' (default), 'triangle', 'sawtooth', 'square' (Optional)",
+      },
+    ],
+    fields: [
+    ],
+    methods: [
+      {
+        name: "start()",
+        description: "Start an oscillator. Starting an oscillator on a user gesture will enable audio in browsers that have a strict autoplay policy, including Chrome and most mobile devices.",
+      },
+      {
+        name: "stop()",
+        description: "Stop an oscillator. Accepts an optional parameter to determine how long (in seconds from now) until the oscillator stops.",
+      },
+      {
+        name: "amp()",
+        description: "Set the amplitude between 0 and 1.0. Or, pass in an object such as an oscillator to modulate amplitude with an audio signal.",
+      },
+      {
+        name: "getAmp()",
+        description: "Returns the value of output gain",
+      },
+      {
+        name: "freq()",
+        description: "Set frequency of an oscillator to a value. Or, pass in an object such as an oscillator to modulate the frequency with an audio signal.",
+      },
+      {
+        name: "getFreq()",
+        description: " Returns the value of frequency of oscillator",
+      },
+      {
+        name: "setType()",
+        description: "Set type to 'sine', 'triangle', 'sawtooth' or 'square'.",
+      },
+      {
+        name: "getType()",
+        description: "Returns current type of oscillator eg. 'sine', 'triangle', 'sawtooth' or 'square'.",
+      },
+      {
+        name: "connect()",
+        description: "Connect to a p5.sound / Web Audio object.",
+      },
+      {
+        name: "disconnect()",
+        description: "Disconnect all outputs",
+      },
+      {
+        name: "pan()",
+        description: "Pan between Left (-1) and Right (1)",
+      },
+      {
+        name: "getPan()",
+        description: "Returns the current value of panPosition , between Left (-1) and Right (1)",
+      },
+      {
+        name: "phase()",
+        description: "Set the phase of an oscillator between 0.0 and 1.0. In this implementation, phase is a delay time based on the oscillator's current frequency.",
+      },
+      {
+        name: "add()",
+        description: "Add a value to the p5.Oscillator's output amplitude, and return the oscillator. Calling this method again will override the initial add() with a new value.",
+      },
+      {
+        name: "mult()",
+        description: "Multiply the p5.Oscillator's output amplitude by a fixed value (i.e. turn it up!). Calling this method again will override the initial mult() with a new value.",
+      },
+      {
+        name: "scale()",
+        description: "Scale this oscillator's amplitude values to a given range, and return the oscillator. Calling this method again will override the initial scale() with new values.",
+      },
+    ],
+  },
+  {
+    element: "p5.FFT",
+    insert: "new p5.FFT()",
+    code: "new p5.FFT([smoothing], [bins])",
+    description: "FFT (Fast Fourier Transform) is an analysis algorithm that isolates individual audio frequencies within a waveform.",
+    parameters: [
+      {
+        name: "smoothing: Number",
+        description: "Smooth results of Freq Spectrum. 0.0 < smoothing < 1.0. Defaults to 0.8. (Optional)",
+      },
+      {
+        name: "bins: Number",
+        description: "Length of resulting array. Must be a power of two between 16 and 1024. Defaults to 1024. (Optional)",
+      },
+    ],
+    fields: [
+    ],
+    methods: [
+      {
+        name: "setInput()",
+        description: "Set the input source for the FFT analysis. If no source is provided, FFT will analyze all sound in the sketch.",
+      },
+      {
+        name: "waveform()",
+        description: " Returns an array of amplitude values (between -1.0 and +1.0) that represent a snapshot of amplitude readings in a single buffer.",
+      },
+      {
+        name: "analyze()",
+        description: "Returns an array of amplitude values (between 0 and 255) across the frequency spectrum. Length is equal to FFT bins (1024 by default).",
+      },
+      {
+        name: "getEnergy()",
+        description: "Returns the amount of energy (volume) at a specific frequency, or the average amount of energy between two frequencies. ",
+      },
+      {
+        name: "getCentroid()",
+        description: "Returns the spectral centroid of the input signal.",
+      },
+      {
+        name: "smooth()",
+        description: "Smooth FFT analysis by averaging with the last analysis frame.",
+      },
+      {
+        name: "linAverages()",
+        description: "Returns an array of average amplitude values for a given number of frequency bands split equally. N defaults to 16. ",
+      },
+      {
+        name: "logAverages()",
+        description: "Returns an array of average amplitude values of the spectrum, for a given set of Octave Bands",
+      },
+      {
+        name: "getOctaveBands()",
+        description: "Calculates and Returns the 1/N Octave Bands N defaults to 3 and minimum central frequency to 15.625Hz.",
+      },
+    ],
+  },
+  {
+    element: "p5.AudioIn",
+    insert: "new p5.AudioIn()",
+    code: "new p5.AudioIn([errorCallback])",
+    description: "Get audio from an input, i.e. your computer's microphone. Turn the mic on/off with the start() and stop() methods. When the mic is on, its volume can be measured with getLevel or by connecting an FFT object.",
+    parameters: [
+      {
+        name: "errorCallback: function",
+        description: "A function to call if there is an error accessing the AudioIn. For example, Safari and iOS devices do not currently allow microphone access. (Optional)",
+      },
+    ],
+    fields: [
+      {
+        name: "input",
+        description: "",
+      },
+      {
+        name: "output",
+        description: "",
+      },
+      {
+        name: "stream",
+        description: "",
+      },
+      {
+        name: "mediaStream",
+        description: "",
+      },
+      {
+        name: "currentSource",
+        description: "",
+      },
+      {
+        name: "enabled",
+        description: "Client must allow browser to access their microphone / audioin source. Default: false. Will become true when the client enables access.",
+      },
+      {
+        name: "amplitude",
+        description: "Input amplitude, connect to it by default but not to master out",
+      },
+    ],
+    methods: [
+      {
+        name: "start()",
+        description: "Start processing audio input. This enables the use of other AudioIn methods like getLevel(). Note that by default, AudioIn is not connected to p5.sound's output. So you won't hear anything unless you use the connect() method.",
+      },
+      {
+        name: "stop()",
+        description: "Turn the AudioIn off. If the AudioIn is stopped, it cannot getLevel(). If re-starting, the user may be prompted for permission access.",
+      },
+      {
+        name: "connect()",
+        description: "Connect to an audio unit. If no parameter is provided, will connect to the main output (i.e. your speakers).",
+      },
+      {
+        name: "disconnect()",
+        description: "Disconnect the AudioIn from all audio units. For example, if connect() had been called, disconnect() will stop sending signal to your speakers.",
+      },
+      {
+        name: "getLevel()",
+        description: "Read the Amplitude (volume level) of an AudioIn. The AudioIn class contains its own instance of the Amplitude class to help make it easy to get a microphone's volume level.",
+      },
+      {
+        name: "amp()",
+        description: "Set amplitude (volume) of a mic input between 0 and 1.0.",
+      },
+      {
+        name: "getSources()",
+        description: "Returns a list of available input sources. This is a wrapper for MediaDevices.enumerateDevices() - Web APIs | MDN and it returns a Promise.",
+      },
+      {
+        name: "setSource()",
+        description: "Set the input source. Accepts a number representing a position in the array returned by getSources().",
+      },
+    ],
+  },
+  {
+    element: "p5.SoundFile",
+    insert: "new p5.SoundFile(${1:path})",
+    code: "new p5.SoundFile(path, [successCallback], [errorCallback], [whileLoadingCallback])",
+    description: "SoundFile object with a path to a file. The p5.SoundFile may not be available immediately because it loads the file information asynchronously. To do something with the sound as soon as it loads pass the name of a function as the second parameter.",
+    parameters: [
+      {
+        name: "path: String|Array",
+        description: "path to a sound file (String). Optionally, you may include multiple file formats in an array. Alternately, accepts an object from the HTML5 File API, or a p5.File.",
+      },
+      {
+        name: "successCallback: function",
+        description: "Name of a function to call once file loads (Optional)",
+      },
+      {
+        name: "errorCallback: function",
+        description: "Name of a function to call if file fails to load. This function will receive an error or XMLHttpRequest object with information about what went wrong. (Optional)",
+      },
+      {
+        name: "whileLoadingCallback: function",
+        description: "Name of a function to call while file is loading. That function will receive progress of the request to load the sound file (between 0 and 1) as its first parameter. This progress does not account for the additional time needed to decode the audio data. (Optional)",
+      },
+    ],
+    fields: [
+    ],
+    methods: [
+      {
+        name: "isLoaded()",
+        description: "Returns true if the sound file finished loading successfully.",
+      },
+      {
+        name: "play()",
+        description: "Play the p5.SoundFile",
+      },
+      {
+        name: "playMode()",
+        description: "p5.SoundFile has two play modes: restart and sustain. Play Mode determines what happens to a p5.SoundFile if it is triggered while in the middle of playback. ",
+      },
+      {
+        name: "pause()",
+        description: "Pauses a file that is currently playing. If the file is not playing, then nothing will happen. After pausing, .play() will resume from the paused position.",
+      },
+      {
+        name: "loop()",
+        description: "Loop the p5.SoundFile. Accepts optional parameters to set the playback rate, playback volume, loopStart, loopEnd.",
+      },
+      {
+        name: "setLoop()",
+        description: "Set a p5.SoundFile's looping flag to true or false. If the sound is currently playing, this change will take effect when it reaches the end of the current playback.",
+      },
+      {
+        name: "isLooping()",
+        description: "Returns 'true' if a p5.SoundFile is currently looping and playing, 'false' if not.",
+      },
+      {
+        name: "isPlaying()",
+        description: "Returns true if a p5.SoundFile is playing, false if not (i.e. paused or stopped)",
+      },
+      {
+        name: "isPaused()",
+        description: "Returns true if a p5.SoundFile is paused, false if not (i.e. playing or stopped).",
+      },
+      {
+        name: "stop()",
+        description: "Stop soundfile playback.",
+      },
+      {
+        name: "pan()",
+        description: " Set the stereo panning of a p5.sound object to a floating point number between -1.0 (left) and 1.0 (right). Default is 0.0 (center).",
+      },
+      {
+        name: "getPan()",
+        description: "Returns the current stereo pan position (-1.0 to 1.0)",
+      },
+      {
+        name: "rate()",
+        description: "Set the playback rate of a sound file. Will change the speed and the pitch. Values less than zero will reverse the audio buffer.",
+      },
+      {
+        name: "setVolume()",
+        description: "Multiply the output volume (amplitude) of a sound file between 0.0 (silence) and 1.0 (full volume). 1.0 is the maximum amplitude of a digital sound, so multiplying by greater than 1.0 may cause digital distortion. To fade, provide a rampTime parameter.",
+      },
+      {
+        name: "duration()",
+        description: "Returns the duration of a sound file in seconds.",
+      },
+      {
+        name: "currentTime()",
+        description: "Return the current position of the p5.SoundFile playhead, in seconds. Time is relative to the normal buffer direction, so if reverseBuffer has been called, currentTime will count backwards.",
+      },
+      {
+        name: "jump()",
+        description: "Move the playhead of a soundfile that is currently playing to a new position and a new duration, in seconds. ",
+      },
+      {
+        name: "channels()",
+        description: "Return the number of channels in a sound file. For example, Mono = 1, Stereo = 2.",
+      },
+      {
+        name: "sampleRate()",
+        description: "Return the sample rate of the sound file.",
+      },
+      {
+        name: "frames()",
+        description: "Return the number of samples in a sound file. Equal to sampleRate * duration.",
+      },
+      {
+        name: "getPeaks()",
+        description: "Returns an array of amplitude peaks in a p5.SoundFile that can be used to draw a static waveform. Scans through the p5.SoundFile's audio buffer to find the greatest amplitudes.",
+      },
+      {
+        name: "reverseBuffer()",
+        description: "Reverses the p5.SoundFile's buffer source. Playback must be handled separately.",
+      },
+      {
+        name: "onended()",
+        description: "Schedule an event to be called when the soundfile reaches the end of a buffer.",
+      },
+      {
+        name: "connect()",
+        description: "Connects the output of a p5sound object to input of another p5.sound object. For example, you may connect a p5.SoundFile to an FFT or an Effect. ",
+      },
+      {
+        name: "disconnect()",
+        description: "Disconnects the output of this p5sound object.",
+      },
+      {
+        name: "setPath()",
+        description: "Reset the source for this SoundFile to a new path (URL).",
+      },
+      {
+        name: "setBuffer()",
+        description: "Replace the current Audio Buffer with a new Buffer.",
+      },
+      {
+        name: "addCue()",
+        description: "Schedule events to trigger every time a MediaElement (audio/video) reaches a playback cue point. Accepts a callback function, a time (in seconds) at which to trigger the callback, and an optional parameter for the callback. ",
+      },
+      {
+        name: "removeCue()",
+        description: "Remove a callback based on its ID. The ID is returned by the addCue method.",
+      },
+      {
+        name: "clearCues()",
+        description: "Remove all of the callbacks that had originally been scheduled via the addCue method.",
+      },
+      {
+        name: "save()",
+        description: "Save a p5.SoundFile as a .wav file. The browser will prompt the user to download the file to their device.",
+      },
+      {
+        name: "getBlob()",
+        description: "This method is useful for sending a SoundFile to a server. It returns the .wav-encoded audio data as a Blob. ",
+      },
+    ],
+  }
+];

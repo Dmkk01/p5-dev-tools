@@ -5,7 +5,7 @@ import axios from 'axios';
 import { referencesP5, referencesP5Sound } from "./references";
 import { htmlTemplateHosted, htmlTemplateLocal, htmlTemplateLocalMin, sketchTemplateBasic, htmlTemplateLocalSound, htmlTemplateLocalSoundMin, htmlTemplateHostedSound } from "./templates";
 import { createFile, checkIfExists, createDirectory } from "./utils";
-import { classesP5 } from "./classes";
+import { classesP5, classesP5Sound } from "./classes";
 
 
 export function activate(context: vscode.ExtensionContext) {
@@ -270,7 +270,9 @@ export function activate(context: vscode.ExtensionContext) {
         const p5Word = document.getText(p5Range);
 
         const referenceClassP5 = classesP5.find((x) => x.element.substring(3) === word);
-        referenceClass = referenceClassP5 ? referenceClassP5 : null;
+        const referenceClassP5Sound = classesP5Sound.find((x) => x.element.substring(3) === word);
+
+        referenceClass = referenceClassP5 ? referenceClassP5 : referenceClassP5Sound ? referenceClassP5Sound : null;
 
         if (p5Word === 'p5.' && referenceClass) {
           const markdown = new vscode.MarkdownString(
@@ -280,7 +282,7 @@ export function activate(context: vscode.ExtensionContext) {
           markdown.appendCodeblock(`${referenceClass.code}`, "javascript");
   
           if (referenceClass.parameters.length > 0) {
-            markdown.appendMarkdown("Parameters: ");
+            markdown.appendMarkdown("\nParameters: ");
             referenceClass.parameters.forEach((parameter) => {
               markdown.appendCodeblock(`${parameter.name}`, "javascript");
               if (parameter.description) {
@@ -290,7 +292,7 @@ export function activate(context: vscode.ExtensionContext) {
           }
 
           if (referenceClass.fields.length > 0) {
-            markdown.appendMarkdown("Fields: ");
+            markdown.appendMarkdown("\nFields: ");
             referenceClass.fields.forEach((field) => {
               markdown.appendCodeblock(`${field.name}`, "javascript");
               if (field.description) {
@@ -300,7 +302,7 @@ export function activate(context: vscode.ExtensionContext) {
           }
 
           if (referenceClass.methods.length > 0) {
-            markdown.appendMarkdown("Methods: ");
+            markdown.appendMarkdown("\nMethods: ");
             referenceClass.methods.forEach((method) => {
               markdown.appendCodeblock(`${method.name}`, "javascript");
               if (method.description) {
@@ -323,10 +325,10 @@ export function activate(context: vscode.ExtensionContext) {
     "javascript",
     {
       provideCompletionItems() {
-        return new Promise((resolve) => {
+        return new Promise(resolve => {
           let completionItems: vscode.CompletionItem[] = [];
 
-          referencesP5.forEach((reference) => {
+          referencesP5.forEach(reference => {
             const completionItem: vscode.CompletionItem =
               new vscode.CompletionItem(reference.element);
             completionItem.detail = "p5.js";
@@ -338,7 +340,7 @@ export function activate(context: vscode.ExtensionContext) {
             completionItems.push(completionItem);
           });
 
-          referencesP5Sound.forEach((reference) => {
+          referencesP5Sound.forEach(reference => {
             const completionItem: vscode.CompletionItem =
               new vscode.CompletionItem(reference.element);
             completionItem.detail = "p5.js sound";
@@ -350,7 +352,7 @@ export function activate(context: vscode.ExtensionContext) {
             completionItems.push(completionItem);
           });
 
-          classesP5.forEach((classP5) => {
+          classesP5.forEach(classP5 => {
             const completionItem: vscode.CompletionItem = new vscode.CompletionItem(classP5.element);
             completionItem.detail = "p5.js class";
             completionItem.filterText = classP5.element;
@@ -358,6 +360,17 @@ export function activate(context: vscode.ExtensionContext) {
               classP5.insert
             );
             completionItem.label = classP5.element;
+            completionItems.push(completionItem);
+          });
+
+          classesP5Sound.forEach(classP5Sound => {
+            const completionItem: vscode.CompletionItem = new vscode.CompletionItem(classP5Sound.element);
+            completionItem.detail = "p5.js sound class";
+            completionItem.filterText = classP5Sound.element;
+            completionItem.insertText = new vscode.SnippetString(
+              classP5Sound.insert
+            );
+            completionItem.label = classP5Sound.element;
             completionItems.push(completionItem);
           });
 

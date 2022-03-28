@@ -7,13 +7,14 @@
 
 # p5.js Dev Tools for Visual Studio Code
 
-This extension puts handy shortcuts and abbreviated p5 documentation right at your fingertips as you write p5.js in Visual Studio Code.
+This extension puts handy shortcuts and abbreviated p5 documentation right at your fingertips as you write p5.js in Visual Studio Code. 
+All of the documentation is based on the references provided by [p5.js](https://p5js.org/).
 
 ## Features
 
 ### Commands
  -  Open VS Code command palette (F1 key) and type `Create a standard p5.js project`
-    This command allows to create a local or hosted version of a p5.js project that include `index.html` and `sketch.js` files.
+    This command allows to create a local or hosted version of a p5.js (and/or p5.js sound) project that include `index.html` and `sketch.js` files.
 
 ### Snippets
 
@@ -23,6 +24,10 @@ It also includes references from the original p5 documentation. It allows for au
 
 ## Release Notes
 
+### 0.3.2
+
+- Complete p5.js sound classes documentation
+
 ### 0.3.1
 
 - Add a command to create a p5.js sound project
@@ -31,10 +36,6 @@ It also includes references from the original p5 documentation. It allows for au
 
 - Add p5.js classes documentation
 - Add a portion of p5.js sound references
-
-### 0.2.0
-
-- Complete the references from p5.js documentation
 
 
 ## Keeping in Touch

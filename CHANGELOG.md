@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.3.2
+
+- Complete p5.js sound classes documentation
+
 ## 0.3.1
 
 - Add a command to create a p5.js sound project
