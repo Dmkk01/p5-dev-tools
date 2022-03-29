@@ -1,6 +1,6 @@
 # Change Log
 
-## 0.3.4
+## 0.4.0
 
 - Add original p5 documentation links on hover
 - Add a check for inserting classes

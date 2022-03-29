@@ -29,7 +29,7 @@ It also includes references from the original p5 documentation. It allows for au
 
 ## Release Notes
 
-### 0.3.4
+### 0.4.0
 
 - Add original p5 documentation links on hover
 - Add a check for inserting classes
