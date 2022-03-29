@@ -29,6 +29,11 @@ It also includes references from the original p5 documentation. It allows for au
 
 ## Release Notes
 
+### 0.3.4
+
+- Add original p5 documentation links on hover
+- Add a check for inserting classes
+
 ### 0.3.3
 
 - Add new command to open the p5.js online editor
@@ -36,11 +41,6 @@ It also includes references from the original p5 documentation. It allows for au
 ### 0.3.2
 
 - Complete p5.js sound classes documentation
-
-### 0.3.1
-
-- Add a command to create a p5.js sound project
-
 
 
 ## Keeping in Touch

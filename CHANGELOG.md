@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.3.4
+
+- Add original p5 documentation links on hover
+- Add a check for inserting classes
+
 ## 0.3.3
 
 - Add new command to open the p5.js online editor

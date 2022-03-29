@@ -3,10 +3,9 @@ import * as path from "path";
 import axios from 'axios';
 
 import { referencesP5, referencesP5Sound } from "./references";
+import { classesP5, classesP5Sound } from "./classes";
 import { htmlTemplateHosted, htmlTemplateLocal, htmlTemplateLocalMin, sketchTemplateBasic, htmlTemplateLocalSound, htmlTemplateLocalSoundMin, htmlTemplateHostedSound } from "./templates";
 import { createFile, checkIfExists, createDirectory } from "./utils";
-import { classesP5, classesP5Sound } from "./classes";
-
 
 export function activate(context: vscode.ExtensionContext) {
   
@@ -247,7 +246,7 @@ export function activate(context: vscode.ExtensionContext) {
 
       if (reference) {
         const markdown = new vscode.MarkdownString(
-          `${reference.description}\n`
+          `${reference.description} [$(open-editors-view-icon)](https://p5js.org/reference/#/p5/${reference.element})\n`, true
         );
 
         markdown.appendCodeblock(`${reference.code}`, "javascript");
@@ -286,7 +285,7 @@ export function activate(context: vscode.ExtensionContext) {
 
         if (p5Word === 'p5.' && referenceClass) {
           const markdown = new vscode.MarkdownString(
-            `${referenceClass.description}\n`
+            `${referenceClass.description} [$(open-editors-view-icon)](https://p5js.org/reference/#/${referenceClass.element})\n`, true
           );
 
           markdown.appendCodeblock(`${referenceClass.code}`, "javascript");
