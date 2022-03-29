@@ -334,7 +334,16 @@ export function activate(context: vscode.ExtensionContext) {
   const provider1 = vscode.languages.registerCompletionItemProvider(
     "javascript",
     {
-      provideCompletionItems() {
+      provideCompletionItems(document, position) {
+
+        // Check the previous character
+        const range = document.getWordRangeAtPosition(position);
+        const p5PosStart = new vscode.Position(range!.start.line, 0);
+        const p5PosEnd = new vscode.Position(range!.start.line, range!.start.character);
+        const p5Range = new vscode.Range(p5PosStart, p5PosEnd);
+        const p5Word = document.getText(p5Range).trim();
+        const isVariable = p5Word.slice(-1) === ":";
+
         return new Promise(resolve => {
           let completionItems: vscode.CompletionItem[] = [];
 
@@ -367,7 +376,7 @@ export function activate(context: vscode.ExtensionContext) {
             completionItem.detail = "p5.js class";
             completionItem.filterText = classP5.element;
             completionItem.insertText = new vscode.SnippetString(
-              classP5.insert
+              isVariable ? classP5.element : classP5.insert
             );
             completionItem.label = classP5.element;
             completionItems.push(completionItem);
@@ -378,7 +387,7 @@ export function activate(context: vscode.ExtensionContext) {
             completionItem.detail = "p5.js sound class";
             completionItem.filterText = classP5Sound.element;
             completionItem.insertText = new vscode.SnippetString(
-              classP5Sound.insert
+              isVariable ? classP5Sound.element : classP5Sound.insert
             );
             completionItem.label = classP5Sound.element;
             completionItems.push(completionItem);
