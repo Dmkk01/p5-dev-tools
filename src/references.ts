@@ -6723,46 +6723,6 @@ export const referencesP5Sound = [
     ],
   },
   {
-    //check this one
-    element: "set",
-    description:
-      "Create a p5.Convolver. Accepts a path to a soundfile that will be used to generate an impulse response.",
-    code: "set(attackTime, attackLevel, decayTime, decayLevel, releaseTime, releaseLevel)",
-    insert: "set(${1:attackTime}, ${2:attackLevel}, ${3:decayTime}, ${4:decayLevel}, ${5:releaseTime}, ${6:releaseLevel})",
-    syntax: [
-      {
-        parameter: "attackTime: Number",
-        description:
-          "Time (in seconds) before level reaches attackLevel",
-      },
-      {
-        parameter: "attackLevel: Number",
-        description:
-          "Typically an amplitude between 0.0 and 1.0",
-      },
-      {
-        parameter: "decayTime: Number",
-        description:
-          "Time",
-      },
-      {
-        parameter: "decayLevel: Number",
-        description:
-          "Amplitude (In a standard ADSR envelope, decayLevel = sustainLevel)",
-      },
-      {
-        parameter: "releaseTime: Number",
-        description:
-          "Release Time (in seconds)",
-      },
-      {
-        parameter: "releaseLevel: Number",
-        description:
-          "Amplitude",
-      },
-    ],
-  },
-  {
     element: "setADSR",
     description:
       "Set values like a traditional ADSR envelope.",
@@ -6966,37 +6926,1550 @@ export const referencesP5Sound = [
     },
   },
   {
-    //check this one
-    element: "scale",
+    element: "leftDelay",
     description:
-      "Scale this envelope's amplitude values to a given range, and return the envelope. Calling this method again will override the initial scale() with new values.",
-    code: "scale(inMin, inMax, outMin, outMax)",
-    insert: "scale(${1:inMin}, ${2:inMax}, ${3:outMin}, ${4:outMax})",
+      "The p5.Delay is built with two Web Audio Delay Nodes, one for each stereo channel.",
+    code: "leftDelay",
+    insert: "leftDelay",
+    syntax: [],
+  },
+  {
+    element: "leftDelay",
+    description:
+      "The p5.Delay is built with two Web Audio Delay Nodes, one for each stereo channel.",
+    code: "leftDelay",
+    insert: "leftDelay",
+    syntax: [],
+  },
+  {
+    element: "rightDelay",
+    description:
+      "The p5.Delay is built with two Web Audio Delay Nodes, one for each stereo channel.",
+    code: "rightDelay",
+    insert: "rightDelay",
+    syntax: [],
+  },
+  {
+    element: "process",
+    description:
+      "Add delay to an audio signal according to a set of delay parameters.",
+    code: "process(Signal, [delayTime], [feedback], [lowPass])",
+    insert: "process(${1:Signal})",
     syntax: [
       {
-        parameter: "inMin: Number",
+        parameter: "Signal: Object",
         description:
-          "input range minumum",
+          "An object that outputs audio",
       },
       {
-        parameter: "inMax: Number",
-        description:
-          "input range maximum",
+        parameter: "delayTime: Number",
+        description: "Time (in seconds) of the delay/echo. Some browsers limit delayTime to 1 second. (Optional)",
       },
       {
-        parameter: "outMin: Number",
-        description:
-          "output range minumum",
+        parameter: "feedback: Number",
+        description: "sends the delay back through itself in a loop that decreases in volume each time. (Optional)",
       },
       {
-        parameter: "outMax: Number",
-        description:
-          "output range maximum",
+        parameter: "lowPass: Number",
+        description: "Cutoff frequency. Only frequencies below the lowPass will be part of the delay. (Optional)",
       },
     ],
-    return: {
-      type: "p5.Envelope",
-      description: "Envelope Returns this envelope with scaled output",
-    },
   },
+  {
+    element: "delayTime",
+    description: "Set the delay (echo) time, in seconds. Usually this value will be a floating point number between 0.0 and 1.0.",
+    code: "delayTime(delayTime)",
+    insert: "delayTime(${1:delayTime})",
+    syntax: [
+      {
+        parameter: "delayTime: Number",
+        description: "Time (in seconds) of the delay",
+      }
+    ],
+  },
+  {
+    element: "feedback",
+    description: "Feedback occurs when Delay sends its signal back through its input in a loop. The feedback amount determines how much signal to send each time through the loop. A feedback greater than 1.0 is not desirable because it will increase the overall output each time through the loop, creating an infinite feedback loop. The default value is 0.5",
+    code: "feedback(feedback)",
+    insert: "feedback(${1:feedback})",
+    syntax: [
+      {
+        parameter: "feedback: Number|Object",
+        description: "0.0 to 1.0, or an object such as an Oscillator that can be used to modulate this param",
+      }
+    ],
+    return: {
+      type: "Number",
+      description: "Feedback value"
+    }
+  },
+  {
+    element: "setType",
+    description: "Choose a preset type of delay. 'pingPong' bounces the signal from the left to the right channel to produce a stereo effect. Any other parameter will revert to the default delay setting.",
+    code: "setType(type)",
+    insert: "setType(${1:type})",
+    syntax: [
+      {
+        parameter: "type: String|Number",
+        description: "'pingPong' (1) or 'default' (0)",
+      }
+    ],
+  },
+  {
+    element: "amp",
+    description: "Set the output level of the delay effect.",
+    code: "amp(volume, [rampTime], [timeFromNow])",
+    insert: "amp(${1:volume})",
+    syntax: [
+      {
+        parameter: "volume: Number",
+        description: "amplitude between 0 and 1.0",
+      },
+      {
+        parameter: "rampTime: Number",
+        description: "create a fade that lasts rampTime (Optional)",
+      },
+      {
+        parameter: "timeFromNow: Number",
+        description: "schedule this event to happen seconds from now (Optional)",
+      }
+    ],
+  },
+  {
+    element: "connect",
+    description: "Send output to a p5.sound or web audio object",
+    code: "connect(unit)",
+    insert: "connect(${1:unit})",
+    syntax: [
+      {
+        parameter: "unit: Object",
+        description: "",
+      }
+    ],
+  },
+  {
+    element: "disconnect",
+    description: "Disconnect all output.",
+    code: "disconnect()",
+    insert: "disconnect()",
+    syntax: [
+    ],
+  },
+  {
+    element: "isLoaded",
+    description: "Returns true if the sound file finished loading successfully.",
+    code: "isLoaded()",
+    insert: "isLoaded()",
+    syntax: [
+    ],
+    return: {
+      type: "Boolean",
+      description: "",
+    }
+  },
+  {
+    element: "pause",
+    description: "Pauses a file that is currently playing. If the file is not playing, then nothing will happen. After pausing, .play() will resume from the paused position. If p5.SoundFile had been set to loop before it was paused, it will continue to loop after it is unpaused with .play().",
+    code: "pause([startTime])",
+    insert: "pause()",
+    syntax: [
+      {
+        parameter: "startTime: Number",
+        description: "schedule event to occur seconds from now (Optional)",
+      }
+    ],
+  },
+  {
+    element: "getBlob",
+    description: "This method is useful for sending a SoundFile to a server. It returns the .wav-encoded audio data as a Blob. A Blob is a file-like data object that can be uploaded to a server with an http request. We'll use the httpDo options object to send a POST request with some specific options: we encode the request as multipart/form-data, and attach the blob as one of the form values using FormData.",
+    code: "getBlob()",
+    insert: "getBlob()",
+    syntax: [
+    ],
+    return: {
+      type: "Blob",
+      description: "A file-like data object"
+    }
+  },
+  {
+    element: "clearCues",
+    description: "Remove all of the callbacks that had originally been scheduled via the addCue method.",
+    code: "clearCues()",
+    insert: "clearCues()",
+    syntax: [
+    ],
+  },
+  {
+    element: "removeCue",
+    description: "Remove a callback based on its ID. The ID is returned by the addCue method.",
+    code: "removeCue(id)",
+    insert: "removeCue(${1:id})",
+    syntax: [
+      {
+        parameter: "id: Number",
+        description: "ID of the cue, as returned by addCue",
+      }
+    ],
+  },
+  {
+    element: "addCue",
+    description: "Schedule events to trigger every time a MediaElement (audio/video) reaches a playback cue point.",
+    code: "addCue(time, callback, [value])",
+    insert: "addCue(${1:time}, ${2:callback})",
+    syntax: [
+      {
+        parameter: "time: Number",
+        description: "Time in seconds, relative to this media element's playback. For example, to trigger an event every time playback reaches two seconds, pass in the number 2. This will be passed as the first parameter to the callback function.",
+      },
+      {
+        parameter: "callback: function",
+        description: "Name of a function that will be called at the given time. The callback will receive time and (optionally) param as its two parameters.",
+      },
+      {
+        parameter: "value: Object",
+        description: "An object to be passed as the second parameter to the callback function. (Optional)",
+      }
+    ],
+    return: {
+      type: "Number",
+      description: "id ID of this cue, useful for removeCue(id)"
+    }
+  },
+  {
+    element: "setBuffer",
+    description: "Replace the current Audio Buffer with a new Buffer.",
+    code: "setBuffer(Signbufal)",
+    insert: "setBuffer(${1:buf})",
+    syntax: [
+      {
+        parameter: "buf: Array",
+        description: "Array of Float32 Array(s). 2 Float32 Arrays will create a stereo source. 1 will create a mono source.",
+      }
+    ],
+  },
+  {
+    element: "setPath",
+    description: "Reset the source for this SoundFile to a new path (URL).",
+    code: "setPath(path, callback)",
+    insert: "setPath(${1:path}, ${2:callback})",
+    syntax: [
+      {
+        parameter: "path: String",
+        description: "path to audio file",
+      },
+      {
+        parameter: "callback: function",
+        description: "Callback function",
+      }
+    ],
+  },
+  {
+    element: "onended",
+    description: "Schedule an event to be called when the soundfile reaches the end of a buffer. If the soundfile is playing through once, this will be called when it ends. If it is looping, it will be called when stop is called.",
+    code: "onended(callback)",
+    insert: "onended(${1:callback})",
+    syntax: [
+      {
+        parameter: "callback: function",
+        description: "function to call when the soundfile has ended.",
+      }
+    ],
+  },
+  {
+    element: "reverseBuffer",
+    description: "Reverses the p5.SoundFile's buffer source. Playback must be handled separately (see example).",
+    code: "reverseBuffer()",
+    insert: "reverseBuffer()",
+    syntax: [
+    ],
+  },
+  {
+    element: "getPeaks",
+    description: "Returns an array of amplitude peaks in a p5.SoundFile that can be used to draw a static waveform. Scans through the p5.SoundFile's audio buffer to find the greatest amplitudes. Accepts one parameter, 'length', which determines size of the array. Larger arrays result in more precise waveform visualizations.",
+    code: "getPeaks([length])",
+    insert: "getPeaks()",
+    syntax: [
+      {
+        parameter: "length: Number",
+        description: "length is the size of the returned array. Larger length results in more precision. Defaults to 5*width of the browser window. (Optional)",
+      }
+    ],
+    return: {
+      type: "Array",
+      description: "Array of peaks.",
+    }
+  },
+  {
+    element: "frames",
+    description: "Return the number of samples in a sound file. Equal to sampleRate * duration.",
+    code: "frames()",
+    insert: "frames()",
+    syntax: [
+    ],
+    return: {
+      type: "Number",
+      description: "sampleCount",
+    }
+  },
+  {
+    element: "channels",
+    description: "Return the number of channels in a sound file. For example, Mono = 1, Stereo = 2.",
+    code: "channels()",
+    insert: "channels()",
+    syntax: [
+    ],
+    return: {
+      type: "Number",
+      description: "channels",
+    }
+  },
+  {
+    element: "jump",
+    description: "Move the playhead of a soundfile that is currently playing to a new position and a new duration, in seconds. If none are given, will reset the file to play entire duration from start to finish. To set the position of a soundfile that is not currently playing, use the play or loop methods.",
+    code: "jump(cueTime, duration)",
+    insert: "jump(${1:cueTime}, ${2:duration})",
+    syntax: [
+      {
+        parameter: "cueTime: Number",
+        description: "cueTime of the soundFile in seconds.",
+      },
+      {
+        parameter: "duration: Number",
+        description: "duration in seconds.",
+      }
+    ],
+  },
+  {
+    element: "currentTime",
+    description: "Return the current position of the p5.SoundFile playhead, in seconds. Time is relative to the normal buffer direction, so if reverseBuffer has been called, currentTime will count backwards.",
+    code: "currentTime()",
+    insert: "currentTime()",
+    syntax: [
+    ],
+    return: {
+      type: "Number",
+      description: "currentTime of the soundFile in seconds.",
+    }
+  },
+  {
+    element: "duration",
+    description: "Returns the duration of a sound file in seconds.",
+    code: "duration()",
+    insert: "duration()",
+    syntax: [
+    ],
+    return: {
+      type: "Number",
+      description: "The duration of the soundFile in seconds.",
+    }
+  },
+  {
+    element: "setVolume",
+    description: "Multiply the output volume (amplitude) of a sound file between 0.0 (silence) and 1.0 (full volume). 1.0 is the maximum amplitude of a digital sound, so multiplying by greater than 1.0 may cause digital distortion. To fade, provide a rampTime parameter. For more complex fades, see the Envelope class.",
+    code: "setVolume(volume, [rampTime], [timeFromNow])",
+    insert: "setVolume(${1:volume})",
+    syntax: [
+      {
+        parameter: "volume: Number|Object",
+        description: "Volume (amplitude) between 0.0 and 1.0 or modulating signal/oscillator",
+      },
+      {
+        parameter: "rampTime: Number",
+        description: "Fade for t seconds (Optional)",
+      },
+      {
+        parameter: "timeFromNow: Number",
+        description: "Schedule this event to happen at t seconds in the future (Optional)",
+      }
+    ],
+  },
+  {
+    element: "playbackRate",
+    description: "Set the playback rate of a sound file. Will change the speed and the pitch. Values less than zero will reverse the audio buffer.",
+    code: "playbackRate([playbackRate])",
+    insert: "playbackRate()",
+    syntax: [
+      {
+        parameter: "playbackRate: Number",
+        description: "Set the playback rate. 1.0 is normal, .5 is half-speed, 2.0 is twice as fast. Values less than zero play backwards. (Optional)        ",
+      }
+    ],
+  },
+  {
+    element: "getPan",
+    description: "Returns the current stereo pan position (-1.0 to 1.0)",
+    code: "getPan()",
+    insert: "getPan()",
+    syntax: [
+    ],
+    return: {
+      type: "Number",
+      description: "Returns the stereo pan setting of the Oscillator as a number between -1.0 (left) and 1.0 (right). 0.0 is center and default."
+    }
+  },
+  {
+    element: "pan",
+    description: "Set the stereo panning of a p5.sound object to a floating point number between -1.0 (left) and 1.0 (right). Default is 0.0 (center).",
+    code: "pan([panValue], [timeFromNow])",
+    insert: "pan()",
+    syntax: [
+      {
+        parameter: "panValue: Number",
+        description: "Set the stereo panner (Optional)",
+      },
+      {
+        parameter: "timeFromNow: Number",
+        description: "schedule this event to happen seconds from now (Optional)",
+      }
+    ],
+  },
+  {
+    element: "stop",
+    description: "Stop soundfile playback.",
+    code: "stop([startTime])",
+    insert: "stop()",
+    syntax: [
+      {
+        parameter: "startTime: Number",
+        description: "schedule event to occur in seconds from now (Optional)",
+      }
+    ],
+  },
+  {
+    element: "isPaused",
+    description: "Returns true if a p5.SoundFile is paused, false if not (i.e. playing or stopped).",
+    code: "isPaused()",
+    insert: "isPaused()",
+    syntax: [
+    ],
+    return: {
+      type: "Boolean",
+      description: "",
+    }
+  },
+  {
+    element: "isPlaying",
+    description: "Returns true if a p5.SoundFile is playing, false if not (i.e. paused or stopped).",
+    code: "isPlaying()",
+    insert: "isPlaying()",
+    syntax: [
+    ],
+    return: {
+      type: "Boolean",
+      description: "",
+    }
+  },
+  {
+    element: "setLoop",
+    description: "Set a p5.SoundFile's looping flag to true or false. If the sound is currently playing, this change will take effect when it reaches the end of the current playback.",
+    code: "setLoop(Boolean)",
+    insert: "setLoop(${1:Boolean})",
+    syntax: [
+      {
+        parameter: "Boolean: Boolean",
+        description: "set looping to true or false",
+      }
+    ],
+  },
+  {
+    element: "playMode",
+    description: "p5.SoundFile has two play modes: restart and sustain. Play Mode determines what happens to a p5.SoundFile if it is triggered while in the middle of playback. In sustain mode, playback will continue simultaneous to the new playback. In restart mode, play() will stop playback and start over. With untilDone, a sound will play only if it's not already playing. Sustain is the default mode.",
+    code: "playMode(str)",
+    insert: "playMode(${1:str})",
+    syntax: [
+      {
+        parameter: "str: String",
+        description: "'restart' or 'sustain' or 'untilDone'",
+      }
+    ],
+  },
+  {
+    element: "setSource",
+    description: "Set the input source. Accepts a number representing a position in the array returned by getSources(). This is only available in browsers that support navigator.mediaDevices.enumerateDevices()",
+    code: "setSource(num)",
+    insert: "setSource(${1:num})",
+    syntax: [
+      {
+        parameter: "num: Number",
+        description: "position of input source in the array",
+      }
+    ],
+  },
+  {
+    element: "getSources",
+    description: "Returns a list of available input sources. This is a wrapper for MediaDevices.enumerateDevices() - Web APIs | MDN and it returns a Promise.",
+    code: "getSources([successCallback], [errorCallback])",
+    insert: "getSources(${1:Signal})",
+    syntax: [
+      {
+        parameter: "successCallback: function",
+        description: "This callback function handles the sources when they have been enumerated. The callback function receives the deviceList array as its only argument (Optional)",
+      },
+      {
+        parameter: "errorCallback: function",
+        description: "This optional callback receives the error message as its argument. (Optional)",
+      }
+    ],
+    return: {
+      type: "Promise",
+      description: "Returns a Promise that can be used in place of the callbacks, similar to the enumerateDevices() method",
+    }
+  },
+  {
+    element: "getLevel",
+    description: "Read the Amplitude (volume level) of an AudioIn. The AudioIn class contains its own instance of the Amplitude class to help make it easy to get a microphone's volume level. ",
+    code: "getLevel([smoothing])",
+    insert: "getLevel(${1:Signal})",
+    syntax: [
+      {
+        parameter: "smoothing: Number",
+        description: "Smoothing is 0.0 by default. Smooths values based on previous values. (Optional)",
+      }
+    ],
+    return: {
+      type: "Number",
+      description: "Volume level (between 0.0 and 1.0)",
+    }
+  },
+  {
+    element: "amplitude",
+    description: "Input amplitude, connect to it by default but not to master out",
+    code: "amplitude",
+    insert: "amplitude",
+    syntax: [
+    ],
+  },
+  {
+    element: "enabled",
+    description: "Client must allow browser to access their microphone / audioin source. Default: false. Will become true when the client enables access.",
+    code: "enabled",
+    insert: "enabled",
+    syntax: [
+    ],
+  },
+  {
+    element: "currentSource",
+    description: "The current source",
+    code: "currentSource",
+    insert: "currentSource",
+    syntax: [
+    ],
+  },
+  {
+    element: "mediaStream",
+    description: "The media Stream source",
+    code: "mediaStream",
+    insert: "mediaStream",
+    syntax: [
+    ],
+  },
+  {
+    element: "stream",
+    description: "The stream source",
+    code: "stream",
+    insert: "stream",
+    syntax: [
+    ],
+  },
+  {
+    element: "output",
+    description: "The output source",
+    code: "output",
+    insert: "output",
+    syntax: [
+    ],
+  },
+  {
+    element: "sequence",
+    description: "Array of values to pass into the callback at each step of the phrase. Depending on the callback function's requirements, these values may be numbers, strings, or an object with multiple parameters. Zero (0) indicates a rest.",
+    code: "sequence",
+    insert: "sequence",
+    syntax: [
+    ],
+  },
+  {
+    element: "toggleImpulse",
+    description: "If you have used .addImpulse() to add multiple impulses to a p5.Convolver, then you can use this method to toggle between the items in the .impulses Array. Accepts a parameter to identify which impulse you wish to use, identified either by its original filename (String) or by its position in the .impulses Array (Number).",
+    code: "toggleImpulse(id)",
+    insert: "toggleImpulse(${1:id})",
+    syntax: [
+      {
+        parameter: "id: String|Number",
+        description: "Identify the impulse by its original filename (String), or by its position in the .impulses Array (Number).",
+      }
+    ],
+  },
+  {
+    element: "resetImpulse",
+    description: "Similar to .addImpulse, except that the .impulses Array is reset to save memory. A new .impulses array is created with this impulse as the only item.",
+    code: "resetImpulse(path, callback, errorCallback)",
+    insert: "resetImpulse(${1:path}, ${2:callback}, ${3:errorCallback})",
+    syntax: [
+      {
+        parameter: "path: String",
+        description: "path to a sound file",
+      },
+      {
+        parameter: "callback: function",
+        description: "function (optional)",
+      },
+      {
+        parameter: "errorCallback: function",
+        description: "function (optional)",
+      }
+    ],
+  },
+  {
+    element: "addImpulse",
+    description: "Load and assign a new Impulse Response to the p5.Convolver. The impulse is added to the .impulses array. Previous impulses can be accessed with the .toggleImpulse(id) method.",
+    code: "addImpulse(path, callback, errorCallback)",
+    insert: "addImpulse(${1:path}, ${2:callback}, ${3:errorCallback})",
+    syntax: [
+      {
+        parameter: "path: String",
+        description: "path to a sound file",
+      },
+      {
+        parameter: "callback: function",
+        description: "function (optional)",
+      },
+      {
+        parameter: "errorCallback: function",
+        description: "function (optional)",
+      }
+    ],
+  },
+  {
+    element: "impulses",
+    description: "If you load multiple impulse files using the .addImpulse method, they will be stored as Objects in this Array. Toggle between them with the toggleImpulse(id) method.",
+    code: "impulses",
+    insert: "impulses",
+    syntax: [
+    ],
+  },
+  {
+    element: "convolverNode",
+    description: "Internally, the p5.Convolver uses the a Web Audio Convolver Node.",
+    code: "convolverNode",
+    insert: "convolverNode",
+    syntax: [
+    ],
+  },
+  {
+    element: "drywet",
+    description: "Adjust the dry/wet value.",
+    code: "drywet([fade])",
+    insert: "drywet()",
+    syntax: [
+      {
+        parameter: "fade: Number",
+        description: "The desired drywet value (0 - 1.0) (Optional)",
+      }
+    ],
+  },
+  {
+    element: "chain",
+    description: "Link effects together in a chain Example usage: filter.chain(reverb, delay, panner); May be used with an open-ended number of arguments",
+    code: "chain([arguments])",
+    insert: "chain()",
+    syntax: [
+      {
+        parameter: "chain: Object",
+        description: "Chain together multiple sound objects (Optional)",
+      }
+    ],
+  },
+  {
+    element: "toggleNormalize",
+    description: "Determines whether the results of Amplitude.process() will be Normalized. To normalize, Amplitude finds the difference the loudest reading it has processed and the maximum amplitude of 1.0. Amplitude adds this difference to all values to produce results that will reliably map between 0.0 and 1.0. However, if a louder moment occurs, the amount that Normalize adds to all the values will change. Accepts an optional boolean parameter (true or false). Normalizing is off by default.",
+    code: "toggleNormalize([boolean])",
+    insert: "toggleNormalize()",
+    syntax: [
+      {
+        parameter: "boolean: Boolean",
+        description: "set normalize to true (1) or false (0) (Optional)",
+      }
+    ],
+  },
+  {
+    element: "onStep",
+    description: "Set the function that will be called at every step. This will clear the previous function.",
+    code: "onStep(callback)",
+    insert: "onStep(${1:callback})",
+    syntax: [
+      {
+        parameter: "callback: function",
+        description: "The name of the callback you want to fire on every beat/tatum.",
+      }
+    ],
+  },
+  {
+    element: "replaceSequence",
+    description: "Find all sequences with the specified name, and replace their patterns with the specified array.",
+    code: "replaceSequence(phraseName, sequence)",
+    insert: "replaceSequence(${1:phraseName}, ${2:sequence})",
+    syntax: [
+      {
+        parameter: "phraseName: String",
+        description: "",
+      },
+      {
+        parameter: "sequence: Array",
+        description: "Array of values to pass into the callback at each step of the phrase.",
+      }
+    ],
+  },
+  {
+    element: "getPhrase",
+    description: "Get a phrase from this part, based on the name it was given when it was created. Now you can modify its array.",
+    code: "getPhrase(phraseName)",
+    insert: "getPhrase(${1:phraseName})",
+    syntax: [
+      {
+        parameter: "phraseName: String",
+        description: "",
+      }
+    ],
+  },
+  {
+    element: "removePhrase",
+    description: "Remove a phrase from this part, based on the name it was given when it was created.",
+    code: "removePhrase(phraseName)",
+    insert: "removePhrase(${1:phraseName})",
+    syntax: [
+      {
+        parameter: "phraseName: String",
+        description: "",
+      }
+    ],
+  },
+  {
+    element: "addPhrase",
+    description: "Add a p5.Phrase to this Part.",
+    code: "addPhrase(phrase)",
+    insert: "addPhrase(${1:phrase})",
+    syntax: [
+      {
+        parameter: "phrase: p5.Phrase",
+        description: "reference to a p5.Phrase",
+      }
+    ],
+  },
+  {
+    element: "start",
+    description: "Start playback of this part. It will play through all of its phrases at a speed determined by setBPM.",
+    code: "start([time])",
+    insert: "start()",
+    syntax: [
+      {
+        parameter: "time: Number",
+        description: "seconds from now (Optional)",
+      }
+    ],
+  },
+  {
+    element: "getBPM",
+    description: "Returns the tempo, in Beats Per Minute, of this part.",
+    code: "getBPM()",
+    insert: "getBPM()",
+    syntax: [
+    ],
+    return: {
+      type: "Number",
+      description: "the tempo, in Beats Per Minute",
+    }
+  },
+  {
+    element: "setBPM",
+    description: "Set the tempo of this part, in Beats Per Minute.",
+    code: "setBPM(BPM, [rampTime])",
+    insert: "setBPM(${1:BPM})",
+    syntax: [
+      {
+        parameter: "BPM: Number",
+        description: "Beats Per Minute",
+      },
+      {
+        parameter: "rampTime: Number",
+        description: "Seconds from now (Optional)",
+      }
+    ],
+  },
+  {
+    element: "syncedStart",
+    description: "Synchronize loops. Use this method to start two or more loops in synchronization or to start a loop in synchronization with a loop that is already playing This method will schedule the implicit loop in sync with the explicit master loop i.e. loopToStart.syncedStart(loopToSyncWith)",
+    code: "syncedStart(otherLoop, [timeFromNow])",
+    insert: "syncedStart(${1:otherLoop})",
+    syntax: [
+      {
+        parameter: "otherLoop: Object",
+        description: "a p5.SoundLoop to sync with",
+      },
+      {
+        parameter: "timeFromNow: Number",
+        description: "Start the loops in sync after timeFromNow seconds (Optional)",
+      }
+    ],
+  },
+  {
+    element: "bands",
+    description: "The p5.EQ is built with abstracted p5.Filter objects. To modify any bands, use methods of the p5.Filter API, especially gain and freq. Bands are stored in an array, with indices 0 - 3, or 0 - 7",
+    code: "bands",
+    insert: "bands",
+    syntax: [
+    ],
+  },
+  {
+    element: "maxIterations",
+    description: "Set a limit to the number of loops to play. defaults to Infinity",
+    code: "maxIterations",
+    insert: "maxIterations",
+    syntax: [
+    ],
+  },
+  {
+    element: "musicalTimeMode",
+    description: "musicalTimeMode uses Tone.Time convention true if string, false if number",
+    code: "musicalTimeMode",
+    insert: "musicalTimeMode",
+    syntax: [
+    ],
+  },
+  {
+    element: "iterations",
+    description: "how many times the callback has been called so far",
+    code: "iterations",
+    insert: "iterations",
+    syntax: [
+    ],
+  },
+  {
+    element: "interval",
+    description: "length of the loops interval",
+    code: "interval",
+    insert: "interval",
+    syntax: [
+    ],
+  },
+  {
+    element: "timeSignature",
+    description: "number of quarter notes in a measure (defaults to 4)",
+    code: "timeSignature",
+    insert: "timeSignature",
+    syntax: [
+    ],
+  },
+  {
+    element: "bpm",
+    description: "Getters and Setters, setting any paramter will result in a change in the clock's frequency, that will be reflected after the next callback beats per minute (defaults to 60)",
+    code: "bpm",
+    insert: "bpm",
+    syntax: [
+    ],
+  },
+  {
+    element: "toggle",
+    description: "Toggle function. Switches between the specified type and allpass",
+    code: "toggle()",
+    insert: "toggle()",
+    syntax: [
+    ],
+    return: {
+      type: "Boolean",
+      description: "Toggle value",
+    }
+  },
+  {
+    element: "gain",
+    description: "Controls the gain attribute of a Biquad Filter. This is distinctly different from .amp() which is inherited from p5.Effect .amp() controls the volume via the output gain node p5.Filter.gain() controls the gain parameter of a Biquad Filter node.",
+    code: "gain(gain)",
+    insert: "gain(${1:gain})",
+    syntax: [
+      {
+        parameter: "gain: Number",
+        description: "",
+      }
+    ],
+    return: {
+      type: "Number",
+      description: "Returns the current or updated gain value",
+    }
+  },
+  {
+    element: "freq",
+    description: "Set the filter frequency, in Hz, from 10 to 22050 (the range of human hearing, although in reality most people hear in a narrower range).",
+    code: "freq(freq, [timeFromNow])",
+    insert: "freq(${1:freq})",
+    syntax: [
+      {
+        parameter: "freq: Number",
+        description: "Filter Frequency",
+      },
+      {
+        parameter: "timeFromNow: Number",
+        description: "schedule this event to happen seconds from now (Optional)",
+      }
+    ],
+    return: {
+      type: "Number",
+      description: "value Returns the current frequency value",
+    }
+  },
+  {
+    element: "biquadFilter",
+    description: "The p5.Filter is built with a Web Audio BiquadFilter Node.",
+    code: "biquadFilter",
+    insert: "biquadFilter",
+    syntax: [
+    ],
+  },
+  {
+    element: "getOctaveBands",
+    description: "Calculates and Returns the 1/N Octave Bands N defaults to 3 and minimum central frequency to 15.625Hz. (1/3 Octave Bands ~= 31 Frequency Bands) Setting fCtr0 to a central value of a higher octave will ignore the lower bands and produce less frequency groups.",
+    code: "getOctaveBands(N, fCtr0)",
+    insert: "getOctaveBands(${1:N}, ${2:fCtr0})",
+    syntax: [
+      {
+        parameter: "N: Number",
+        description: "Specifies the 1/N type of generated octave bands",
+      },
+      {
+        parameter: "fCtr0: Number",
+        description: "Minimum central frequency for the lowest band",
+      }
+    ],
+    return: {
+      type: "Array",
+      description: "octaveBands Array of octave band objects with their bounds",
+    }
+  },
+  {
+    element: "logAverages",
+    description: "Returns an array of average amplitude values of the spectrum, for a given set of Octave Bands ",
+    code: "logAverages(octaveBands)",
+    insert: "logAverages(${1:octaveBands})",
+    syntax: [
+      {
+        parameter: "octaveBands: Array",
+        description: "Array of Octave Bands objects for grouping",
+      }
+    ],
+    return: {
+      type: "Array",
+      description: "logAverages Array of average amplitude values for each group",
+    }
+  },
+  {
+    element: "linAverages",
+    description: "Returns an array of average amplitude values for a given number of frequency bands split equally.",
+    code: "linAverages(N)",
+    insert: "linAverages(${1:N})",
+    syntax: [
+      {
+        parameter: "N: Number",
+        description: "Number of returned frequency groups",
+      }
+    ],
+    return: {
+      type: "Array",
+      description: "linAverages Array of average amplitude values for each group",
+    }
+  },
+  {
+    element: "getCentroid",
+    description: "Returns the spectral centroid of the input signal.",
+    code: "getCentroid()",
+    insert: "getCentroid()",
+    syntax: [
+    ],
+    return: {
+      type: "Number",
+      description: "Spectral Centroid Frequency of the spectral centroid in Hz.",
+    }
+  },
+  {
+    element: "getEnergy",
+    description: "Returns the amount of energy (volume) at a specific frequency, or the average amount of energy between two frequencies. Accepts Number(s) corresponding to frequency (in Hz), or a string corresponding to predefined frequency ranges (bass, lowMid, mid, highMid, treble). ",
+    code: "getEnergy(frequency1, [frequency2])",
+    insert: "getEnergy(${1:frequency1})",
+    syntax: [
+      {
+        parameter: "frequency1: Number|String",
+        description: "Will return a value representing energy at this frequency. Alternately, the strings bass, lowMid mid, highMid, and treble will return predefined frequency ranges.",
+      },
+      {
+        parameter: "frequency2: Number",
+        description: "If a second frequency is given, will return average amount of energy that exists between the two frequencies. (Optional)",
+      }
+    ],
+    return: {
+      type: "Number",
+      description: "Energy (volume/amplitude) from 0 and 255.",
+    }
+  },
+  {
+    element: "analyze",
+    description: "Returns an array of amplitude values (between 0 and 255) across the frequency spectrum. Length is equal to FFT bins (1024 by default). The array indices correspond to frequencies (i.e. pitches), from the lowest to the highest that humans can hear. Each value represents amplitude at that slice of the frequency spectrum. Must be called prior to using getEnergy().",
+    code: "analyze([bins], [scale])",
+    insert: "analyze()",
+    syntax: [
+      {
+        parameter: "bins: Number",
+        description: "Must be a power of two between 16 and 1024. Defaults to 1024. (Optional)",
+      },
+      {
+        parameter: "scale: Number",
+        description: "If dB returns decibel float measurements between -140 and 0 (max). Otherwise returns integers from 0-255. (Optional)",
+      }
+    ],
+    return: {
+      type: "Array",
+      description: "spectrum Array of energy (amplitude/volume) values across the frequency spectrum. Lowest energy (silence) = 0, highest possible is 255.",
+    }
+  },
+  {
+    element: "waveform",
+    description: "Returns an array of amplitude values (between -1.0 and +1.0) that represent a snapshot of amplitude readings in a single buffer. Length will be equal to bins (defaults to 1024). Can be used to draw the waveform of a sound.",
+    code: "waveform([bins], [precision])",
+    insert: "waveform()",
+    syntax: [
+      {
+        parameter: "bins: Number",
+        description: "Must be a power of two between 16 and 1024. Defaults to 1024. (Optional)",
+      },
+      {
+        parameter: "precision: String",
+        description: "If any value is provided, will return results in a Float32 Array which is more precise than a regular array. (Optional)",
+      }
+    ],
+    return: {
+      type: "Array",
+      description: "Array of amplitude values (-1 to 1) over time. Array length = bins.",
+    }
+  },
+  {
+    element: "getAmp",
+    description: "Returns the value of output gain",
+    code: "getAmp()",
+    insert: "getAmp()",
+    syntax: [
+    ],
+    return: {
+      type: "Number",
+      description: "Amplitude value between 0.0 and 1.0",
+    }
+  },
+  {
+    element: "getFreq",
+    description: "Returns the value of frequency of oscillator",
+    code: "getFreq()",
+    insert: "getFreq()",
+    syntax: [
+    ],
+    return: {
+      type: "Number",
+      description: "Frequency of oscillator in Hertz",
+    }
+  },
+  {
+    element: "getType",
+    description: "Returns current type of oscillator eg. 'sine', 'triangle', 'sawtooth' or 'square'.",
+    code: "getType()",
+    insert: "getType()",
+    syntax: [
+    ],
+    return: {
+      type: "String",
+      description: "type of oscillator eg . 'sine', 'triangle', 'sawtooth' or 'square'.",
+    }
+  },
+  {
+    element: "phase",
+    description: "Set the phase of an oscillator between 0.0 and 1.0. In this implementation, phase is a delay time based on the oscillator's current frequency.",
+    code: "phase(phase)",
+    insert: "phase(${1:phase})",
+    syntax: [
+      {
+        parameter: "phase: Number",
+        description: "float between 0.0 and 1.0",
+      }
+    ],
+  },
+  {
+    element: "panner",
+    description: "Web Audio Spatial Panner Node",
+    code: "panner",
+    insert: "panner",
+    syntax: [
+    ],
+  },
+  {
+    element: "positionX",
+    description: "Getter and setter methods for position coordinates",
+    code: "positionX()",
+    insert: "positionX()",
+    syntax: [
+    ],
+    return: {
+      type: "Number",
+      description: "updated coordinate value",
+    }
+  },
+  {
+    element: "positionY",
+    description: "Getter and setter methods for position coordinates",
+    code: "positionY()",
+    insert: "positionY()",
+    syntax: [
+    ],
+    return: {
+      type: "Number",
+      description: "updated coordinate value",
+    }
+  },
+  {
+    element: "positionZ",
+    description: "Getter and setter methods for position coordinates",
+    code: "positionZ()",
+    insert: "positionZ()",
+    syntax: [
+    ],
+    return: {
+      type: "Number",
+      description: "updated coordinate value",
+    }
+  },
+  {
+    element: "orientX",
+    description: "Getter and setter methods for orient coordinates",
+    code: "orientX()",
+    insert: "orientX()",
+    syntax: [
+    ],
+    return: {
+      type: "Number",
+      description: "updated coordinate value",
+    }
+  },
+  {
+    element: "orientY",
+    description: "Getter and setter methods for orient coordinates",
+    code: "orientY()",
+    insert: "orientY()",
+    syntax: [
+    ],
+    return: {
+      type: "Number",
+      description: "updated coordinate value",
+    }
+  },
+  {
+    element: "orientZ",
+    description: "Getter and setter methods for orient coordinates",
+    code: "orientZ()",
+    insert: "orientZ()",
+    syntax: [
+    ],
+    return: {
+      type: "Number",
+      description: "updated coordinate value",
+    }
+  },
+  {
+    element: "setFalloff",
+    description: "Set the rolloff factor and max distance",
+    code: "setFalloff([maxDistance], [rolloffFactor])",
+    insert: "setFalloff()",
+    syntax: [
+      {
+        parameter: "maxDistance: Number",
+        description: "(Optional)",
+      },
+      {
+        parameter: "rolloffFactor: Number",
+        description: "(Optional)",
+      }
+    ],
+  },
+  {
+    element: "maxDist",
+    description: "Maxium distance between the source and the listener",
+    code: "maxDist(maxDistance)",
+    insert: "maxDist(${1:maxDistance})",
+    syntax: [
+      {
+        parameter: "maxDistance: Number",
+        description: "",
+      }
+    ],
+    return: {
+      type: "Number",
+      description: "updated value",
+    }
+  },
+  {
+    element: "rollof",
+    description: "How quickly the volume is reduced as the source moves away from the listener",
+    code: "rollof(rolloffFactor)",
+    insert: "rollof(${1:rolloffFactor})",
+    syntax: [
+      {
+        parameter: "rolloffFactor: Number",
+        description: "",
+      }
+    ],
+    return: {
+      type: "Number",
+      description: "updated value",
+    }
+  },
+  {
+    element: "compressor",
+    description: "The p5.Compressor is built with a Web Audio Dynamics Compressor Node",
+    code: "compressor",
+    insert: "compressor",
+    syntax: [
+    ],
+  },
+  {
+    element: "attack",
+    description: "Get current attack or set value w/ time ramp",
+    code: "attack([attack], [time])",
+    insert: "attack()",
+    syntax: [
+      {
+        parameter: "attack: Number",
+        description: "Attack is the amount of time (in seconds) to reduce the gain by 10dB, default = .003, range 0 - 1 (Optional)",
+      },
+      {
+        parameter: "time: Number",
+        description: "Assign time value to schedule the change in value (Optional)",
+      }
+    ],
+  },
+  {
+    element: "knee",
+    description: "Get current knee or set value w/ time ramp",
+    code: "knee([knee], [time])",
+    insert: "knee()",
+    syntax: [
+      {
+        parameter: "knee: Number",
+        description: "A decibel value representing the range above the threshold where the curve smoothly transitions to the ratio portion. default = 30, range 0 - 40 (Optional)",
+      },
+      {
+        parameter: "time: Number",
+        description: "Assign time value to schedule the change in value (Optional)",
+      }
+    ],
+  },
+  {
+    element: "ratio",
+    description: "Get current ratio or set value w/ time ramp",
+    code: "ratio([ratio], [time])",
+    insert: "ratio()",
+    syntax: [
+      {
+        parameter: "ratio: Number",
+        description: "The amount of dB change in input for a 1 dB change in output default = 12, range 1 - 20 (Optional)",
+      },
+      {
+        parameter: "time: Number",
+        description: "Assign time value to schedule the change in value (Optional)",
+      }
+    ],
+  },
+  {
+    element: "threshold",
+    description: "Get current threshold or set value w/ time ramp",
+    code: "threshold(threshold, [time])",
+    insert: "threshold(${1:threshold})",
+    syntax: [
+      {
+        parameter: "threshold: Number",
+        description: "The decibel value above which the compression will start taking effect default = -24, range -100 - 0",
+      },
+      {
+        parameter: "time: Number",
+        description: "Assign time value to schedule the change in value (Optional)",
+      }
+    ],
+  },
+  {
+    element: "release",
+    description: "Get current release or set value w/ time ramp",
+    code: "release(release, [time])",
+    insert: "release(${1:release})",
+    syntax: [
+      {
+        parameter: "release: Number",
+        description: "The amount of time (in seconds) to increase the gain by 10dB default = .25, range 0 - 1",
+      },
+      {
+        parameter: "time: Number",
+        description: "Assign time value to schedule the change in value (Optional)",
+      }
+    ],
+  },
+  {
+    element: "reduction",
+    description: "Return the current reduction value",
+    code: "reduction()",
+    insert: "reduction()",
+    syntax: [
+    ],
+    return: {
+      type: "Number",
+      description: "Value of the amount of gain reduction that is applied to the signal",
+    }
+  },
+  {
+    element: "update",
+    description: "The update method is run in the draw loop. Accepts an FFT object. You must call .analyze() on the FFT object prior to updating the peakDetect because it relies on a completed FFT analysis.",
+    code: "update(fftObject)",
+    insert: "update(${1:fftObject})",
+    syntax: [
+      {
+        parameter: "fftObject: p5.FFT",
+        description: "A p5.FFT object",
+      }
+    ],
+  },
+  {
+    element: "onPeak",
+    description: "onPeak accepts two arguments: a function to call when a peak is detected. The value of the peak, between 0.0 and 1.0, is passed to the callback.",
+    code: "onPeak(callback, [val])",
+    insert: "onPeak(${1:callback})",
+    syntax: [
+      {
+        parameter: "callback: function",
+        description: "Name of a function that will be called when a peak is detected.",
+      },
+      {
+        parameter: "val: Object",
+        description: "Optional value to pass into the function when a peak is detected. (Optional)",
+      }
+    ],
+  },
+  {
+    element: "dispose",
+    description: "Get rid of the MonoSynth and free up its resources / memory.",
+    code: "dispose()",
+    insert: "dispose()",
+    syntax: [
+    ],
+  },
+  {
+    element: "record",
+    description: "Start recording. To access the recording, provide a p5.SoundFile as the first parameter. The p5.SoundRecorder will send its recording to that p5.SoundFile for playback once recording is complete. Optional parameters include duration (in seconds) of the recording, and a callback function that will be called once the complete recording has been transfered to the p5.SoundFile.",
+    code: "record(soundFile, [duration], [callback])",
+    insert: "record(${1:soundFile})",
+    syntax: [
+      {
+        parameter: "soundFile: p5.SoundFile",
+        description: "p5.SoundFile",
+      },
+      {
+        parameter: "duration: Number",
+        description: "Time (in seconds) (Optional)",
+      },
+      {
+        parameter: "callback: function",
+        description: "The name of a function that will be called once the recording completes (Optional)",
+      }
+    ],
+  },
+  {
+    element: "WaveShaperNode",
+    description: "The p5.Distortion is built with a Web Audio WaveShaper Node.",
+    code: "WaveShaperNode",
+    insert: "WaveShaperNode",
+    syntax: [
+    ],
+  },
+  {
+    element: "getAmount",
+    description: "Return the distortion amount, typically between 0-1.",
+    code: "getAmount()",
+    insert: "getAmount()",
+    syntax: [
+    ],
+    return: {
+      type: "Number",
+      description: "Unbounded distortion amount. Normal values range from 0-1.",
+    }
+  },
+  {
+    element: "getOversample",
+    description: "Return the oversampling.",
+    code: "getOversample()",
+    insert: "getOversample()",
+    syntax: [
+    ],
+    return: {
+      type: "String",
+      description: "Oversample can either be 'none', '2x', or '4x'.",
+    }
+  },
+  {
+    element: "decay",
+    description: "decay",
+    code: "decay",
+    insert: "decay",
+    syntax: [
+    ],
+  },
+  {
+    element: "sustain",
+    description: "sustain",
+    code: "sustain",
+    insert: "sustain",
+    syntax: [
+    ],
+  },
+  {
+    element: "notes",
+    description: "An object that holds information about which notes have been played and which notes are currently being played. New notes are added as keys on the fly. While a note has been attacked, but not released, the value of the key is the audiovoice which is generating that note. When notes are released, the value of the key becomes undefined.",
+    code: "notes",
+    insert: "notes",
+    syntax: [
+    ],
+  },
+  {
+    element: "polyvalue",
+    description: "A PolySynth must have at least 1 voice, defaults to 8",
+    code: "polyvalue",
+    insert: "polyvalue",
+    syntax: [
+    ],
+  },
+  {
+    element: "AudioVoice",
+    description: "Monosynth that generates the sound for each note that is triggered. The p5.PolySynth defaults to using the p5.MonoSynth as its voice.",
+    code: "AudioVoice",
+    insert: "AudioVoice",
+    syntax: [
+    ],
+  },
+  {
+    element: "noteADSR",
+    description: "noteADSR sets the envelope for a specific note that has just been triggered. Using this method modifies the envelope of whichever audiovoice is being used to play the desired note. The envelope should be reset before noteRelease is called in order to prevent the modified envelope from being used on other notes.",
+    code: "noteADSR([note], [attackTime], [decayTime], [susRatio], [releaseTime]))",
+    insert: "noteADSR()",
+    syntax: [
+      {
+        parameter: "note: Number",
+        description: "Midi note on which ADSR should be set. (Optional)",
+      },
+      {
+        parameter: "attackTime: Number",
+        description: "Time (in seconds before envelope reaches Attack Level (Optional)",
+      },
+      {
+        parameter: "decayTime: Number",
+        description: "Time (in seconds) before envelope reaches Decay/Sustain Level (Optional)",
+      },
+      {
+        parameter: "susRatio: Number",
+        description: "Ratio between attackLevel and releaseLevel, on a scale from 0 to 1, where 1.0 = attackLevel, 0.0 = releaseLevel. The susRatio determines the decayLevel and the level at which the sustain portion of the envelope will sustain. ",
+      },
+      {
+        parameter: "releaseTime: Number",
+        description: "Time in seconds from now (defaults to 0) (Optional)",
+      }
+    ],
+  },
+  {
+    element: "noteAttack",
+    description: "Trigger the Attack, and Decay portion of a MonoSynth. Similar to holding down a key on a piano, but it will hold the sustain level until you let go.",
+    code: "noteAttack([note], [velocity], [secondsFromNow])",
+    insert: "noteAttack()",
+    syntax: [
+      {
+        parameter: "note: Number",
+        description: "midi note on which attack should be triggered. (Optional)",
+      },
+      {
+        parameter: "velocity: Number",
+        description: "velocity of the note to play (ranging from 0 to 1)/ (Optional)",
+      },
+      {
+        parameter: "secondsFromNow: Number",
+        description: "time from now (in seconds) (Optional)",
+      }
+    ],
+  },
+  {
+    element: "noteRelease",
+    description: "Trigger the Release of an AudioVoice note. This is similar to releasing the key on a piano and letting the sound fade according to the release level and release time.",
+    code: "noteRelease([note], [secondsFromNow])",
+    insert: "noteRelease()",
+    syntax: [
+      {
+        parameter: "note: Number",
+        description: "midi note on which attack should be triggered. If no value is provided, all notes will be released. (Optional)",
+      },
+      {
+        parameter: "secondsFromNow: Number",
+        description: "time to trigger the release (Optional)",
+      }
+    ],
+  }
 ];
+
+
+const a = 
+{
+  element: "process",
+  description: "",
+  code: "process(Signal)",
+  insert: "process(${1:Signal})",
+  syntax: [
+    {
+      parameter: ": ",
+      description: "",
+    }
+  ],
+}
+
+const b = 
+{
+  element: "process",
+  description: "",
+  code: "process(Signal)",
+  insert: "process(${1:Signal})",
+  syntax: [
+    {
+      parameter: ": ",
+      description: "",
+    }
+  ],
+  return: {
+    type: "",
+    description: "",
+  }
+}
+
+const c = 
+{
+  element: "process",
+  description: "",
+  code: "process",
+  insert: "process",
+  syntax: [
+  ],
+}
+
+const d = 
+{
+  element: "process",
+  description: "",
+  code: "process()",
+  insert: "process()",
+  syntax: [
+  ],
+  return: {
+    type: "",
+    description: "",
+  }
+}

@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.0
+
+- Complete the p5.js sound documentation references
+
 ## 0.4.0
 
 - Add original p5 documentation links on hover
