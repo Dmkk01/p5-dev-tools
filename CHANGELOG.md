@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.1
+
+- Update p5.Vector documentation
+
 ## 1.0.0
 
 - Complete the p5.js sound documentation references

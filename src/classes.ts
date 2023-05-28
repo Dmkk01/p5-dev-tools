@@ -1118,7 +1118,7 @@ export const classesP5 = [
     ],
   },
   {
-    element: "p5.Vector ",
+    element: "p5.VectorNew",
     insert: "new p5.Vector()",
     code: "new p5.Vector([x], [y], [z])",
     description:
@@ -1151,6 +1151,129 @@ export const classesP5 = [
         description: "The z component of the vector",
       },
     ],
+    methods: [
+      {
+        name: "toString()",
+        description: "Returns a string representation of a vector v by calling String(v) or v.toString(). ",
+      },
+      {
+        name: "set()",
+        description: "Sets the x, y, and z component of the vector using two or three separate variables, the data from a p5.Vector, or the values from a float array.",
+      },
+      {
+        name: "copy()",
+        description: "Gets a copy of the vector, returns a p5.Vector object.",
+      },
+      {
+        name: "add()",
+        description: "Adds x, y, and z components to a vector, adds one vector to another, or adds two independent vectors together.",
+      },
+      {
+        name: "rem()",
+        description: "Gives remainder of a vector when it is divided by another vector.",
+      },
+      {
+        name: "sub()",
+        description: "Subtracts x, y, and z components from a vector, subtracts one vector from another, or subtracts two independent vectors.",
+      },
+      {
+        name: "mult()",
+        description: "Multiplies the vector by a scalar, multiplies the x, y, and z components from a vector, or multiplies the x, y, and z components of two independent vectors.",
+      },
+      {
+        name: "div()",
+        description: " Divides the vector by a scalar, divides a vector by the x, y, and z arguments, or divides the x, y, and z components of two vectors against each other.",
+      },
+      {
+        name: "mag()",
+        description: "Calculates the magnitude (length) of the vector and returns the result as a float",
+      },
+      {
+        name: "magSq()",
+        description: "Calculates the squared magnitude of the vector and returns the result as a float",
+      },
+      {
+        name: "dot()",
+        description: "Calculates the dot product of two vectors. The version of the method that computes the dot product of two independent vectors is a static method.",
+      },
+      {
+        name: "cross()",
+        description: "Calculates and returns a vector composed of the cross product between two vectors. ",
+      },
+      {
+        name: "dist()",
+        description: "Calculates the Euclidean distance between two points (considering a point as a vector object).",
+      },
+      {
+        name: "normalize()",
+        description: "Normalize the vector to length 1 (make it a unit vector).",
+      },
+      {
+        name: "limit()",
+        description: "Limit the magnitude of this vector to the value used for the max parameter.",
+      },
+      {
+        name: "setMag()",
+        description: "Set the magnitude of this vector to the value used for the len parameter.",
+      },
+      {
+        name: "heading()",
+        description: "Calculate the angle of rotation for this vector(only 2D vectors).",
+      },
+      {
+        name: "setHeading()",
+        description: "Rotate the vector to a specific angle (only 2D vectors), magnitude remains the same",
+      },
+      {
+        name: "rotate()",
+        description: "Rotate the vector by an angle (only 2D vectors), magnitude remains the same",
+      },
+      {
+        name: "angleBetween()",
+        description: "Calculates and returns the angle between two vectors.",
+      },
+      {
+        name: "lerp()",
+        description: " Linear interpolate the vector to another vector",
+      },
+      {
+        name: "reflect()",
+        description: "Reflect the incoming vector about a normal to a line in 2D, or about a normal to a plane in 3D This method acts on the vector directly",
+      },
+      {
+        name: "array()",
+        description: "Return a representation of this vector as a float array.",
+      },
+      {
+        name: "equals()",
+        description: "Equality check against a p5.Vector",
+      },
+      {
+        name: "fromAngle()",
+        description: "Make a new 2D vector from an angle",
+      },
+      {
+        name: "fromAngles()",
+        description: "Make a new 3D vector from a pair of ISO spherical angles",
+      },
+      {
+        name: "random2D()",
+        description: "Make a new 2D unit vector from a random angle",
+      },
+      {
+        name: "random3D()",
+        description: "Make a new random 3D unit vector.",
+      },
+    ],
+  },
+  {
+    element: "p5.Vector",
+    insert: "p5.Vector",
+    code: "p5.Vector",
+    description:
+      "A class to describe a two or three dimensional vector, specifically a Euclidean (also known as geometric) vector. A vector is an entity that has both magnitude and direction. The datatype, however, stores the components of the vector (x, y for 2D, and x, y, z for 3D).",
+    parameters: [],
+    fields: [],
     methods: [
       {
         name: "toString()",
