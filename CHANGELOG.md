@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.0.2
+
+- Fix p5.circle typo
 ## 1.0.1
 
 - Update p5.Vector documentation

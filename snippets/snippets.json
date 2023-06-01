@@ -124,7 +124,7 @@
         "description": "Simple circle for p5.js"
     },
     "p5.js Square": {
-        "prefix": "p5-circle",
+        "prefix": "p5-square",
         "body": [
             "fill(255);",
             "square(50, 50, 200);"
